@@ -35,7 +35,11 @@ REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../ext"
 
 portal_prepare () {
 
-	util_error_echo "portal_prepare"
+	util_error_echo
+	util_error_echo "##"
+	util_error_echo "## ## portal_prepare"
+	util_error_echo "##"
+	util_error_echo
 
 	mod_main_signal_bind
 
