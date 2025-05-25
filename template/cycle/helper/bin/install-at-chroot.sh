@@ -30,14 +30,14 @@ REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../ext"
 
 
 ################################################################################
-### Head: Model / mod_install_at_chroot
+### Head: Portal / portal_install_at_chroot
 ##
 
-mod_install_at_chroot () {
+portal_install_at_chroot () {
 
 	util_error_echo
 	util_error_echo "##"
-	util_error_echo "## ## mod_install_at_chroot"
+	util_error_echo "## ## portal_install_at_chroot"
 	util_error_echo "##"
 	util_error_echo
 
@@ -49,7 +49,7 @@ mod_install_at_chroot () {
 }
 
 ##
-### Tail: Model / mod_install_at_chroot
+### Tail: Portal / portal_install_at_chroot
 ################################################################################
 
 
@@ -59,7 +59,7 @@ mod_install_at_chroot () {
 
 __main__ () {
 
-	mod_install_at_chroot "${@}"
+	portal_install_at_chroot "${@}"
 
 }
 

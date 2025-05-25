@@ -30,14 +30,14 @@ REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../ext"
 
 
 ################################################################################
-### Head: Model / mod_install
+### Head: Portal / portal_install
 ##
 
-mod_install () {
+portal_install () {
 
 	util_error_echo
 	util_error_echo "##"
-	util_error_echo "## ## mod_install"
+	util_error_echo "## ## portal_install"
 	util_error_echo "##"
 	util_error_echo
 
@@ -57,7 +57,7 @@ mod_install () {
 }
 
 ##
-### Tail: Model / mod_install
+### Tail: Portal / portal_install
 ################################################################################
 
 
@@ -67,7 +67,7 @@ mod_install () {
 
 __main__ () {
 
-	mod_install "${@}"
+	portal_install "${@}"
 
 }
 

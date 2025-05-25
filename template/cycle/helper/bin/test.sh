@@ -30,19 +30,19 @@ REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../ext"
 
 
 ################################################################################
-### Head: Model / mod_test
+### Head: Portal / portal_test
 ##
 
-mod_test () {
+portal_test () {
 
 	util_error_echo
 	util_error_echo "##"
-	util_error_echo "## ## mod_test"
+	util_error_echo "## ## portal_test"
 	util_error_echo "##"
 	util_error_echo
 
 
-
+	mod_test_util_text_file_list_load
 
 	mod_main_signal_bind
 
@@ -51,7 +51,7 @@ mod_test () {
 }
 
 ##
-### Tail: Model / mod_test
+### Tail: Portal / portal_test
 ################################################################################
 
 
@@ -61,7 +61,7 @@ mod_test () {
 
 __main__ () {
 
-	mod_test "${@}"
+	portal_test "${@}"
 
 }
 
