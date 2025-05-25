@@ -23,6 +23,30 @@ mod_test_util_text_file_list_load () {
 }
 
 
+mod_test_util_stage_rundown_process () {
+
+	util_error_echo
+	util_error_echo "##"
+	util_error_echo "## ## mod_test_util_stage_rundown_process"
+	util_error_echo "##"
+	util_error_echo
+
+	local module_root_dir_path="${REF_MAIN_DIR_PATH}/stage/module"
+
+	local rundown_file_path="${REF_MAIN_DIR_PATH}/stage/rundown/master-package-install.txt"
+
+	echo "${rundown_file_path}"
+
+	#util_stage_rundown_process "${rundown_file_path}" "${module_root_dir_path}"
+	#util_stage_rundown_process "${rundown_file_path}"
+
+	#util_stage_rundown_process "${rundown_file_path}"
+
+	util_stage_rundown_process "${rundown_file_path}" "${module_root_dir_path}"
+
+}
+
+
 ##
 ### Tail: Master / Mod / Test
 ################################################################################

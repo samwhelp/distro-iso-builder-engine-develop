@@ -5,7 +5,9 @@
 ##
 
 util_text_file_list_load () {
+
 	local file_path="$1"
+
 	cat $file_path  | while IFS='' read -r line; do
 		trim_line=$(echo $line) # trim
 
@@ -22,6 +24,7 @@ util_text_file_list_load () {
 
 		echo "$line"
 	done
+
 }
 
 ##
