@@ -170,7 +170,8 @@ base_var_init () {
 	## ## Master Path
 	##
 
-	REF_MASTER_DIR_PATH="${REF_PLAN_DIR_PATH}"
+	##REF_MASTER_DIR_PATH="${REF_PLAN_DIR_PATH}"
+	REF_MASTER_DIR_PATH="$(find_dir_path "${REF_PLAN_DIR_PATH}/../.")"
 
 
 	##
@@ -365,7 +366,7 @@ base_var_dump () {
 
 	util_debug_echo
 	util_debug_echo "##"
-	util_debug_echo "## ## ## Master Path"
+	util_debug_echo "## ## Master Path"
 	util_debug_echo "##"
 	util_debug_echo
 
