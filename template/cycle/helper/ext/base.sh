@@ -170,6 +170,26 @@ base_var_init () {
 
 
 	##
+	## ## Master Path / Stage / Sub
+	##
+
+	REF_MASTER_STAGE_MODULE_DIR_NAME="module"
+	REF_MASTER_STAGE_MODULE_DIR_PATH="${REF_MAIN_STAGE_DIR_PATH}/${REF_MASTER_STAGE_MODULE_DIR_NAME}"
+
+	REF_MASTER_STAGE_RUNDOWN_DIR_NAME="rundown"
+	REF_MASTER_STAGE_RUNDOWN_DIR_PATH="${REF_MAIN_STAGE_DIR_PATH}/${REF_MASTER_STAGE_RUNDOWN_DIR_NAME}"
+
+
+
+
+	##
+	############################################################################
+	##
+
+
+
+
+	##
 	## ## Master Path
 	##
 
@@ -373,6 +393,30 @@ base_var_dump () {
 
 	util_debug_echo "REF_MAIN_EXT_MASTER_MOD_DIR_NAME=${REF_MAIN_EXT_MASTER_MOD_DIR_NAME}"
 	util_debug_echo "REF_MAIN_EXT_MASTER_MOD_DIR_PATH=${REF_MAIN_EXT_MASTER_MOD_DIR_PATH}"
+	util_debug_echo
+
+
+
+
+	##
+	############################################################################
+	##
+
+
+
+
+	util_debug_echo
+	util_debug_echo "##"
+	util_debug_echo "## ## Master Path / Stage / Sub"
+	util_debug_echo "##"
+	util_debug_echo
+
+	util_debug_echo "REF_MASTER_STAGE_MODULE_DIR_NAME=${REF_MASTER_STAGE_MODULE_DIR_NAME}"
+	util_debug_echo "REF_MASTER_STAGE_MODULE_DIR_PATH=${REF_MASTER_STAGE_MODULE_DIR_PATH}"
+	util_debug_echo
+
+	util_debug_echo "REF_MASTER_STAGE_RUNDOWN_DIR_NAME=${REF_MASTER_STAGE_RUNDOWN_DIR_NAME}"
+	util_debug_echo "REF_MASTER_STAGE_RUNDOWN_DIR_PATH=${REF_MASTER_STAGE_RUNDOWN_DIR_PATH}"
 	util_debug_echo
 
 
