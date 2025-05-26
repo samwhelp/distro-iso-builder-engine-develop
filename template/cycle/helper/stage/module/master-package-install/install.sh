@@ -31,6 +31,82 @@ REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../../../ext"
 
 
 ################################################################################
+### Head: PATH
+##
+
+THE_MASTER_PACKAGE_INSTALL_FILE_PATH="${REF_MAIN_TMP_DIR_PATH}/master-package-install.txt"
+
+##
+### Tail: PATH
+################################################################################
+
+
+################################################################################
+### Head: Model / mod_module_master_package_install
+##
+
+sys_module_master_package_install_combine_list () {
+
+	sys_tmp_dir_create
+
+	local tmp_dir_path="${REF_MAIN_TMP_DIR_PATH}"
+
+	local package_install_file_path="${THE_MASTER_PACKAGE_INSTALL_FILE_PATH}"
+
+	local package_install_dir_path="${REF_MASTER_ASSET_PACKAGE_INSTALL_DIR_PATH}"
+
+	cat "${package_install_dir_path}"/*.txt > "${package_install_file_path}"
+
+
+	return 0
+
+}
+
+
+sys_module_master_package_install_load_list () {
+
+	local package_install_file_path="${THE_MASTER_PACKAGE_INSTALL_FILE_PATH}"
+
+	util_text_file_list_load "${package_install_file_path}"
+
+	return 0
+
+}
+
+sys_module_master_package_install () {
+
+	##util_error_echo
+	##util_error_echo apt-get install -y --no-install-recommends $(sys_module_master_package_install_load_list)
+	##util_error_echo
+	##apt-get install -y --no-install-recommends $(sys_module_master_package_install_load_list)
+
+
+	local package_install_list=$(sys_module_master_package_install_load_list)
+
+	util_error_echo
+	util_error_echo apt-get install -y --no-install-recommends ${package_install_list}
+	util_error_echo
+	apt-get install -y --no-install-recommends ${package_install_list}
+
+
+	return 0
+
+}
+
+mod_module_master_package_install () {
+
+	sys_module_master_package_install_combine_list
+
+	sys_module_master_package_install
+
+}
+
+##
+### Tail: Model / mod_module_master_package_install
+################################################################################
+
+
+################################################################################
 ### Head: Portal / portal_install
 ##
 
@@ -45,6 +121,10 @@ portal_install () {
 	local script_file_path="${REF_BASE_DIR_PATH}/${REF_CMD_FILE_NAME}"
 
 	util_error_echo "[Run Module]: ${script_file_path}"
+
+
+	mod_module_master_package_install
+
 
 }
 
