@@ -34,7 +34,7 @@ REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../../../ext"
 ### Head: PATH
 ##
 
-THE_FACTORY_PACKAGE_REMOVE_FILE_PATH="${REF_MAIN_TMP_DIR_PATH}/factory-package-remove.txt"
+THE_FACTORY_PACKAGE_REMOVE_FILE_PATH="${REF_MASTER_TMP_DIR_PATH}/factory-package-remove.txt"
 
 ##
 ### Tail: PATH
@@ -49,7 +49,7 @@ sys_module_factory_package_remove_combine_list () {
 
 	sys_tmp_dir_create
 
-	local tmp_dir_path="${REF_MAIN_TMP_DIR_PATH}"
+	local tmp_dir_path="${REF_MASTER_TMP_DIR_PATH}"
 
 	local package_remove_file_path="${THE_FACTORY_PACKAGE_REMOVE_FILE_PATH}"
 

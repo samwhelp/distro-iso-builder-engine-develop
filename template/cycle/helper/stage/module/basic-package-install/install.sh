@@ -34,7 +34,7 @@ REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../../../ext"
 ### Head: PATH
 ##
 
-THE_BASIC_PACKAGE_INSTALL_FILE_PATH="${REF_MAIN_TMP_DIR_PATH}/basic-package-install.txt"
+THE_BASIC_PACKAGE_INSTALL_FILE_PATH="${REF_MASTER_TMP_DIR_PATH}/basic-package-install.txt"
 
 ##
 ### Tail: PATH
@@ -49,7 +49,7 @@ sys_module_basic_package_install_combine_list () {
 
 	sys_tmp_dir_create
 
-	local tmp_dir_path="${REF_MAIN_TMP_DIR_PATH}"
+	local tmp_dir_path="${REF_MASTER_TMP_DIR_PATH}"
 
 	local package_install_file_path="${THE_BASIC_PACKAGE_INSTALL_FILE_PATH}"
 
@@ -57,6 +57,8 @@ sys_module_basic_package_install_combine_list () {
 
 	cat "${package_install_dir_path}"/*.txt > "${package_install_file_path}"
 
+
+	echo "${package_install_file_path}"
 
 	return 0
 
