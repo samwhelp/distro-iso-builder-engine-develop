@@ -57,8 +57,10 @@ util_stage_rundown_process () {
 			util_error_echo
 			util_error_echo
 			util_error_echo "##"
-			util_error_echo "## ## [Call]: ${module_install_file_path}"
+			util_error_echo "## ## Module"
 			util_error_echo "##"
+			util_error_echo
+			util_error_echo "[Call]: ${module_install_file_path}"
 			util_error_echo
 			${module_install_file_path}
 
@@ -66,8 +68,10 @@ util_stage_rundown_process () {
 			util_error_echo
 			util_error_echo
 			util_error_echo "##"
-			util_error_echo "## ## [Skip]: ${module_install_file_path}"
+			util_error_echo "## ## Module"
 			util_error_echo "##"
+			util_error_echo
+			util_error_echo "[Skip]: ${module_install_file_path}"
 			util_error_echo
 		fi
 
