@@ -32,7 +32,6 @@ mod_stage_rundown_process_factory_install () {
 	util_error_echo "## ## Rundown"
 	util_error_echo "##"
 	util_error_echo
-	util_error_echo
 	util_error_echo "[Rundown]: ${rundown_file_path}"
 	util_error_echo
 
@@ -54,7 +53,6 @@ mod_stage_rundown_process_master_install () {
 	util_error_echo "## ## Rundown"
 	util_error_echo "##"
 	util_error_echo
-	util_error_echo
 	util_error_echo "[Rundown]: ${rundown_file_path}"
 	util_error_echo
 
@@ -75,7 +73,6 @@ mod_stage_rundown_process_skeleton_head () {
 	util_error_echo "##"
 	util_error_echo "## ## Rundown"
 	util_error_echo "##"
-	util_error_echo
 	util_error_echo
 	util_error_echo "[Rundown]: ${rundown_file_path}"
 	util_error_echo
@@ -99,7 +96,6 @@ mod_stage_rundown_process_skeleton_tail () {
 	util_error_echo "## ## Rundown"
 	util_error_echo "##"
 	util_error_echo
-	util_error_echo
 	util_error_echo "[Rundown]: ${rundown_file_path}"
 	util_error_echo
 
@@ -121,7 +117,6 @@ mod_stage_rundown_process_skeleton_middle () {
 	util_error_echo "##"
 	util_error_echo "## ## Rundown"
 	util_error_echo "##"
-	util_error_echo
 	util_error_echo
 	util_error_echo "[Rundown]: ${rundown_file_path}"
 	util_error_echo
