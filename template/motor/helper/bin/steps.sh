@@ -31,25 +31,27 @@ REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../ext"
 
 
 ################################################################################
-### Head: Portal / portal_prepare
+### Head: Portal / portal_steps
 ##
 
-portal_prepare () {
+portal_steps () {
 
 	util_error_echo
 	util_error_echo "##"
-	util_error_echo "## ## portal_prepare"
+	util_error_echo "## ## portal_steps"
 	util_error_echo "##"
 	util_error_echo
 
-	mod_main_signal_bind
 
-	sleep 10;
+	mod_stage_rundown_process_all
+
+
+	return 0
 
 }
 
 ##
-### Tail: Portal / portal_prepare
+### Tail: Portal / portal_steps
 ################################################################################
 
 
@@ -59,7 +61,7 @@ portal_prepare () {
 
 __main__ () {
 
-	portal_prepare "${@}"
+	portal_steps "${@}"
 
 }
 

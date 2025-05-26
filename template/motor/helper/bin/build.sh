@@ -31,25 +31,31 @@ REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../ext"
 
 
 ################################################################################
-### Head: Portal / portal_prepare
+### Head: Portal / portal_build
 ##
 
-portal_prepare () {
+portal_build () {
 
 	util_error_echo
 	util_error_echo "##"
-	util_error_echo "## ## portal_prepare"
+	util_error_echo "## ## portal_build"
 	util_error_echo "##"
 	util_error_echo
 
-	mod_main_signal_bind
+	local script_file_path="${REF_MAIN_BIN_DIR_PATH}/steps.sh"
 
-	sleep 10;
+	util_error_echo
+	util_error_echo sudo "${script_file_path}"
+	util_error_echo
+	sudo "${script_file_path}"
+
+
+	return 0
 
 }
 
 ##
-### Tail: Portal / portal_prepare
+### Tail: Portal / portal_build
 ################################################################################
 
 
@@ -59,7 +65,7 @@ portal_prepare () {
 
 __main__ () {
 
-	portal_prepare "${@}"
+	portal_build "${@}"
 
 }
 

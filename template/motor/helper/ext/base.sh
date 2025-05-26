@@ -74,6 +74,7 @@ base_var_init () {
 
 	REF_INIT_DIR_PATH="$(find_dir_path "${REF_INIT_DIR_PATH}/.")"
 	REF_PLAN_DIR_PATH="$(find_dir_path "${REF_INIT_DIR_PATH}/../../.")"
+	REF_SUIT_DIR_PATH="$(find_dir_path "${REF_INIT_DIR_PATH}/../../../../.")"
 
 
 
@@ -104,6 +105,9 @@ base_var_init () {
 
 	REF_MAIN_SHARE_DIR_NAME="share"
 	REF_MAIN_SHARE_DIR_PATH="${REF_MAIN_DIR_PATH}/${REF_MAIN_SHARE_DIR_NAME}"
+
+	REF_MAIN_STAGE_DIR_NAME="stage"
+	REF_MAIN_STAGE_DIR_PATH="${REF_MAIN_DIR_PATH}/${REF_MAIN_STAGE_DIR_NAME}"
 
 	REF_MAIN_TMP_DIR_NAME="tmp"
 	REF_MAIN_TMP_DIR_PATH="${REF_MAIN_DIR_PATH}/${REF_MAIN_TMP_DIR_NAME}"
@@ -167,10 +171,39 @@ base_var_init () {
 
 
 	##
+	## ## Master Path / Stage / Sub
+	##
+
+	REF_MASTER_STAGE_MODULE_DIR_NAME="module"
+	REF_MASTER_STAGE_MODULE_DIR_PATH="${REF_MAIN_STAGE_DIR_PATH}/${REF_MASTER_STAGE_MODULE_DIR_NAME}"
+
+	REF_MASTER_STAGE_RUNDOWN_DIR_NAME="rundown"
+	REF_MASTER_STAGE_RUNDOWN_DIR_PATH="${REF_MAIN_STAGE_DIR_PATH}/${REF_MASTER_STAGE_RUNDOWN_DIR_NAME}"
+
+
+
+
+	##
+	############################################################################
+	##
+
+
+
+
+	##
 	## ## Master Path
 	##
 
-	REF_MASTER_DIR_PATH="${REF_PLAN_DIR_PATH}"
+	##REF_MASTER_DIR_PATH="${REF_PLAN_DIR_PATH}"
+	REF_MASTER_DIR_PATH="$(find_dir_path "${REF_PLAN_DIR_PATH}/../.")"
+
+
+	##
+	## ## Master Path / Tmp
+	##
+
+	REF_MASTER_TMP_DIR_NAME="tmp"
+	REF_MASTER_TMP_DIR_PATH="${REF_SUIT_DIR_PATH}/${REF_MASTER_TMP_DIR_NAME}"
 
 
 	##
@@ -180,8 +213,11 @@ base_var_init () {
 	REF_MASTER_ASSET_DIR_NAME="asset"
 	REF_MASTER_ASSET_DIR_PATH="${REF_MASTER_DIR_PATH}/${REF_MASTER_ASSET_DIR_NAME}"
 
-	REF_MASTER_TOOL_DIR_NAME="tool"
-	REF_MASTER_TOOL_DIR_PATH="${REF_MASTER_DIR_PATH}/${REF_MASTER_TOOL_DIR_NAME}"
+	REF_MASTER_FACTORY_DIR_NAME="factory"
+	REF_MASTER_FACTORY_DIR_PATH="${REF_MASTER_DIR_PATH}/${REF_MASTER_FACTORY_DIR_NAME}"
+
+	REF_MASTER_BASIC_DIR_NAME="basic"
+	REF_MASTER_BASIC_DIR_PATH="${REF_MASTER_DIR_PATH}/${REF_MASTER_BASIC_DIR_NAME}"
 
 
 	##
@@ -191,14 +227,42 @@ base_var_init () {
 	REF_MASTER_ASSET_OVERLAY_DIR_NAME="overlay"
 	REF_MASTER_ASSET_OVERLAY_DIR_PATH="${REF_MASTER_ASSET_DIR_PATH}/${REF_MASTER_ASSET_OVERLAY_DIR_NAME}"
 
-	REF_MASTER_ASSET_COMPONENT_DIR_NAME="component"
-	REF_MASTER_ASSET_COMPONENT_DIR_PATH="${REF_MASTER_ASSET_DIR_PATH}/${REF_MASTER_ASSET_COMPONENT_DIR_NAME}"
+	REF_MASTER_ASSET_PACKAGE_DIR_NAME="package"
+	REF_MASTER_ASSET_PACKAGE_DIR_PATH="${REF_MASTER_ASSET_DIR_PATH}/${REF_MASTER_ASSET_PACKAGE_DIR_NAME}"
 
-	REF_MASTER_ASSET_PART_DIR_NAME="part"
-	REF_MASTER_ASSET_PART_DIR_PATH="${REF_MASTER_ASSET_DIR_PATH}/${REF_MASTER_ASSET_PART_DIR_NAME}"
+	REF_MASTER_ASSET_PACKAGE_INSTALL_DIR_NAME="install"
+	REF_MASTER_ASSET_PACKAGE_INSTALL_DIR_PATH="${REF_MASTER_ASSET_PACKAGE_DIR_PATH}/${REF_MASTER_ASSET_PACKAGE_INSTALL_DIR_NAME}"
 
-	REF_MASTER_ASSET_VENDOR_DIR_NAME="vendor"
-	REF_MASTER_ASSET_VENDOR_DIR_PATH="${REF_MASTER_ASSET_DIR_PATH}/${REF_MASTER_ASSET_VENDOR_DIR_NAME}"
+
+	##
+	## ## Master Path / Factory / Sub
+	##
+
+	REF_MASTER_FACTORY_OVERLAY_DIR_NAME="overlay"
+	REF_MASTER_FACTORY_OVERLAY_DIR_PATH="${REF_MASTER_FACTORY_DIR_PATH}/${REF_MASTER_FACTORY_OVERLAY_DIR_NAME}"
+
+	REF_MASTER_FACTORY_PACKAGE_DIR_NAME="package"
+	REF_MASTER_FACTORY_PACKAGE_DIR_PATH="${REF_MASTER_FACTORY_DIR_PATH}/${REF_MASTER_FACTORY_PACKAGE_DIR_NAME}"
+
+	REF_MASTER_FACTORY_PACKAGE_INSTALL_DIR_NAME="install"
+	REF_MASTER_FACTORY_PACKAGE_INSTALL_DIR_PATH="${REF_MASTER_FACTORY_PACKAGE_DIR_PATH}/${REF_MASTER_FACTORY_PACKAGE_INSTALL_DIR_NAME}"
+
+	REF_MASTER_FACTORY_PACKAGE_REMOVE_DIR_NAME="remove"
+	REF_MASTER_FACTORY_PACKAGE_REMOVE_DIR_PATH="${REF_MASTER_FACTORY_PACKAGE_DIR_PATH}/${REF_MASTER_FACTORY_PACKAGE_REMOVE_DIR_NAME}"
+
+
+	##
+	## ## Master Path / Basic / Sub
+	##
+
+	REF_MASTER_BASIC_OVERLAY_DIR_NAME="overlay"
+	REF_MASTER_BASIC_OVERLAY_DIR_PATH="${REF_MASTER_BASIC_DIR_PATH}/${REF_MASTER_BASIC_OVERLAY_DIR_NAME}"
+
+	REF_MASTER_BASIC_PACKAGE_DIR_NAME="package"
+	REF_MASTER_BASIC_PACKAGE_DIR_PATH="${REF_MASTER_BASIC_DIR_PATH}/${REF_MASTER_BASIC_PACKAGE_DIR_NAME}"
+
+	REF_MASTER_BASIC_PACKAGE_INSTALL_DIR_NAME="install"
+	REF_MASTER_BASIC_PACKAGE_INSTALL_DIR_PATH="${REF_MASTER_BASIC_PACKAGE_DIR_PATH}/${REF_MASTER_BASIC_PACKAGE_INSTALL_DIR_NAME}"
 
 
 
@@ -213,7 +277,7 @@ base_var_dump () {
 
 	util_debug_echo
 	util_debug_echo "################################################################################"
-	util_debug_echo "### Head: var_dump"
+	util_debug_echo "### Head: base_var_dump"
 	util_debug_echo "##"
 	util_debug_echo
 
@@ -245,6 +309,7 @@ base_var_dump () {
 	util_debug_echo "REF_BASE_DIR_PATH=${REF_BASE_DIR_PATH}"
 	util_debug_echo "REF_INIT_DIR_PATH=${REF_INIT_DIR_PATH}"
 	util_debug_echo "REF_PLAN_DIR_PATH=${REF_PLAN_DIR_PATH}"
+	util_debug_echo "REF_SUIT_DIR_PATH=${REF_SUIT_DIR_PATH}"
 	util_debug_echo
 
 
@@ -285,6 +350,10 @@ base_var_dump () {
 
 	util_debug_echo "REF_MAIN_SHARE_DIR_NAME=${REF_MAIN_SHARE_DIR_NAME}"
 	util_debug_echo "REF_MAIN_SHARE_DIR_PATH=${REF_MAIN_SHARE_DIR_PATH}"
+	util_debug_echo
+
+	util_debug_echo "REF_MAIN_STAGE_DIR_NAME=${REF_MAIN_STAGE_DIR_NAME}"
+	util_debug_echo "REF_MAIN_STAGE_DIR_PATH=${REF_MAIN_STAGE_DIR_PATH}"
 	util_debug_echo
 
 	util_debug_echo "REF_MAIN_TMP_DIR_NAME=${REF_MAIN_TMP_DIR_NAME}"
@@ -365,11 +434,46 @@ base_var_dump () {
 
 	util_debug_echo
 	util_debug_echo "##"
-	util_debug_echo "## ## ## Master Path"
+	util_debug_echo "## ## Master Path / Stage / Sub"
+	util_debug_echo "##"
+	util_debug_echo
+
+	util_debug_echo "REF_MASTER_STAGE_MODULE_DIR_NAME=${REF_MASTER_STAGE_MODULE_DIR_NAME}"
+	util_debug_echo "REF_MASTER_STAGE_MODULE_DIR_PATH=${REF_MASTER_STAGE_MODULE_DIR_PATH}"
+	util_debug_echo
+
+	util_debug_echo "REF_MASTER_STAGE_RUNDOWN_DIR_NAME=${REF_MASTER_STAGE_RUNDOWN_DIR_NAME}"
+	util_debug_echo "REF_MASTER_STAGE_RUNDOWN_DIR_PATH=${REF_MASTER_STAGE_RUNDOWN_DIR_PATH}"
+	util_debug_echo
+
+
+
+
+	##
+	############################################################################
+	##
+
+
+
+
+	util_debug_echo
+	util_debug_echo "##"
+	util_debug_echo "## ## Master Path"
 	util_debug_echo "##"
 	util_debug_echo
 
 	util_debug_echo "REF_MASTER_DIR_PATH=${REF_MASTER_DIR_PATH}"
+	util_debug_echo
+
+
+	util_debug_echo
+	util_debug_echo "##"
+	util_debug_echo "## ## Master Path / Tmp"
+	util_debug_echo "##"
+	util_debug_echo
+
+	util_debug_echo "REF_MASTER_TMP_DIR_NAME=${REF_MASTER_TMP_DIR_NAME}"
+	util_debug_echo "REF_MASTER_TMP_DIR_PATH=${REF_MASTER_TMP_DIR_PATH}"
 	util_debug_echo
 
 
@@ -383,8 +487,12 @@ base_var_dump () {
 	util_debug_echo "REF_MASTER_ASSET_DIR_PATH=${REF_MASTER_ASSET_DIR_PATH}"
 	util_debug_echo
 
-	util_debug_echo "REF_MASTER_TOOL_DIR_NAME=${REF_MASTER_TOOL_DIR_NAME}"
-	util_debug_echo "REF_MASTER_TOOL_DIR_PATH=${REF_MASTER_TOOL_DIR_PATH}"
+	util_debug_echo "REF_MASTER_FACTORY_DIR_NAME=${REF_MASTER_FACTORY_DIR_NAME}"
+	util_debug_echo "REF_MASTER_FACTORY_DIR_PATH=${REF_MASTER_FACTORY_DIR_PATH}"
+	util_debug_echo
+
+	util_debug_echo "REF_MASTER_BASIC_DIR_NAME=${REF_MASTER_BASIC_DIR_NAME}"
+	util_debug_echo "REF_MASTER_BASIC_DIR_PATH=${REF_MASTER_BASIC_DIR_PATH}"
 	util_debug_echo
 
 
@@ -398,16 +506,54 @@ base_var_dump () {
 	util_debug_echo "REF_MASTER_ASSET_OVERLAY_DIR_PATH=${REF_MASTER_ASSET_OVERLAY_DIR_PATH}"
 	util_debug_echo
 
-	util_debug_echo "REF_MASTER_ASSET_COMPONENT_DIR_NAME=${REF_MASTER_ASSET_COMPONENT_DIR_NAME}"
-	util_debug_echo "REF_MASTER_ASSET_COMPONENT_DIR_PATH=${REF_MASTER_ASSET_COMPONENT_DIR_PATH}"
+	util_debug_echo "REF_MASTER_ASSET_PACKAGE_DIR_NAME=${REF_MASTER_ASSET_PACKAGE_DIR_NAME}"
+	util_debug_echo "REF_MASTER_ASSET_PACKAGE_DIR_PATH=${REF_MASTER_ASSET_PACKAGE_DIR_PATH}"
 	util_debug_echo
 
-	util_debug_echo "REF_MASTER_ASSET_PART_DIR_NAME=${REF_MASTER_ASSET_PART_DIR_NAME}"
-	util_debug_echo "REF_MASTER_ASSET_PART_DIR_PATH=${REF_MASTER_ASSET_PART_DIR_PATH}"
+	util_debug_echo "REF_MASTER_ASSET_PACKAGE_INSTALL_DIR_NAME=${REF_MASTER_ASSET_PACKAGE_INSTALL_DIR_NAME}"
+	util_debug_echo "REF_MASTER_ASSET_PACKAGE_INSTALL_DIR_PATH=${REF_MASTER_ASSET_PACKAGE_INSTALL_DIR_PATH}"
 	util_debug_echo
 
-	util_debug_echo "REF_MASTER_ASSET_VENDOR_DIR_NAME=${REF_MASTER_ASSET_VENDOR_DIR_NAME}"
-	util_debug_echo "REF_MASTER_ASSET_VENDOR_DIR_PATH=${REF_MASTER_ASSET_VENDOR_DIR_PATH}"
+
+	util_debug_echo
+	util_debug_echo "##"
+	util_debug_echo "## ## Master Path / Factory / Sub"
+	util_debug_echo "##"
+	util_debug_echo
+
+	util_debug_echo "REF_MASTER_FACTORY_OVERLAY_DIR_NAME=${REF_MASTER_FACTORY_OVERLAY_DIR_NAME}"
+	util_debug_echo "REF_MASTER_FACTORY_OVERLAY_DIR_PATH=${REF_MASTER_FACTORY_OVERLAY_DIR_PATH}"
+	util_debug_echo
+
+	util_debug_echo "REF_MASTER_FACTORY_PACKAGE_DIR_NAME=${REF_MASTER_FACTORY_PACKAGE_DIR_NAME}"
+	util_debug_echo "REF_MASTER_FACTORY_PACKAGE_DIR_PATH=${REF_MASTER_FACTORY_PACKAGE_DIR_PATH}"
+	util_debug_echo
+
+	util_debug_echo "REF_MASTER_FACTORY_PACKAGE_INSTALL_DIR_NAME=${REF_MASTER_FACTORY_PACKAGE_INSTALL_DIR_NAME}"
+	util_debug_echo "REF_MASTER_FACTORY_PACKAGE_INSTALL_DIR_PATH=${REF_MASTER_FACTORY_PACKAGE_INSTALL_DIR_PATH}"
+	util_debug_echo
+
+	util_debug_echo "REF_MASTER_FACTORY_PACKAGE_REMOVE_DIR_NAME=${REF_MASTER_FACTORY_PACKAGE_REMOVE_DIR_NAME}"
+	util_debug_echo "REF_MASTER_FACTORY_PACKAGE_REMOVE_DIR_PATH=${REF_MASTER_FACTORY_PACKAGE_REMOVE_DIR_PATH}"
+	util_debug_echo
+
+
+	util_debug_echo
+	util_debug_echo "##"
+	util_debug_echo "## ## Master Path / Basic / Sub"
+	util_debug_echo "##"
+	util_debug_echo
+
+	util_debug_echo "REF_MASTER_BASIC_OVERLAY_DIR_NAME=${REF_MASTER_BASIC_OVERLAY_DIR_NAME}"
+	util_debug_echo "REF_MASTER_BASIC_OVERLAY_DIR_PATH=${REF_MASTER_BASIC_OVERLAY_DIR_PATH}"
+	util_debug_echo
+
+	util_debug_echo "REF_MASTER_BASIC_PACKAGE_DIR_NAME=${REF_MASTER_BASIC_PACKAGE_DIR_NAME}"
+	util_debug_echo "REF_MASTER_BASIC_PACKAGE_DIR_PATH=${REF_MASTER_BASIC_PACKAGE_DIR_PATH}"
+	util_debug_echo
+
+	util_debug_echo "REF_MASTER_BASIC_PACKAGE_INSTALL_DIR_NAME=${REF_MASTER_BASIC_PACKAGE_INSTALL_DIR_NAME}"
+	util_debug_echo "REF_MASTER_BASIC_PACKAGE_INSTALL_DIR_PATH=${REF_MASTER_BASIC_PACKAGE_INSTALL_DIR_PATH}"
 	util_debug_echo
 
 
@@ -415,7 +561,7 @@ base_var_dump () {
 
 	util_debug_echo
 	util_debug_echo "##"
-	util_debug_echo "### Tail: var_dump"
+	util_debug_echo "### Tail: base_var_dump"
 	util_debug_echo "################################################################################"
 	util_debug_echo
 
