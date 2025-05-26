@@ -1,17 +1,17 @@
 
 
 ################################################################################
-### Head: Master / Sys / Init
+### Head: Master / Sys / Tmp
 ##
 
+sys_tmp_dir_create () {
+
+	local dir_path="${REF_MAIN_TMP_DIR_PATH}"
+
+	mkdir -p "${dir_path}"
+
+}
 
 ##
-## ## Load: Master / Sys / Tmp
-##
-
-. "${REF_MAIN_EXT_MASTER_SYS_DIR_PATH}/tmp.sh"
-
-
-##
-### Tail: Master / Sys / Init
+### Tail: Master / Sys / Tmp
 ################################################################################

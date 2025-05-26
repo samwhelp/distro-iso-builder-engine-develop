@@ -36,6 +36,8 @@ REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../../../ext"
 
 sys_module_factory_package_install_combine_list () {
 
+	sys_tmp_dir_create
+
 	return 0
 
 }
