@@ -43,6 +43,12 @@ portal_install_at_chroot () {
 	util_error_echo
 
 
+	mod_stage_rundown_process_all
+
+
+	return 0
+
+
 	mod_main_signal_bind
 
 	sleep 10;
