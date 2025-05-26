@@ -74,6 +74,7 @@ base_var_init () {
 
 	REF_INIT_DIR_PATH="$(find_dir_path "${REF_INIT_DIR_PATH}/.")"
 	REF_PLAN_DIR_PATH="$(find_dir_path "${REF_INIT_DIR_PATH}/../../.")"
+	REF_SUIT_DIR_PATH="$(find_dir_path "${REF_INIT_DIR_PATH}/../../../../.")"
 
 
 
@@ -198,6 +199,14 @@ base_var_init () {
 
 
 	##
+	## ## Master Path / Tmp
+	##
+
+	REF_MASTER_TMP_DIR_NAME="tmp"
+	REF_MASTER_TMP_DIR_PATH="${REF_SUIT_DIR_PATH}/${REF_MASTER_TMP_DIR_NAME}"
+
+
+	##
 	## ## Master Path / Sub
 	##
 
@@ -300,6 +309,7 @@ base_var_dump () {
 	util_debug_echo "REF_BASE_DIR_PATH=${REF_BASE_DIR_PATH}"
 	util_debug_echo "REF_INIT_DIR_PATH=${REF_INIT_DIR_PATH}"
 	util_debug_echo "REF_PLAN_DIR_PATH=${REF_PLAN_DIR_PATH}"
+	util_debug_echo "REF_SUIT_DIR_PATH=${REF_SUIT_DIR_PATH}"
 	util_debug_echo
 
 
@@ -453,6 +463,17 @@ base_var_dump () {
 	util_debug_echo
 
 	util_debug_echo "REF_MASTER_DIR_PATH=${REF_MASTER_DIR_PATH}"
+	util_debug_echo
+
+
+	util_debug_echo
+	util_debug_echo "##"
+	util_debug_echo "## ## Master Path / Tmp"
+	util_debug_echo "##"
+	util_debug_echo
+
+	util_debug_echo "REF_MASTER_TMP_DIR_NAME=${REF_MASTER_TMP_DIR_NAME}"
+	util_debug_echo "REF_MASTER_TMP_DIR_PATH=${REF_MASTER_TMP_DIR_PATH}"
 	util_debug_echo
 
 
