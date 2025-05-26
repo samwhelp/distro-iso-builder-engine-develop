@@ -47,9 +47,8 @@ portal_test () {
 
 	mod_test_util_stage_rundown_process
 
-	mod_main_signal_bind
 
-	sleep 10;
+
 
 }
 

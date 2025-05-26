@@ -49,11 +49,8 @@ portal_install () {
 	util_error_echo
 	sudo "${script_file_path}"
 
+
 	return 0
-
-	mod_main_signal_bind
-
-	sleep 10;
 
 }
 

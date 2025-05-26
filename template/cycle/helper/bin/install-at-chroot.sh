@@ -48,11 +48,6 @@ portal_install_at_chroot () {
 
 	return 0
 
-
-	mod_main_signal_bind
-
-	sleep 10;
-
 }
 
 ##
