@@ -246,9 +246,23 @@ __EOF__
 ### Head: Master / Sys / Distro / Iso / Create / Boot Image
 ##
 
+sys_distro_iso_create_boot_image_for_hybrid () {
+
+	local cdboot_img_file_path="/usr/lib/grub/i386-pc/cdboot.img"
+	local core_img_file_path="${1}"
+	local bios_img_file_path="${2}"
+
+	echo 	cat "${cdboot_img_file_path}" "${core_img_file_path}" > "${bios_img_file_path}"
+	#cat "${cdboot_img_file_path}" "${core_img_file_path}" > "${bios_img_file_path}"
+
+	return 0
+}
+
 sys_distro_iso_create_boot_image_for_bios () {
 
-	sys_distro_iso_create_boot_image_for_bios_via_grub_mkstandalone
+	local boot_image_file_path="${1}"
+
+	sys_distro_iso_create_boot_image_for_bios_via_grub_mkstandalone "${boot_image_file_path}"
 
 	return 0
 }
@@ -266,6 +280,23 @@ sys_distro_iso_create_boot_image_for_uefi () {
 
 sys_distro_iso_create_boot_image_for_bios_via_grub_mkstandalone () {
 
+	local boot_image_file_path="${1}"
+
+
+	##
+	## --output="isolinux/core.img" \
+	##
+
+	grub-mkstandalone \
+		--format=i386-pc \
+		--output="${boot_image_file_path}" \
+		--install-modules="linux16 linux normal iso9660 biosdisk memdisk search tar ls" \
+		--modules="linux16 linux normal iso9660 biosdisk search" \
+		--locales="" \
+		--fonts="" \
+		"boot/grub/grub.cfg=isolinux/grub.cfg"
+
+
 	return 0
 }
 
@@ -275,7 +306,7 @@ sys_distro_iso_create_boot_image_for_uefi_via_grub_mkimage () {
 
 
 	##
-	## --output="./efiboot.img" \
+	## --output="isolinux/efiboot.img" \
 	##
 
 	sudo grub-mkimage \
@@ -315,6 +346,7 @@ sys_distro_iso_create_boot_image_for_uefi_via_grub_mkimage () {
 			hfsplus \
 			udf \
 			cat
+
 
 	return 0
 }

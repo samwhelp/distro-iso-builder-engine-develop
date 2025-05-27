@@ -91,7 +91,11 @@ mod_distro_iso_build () {
 
 	mod_distro_iso_create_base_dir
 
+	mod_distro_iso_create_grub_cfg
+
 	mod_distro_iso_create_boot_image_for_bios
+
+	mod_distro_iso_create_boot_image_for_hybrid
 
 	mod_distro_iso_create_boot_image_for_uefi
 
@@ -136,7 +140,7 @@ mod_distro_iso_create_grub_cfg () {
 	local menu_entry_subject_name="Demo OS"
 	local iso_volume_id="TestId"
 
-	sys_distro_iso_create_grub_cfg
+	sys_distro_iso_create_grub_cfg "${grub_cfg_file_path}" "${menu_entry_subject_name}" "${iso_volume_id}"
 
 	return 0
 }
@@ -151,7 +155,22 @@ mod_distro_iso_create_grub_cfg () {
 ### Head: Master / Mod / Distro / Iso / Create / Boot Image
 ##
 
+mod_distro_iso_create_boot_image_for_hybrid () {
+
+	local core_img_file_path="${REF_DISTRO_ISO_DIR_PATH}/isolinux/core.img"
+	local bios_img_file_path="${REF_DISTRO_ISO_DIR_PATH}/isolinux/bios.img"
+
+	sys_distro_iso_create_boot_image_for_hybrid "${core_img_file_path}" "${bios_img_file_path}"
+
+	return 0
+}
+
 mod_distro_iso_create_boot_image_for_bios () {
+
+	local boot_image_file_path="${REF_DISTRO_ISO_DIR_PATH}/isolinux/core.img"
+
+	sys_distro_iso_create_boot_image_for_bios "${boot_image_file_path}"
+
 
 	return 0
 }
