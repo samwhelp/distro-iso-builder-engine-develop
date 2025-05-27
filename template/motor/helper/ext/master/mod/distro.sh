@@ -89,9 +89,11 @@ mod_distro_iso_extract () {
 
 mod_distro_iso_build () {
 
-	sys_distro_iso_create_boot_image_for_bios
+	mod_distro_iso_create_base_dir
 
-	sys_distro_iso_create_boot_image_for_uefi
+	mod_distro_iso_create_boot_image_for_bios
+
+	mod_distro_iso_create_boot_image_for_uefi
 
 	mod_distro_iso_archive
 
@@ -103,3 +105,48 @@ mod_distro_iso_build () {
 ##
 ### Tail: Master / Mod / Distro / Iso / Build
 ################################################################################
+
+
+################################################################################
+### Head: Master / Mod / Distro / Iso / Create / Dir
+##
+
+mod_distro_iso_create_base_dir () {
+
+	local distro_iso_dir_path="${REF_DISTRO_ISO_DIR_PATH}"
+
+	sudo rm -rf "${distro_iso_dir_path}"
+
+	sudo mkdir -p "${distro_iso_dir_path}"/{casper,isolinux,.disk}
+
+}
+
+##
+### Tail: Master / Mod / Distro / Iso / Create / Dir
+################################################################################
+
+
+
+################################################################################
+### Head: Master / Mod / Distro / Iso / Create / Boot Image
+##
+
+mod_distro_iso_create_boot_image_for_bios () {
+
+	return 0
+}
+
+
+mod_distro_iso_create_boot_image_for_uefi () {
+
+	local boot_image_file_path="${REF_DISTRO_ISO_DIR_PATH}/isolinux/efiboot.img"
+
+	sys_distro_iso_create_boot_image_for_uefi "${boot_image_file_path}"
+
+	return 0
+}
+
+##
+### Tail: Master / Mod / Distro / Iso / Create / Boot Image
+################################################################################
+

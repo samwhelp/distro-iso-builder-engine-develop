@@ -198,9 +198,11 @@ sys_distro_iso_create_boot_image_for_bios () {
 
 sys_distro_iso_create_boot_image_for_uefi () {
 
-	#sys_distro_iso_create_boot_image_for_uefi_via_grub_install
+	local boot_image_file_path="${1}"
 
-	sys_distro_iso_create_boot_image_for_uefi_via_grub_mkimage
+	#sys_distro_iso_create_boot_image_for_uefi_via_grub_install "${boot_image_file_path}"
+
+	sys_distro_iso_create_boot_image_for_uefi_via_grub_mkimage "${boot_image_file_path}"
 
 	return 0
 }
@@ -210,13 +212,57 @@ sys_distro_iso_create_boot_image_for_bios_via_grub_mkstandalone () {
 	return 0
 }
 
+sys_distro_iso_create_boot_image_for_uefi_via_grub_mkimage () {
 
-sys_distro_iso_create_boot_image_for_uefi_via_grub_install () {
+	local boot_image_file_path="${1}"
+
+
+	##
+	## --output="./efiboot.img" \
+	##
+
+	sudo grub-mkimage \
+		--format="x86_64-efi" \
+		--output="${boot_image_file_path}" \
+		--directory="/usr/lib/grub/x86_64-efi" \
+		--prefix="/EFI" \
+			fat \
+			iso9660 \
+			part_gpt \
+			part_msdos \
+			normal \
+			boot \
+			linux \
+			linux16 \
+			configfile \
+			loopback \
+			chain \
+			efifwsetup \
+			efi_gop \
+			efi_uga \
+			ls \
+			search \
+			search_label \
+			search_fs_uuid \
+			search_fs_file \
+			gfxterm \
+			gfxterm_background \
+			gfxterm_menu \
+			test \
+			all_video \
+			loadenv \
+			exfat \
+			ext2 \
+			ntfs \
+			btrfs \
+			hfsplus \
+			udf \
+			cat
 
 	return 0
 }
 
-sys_distro_iso_create_boot_image_for_uefi_via_grub_mkimage () {
+sys_distro_iso_create_boot_image_for_uefi_via_grub_install () {
 
 	return 0
 }
