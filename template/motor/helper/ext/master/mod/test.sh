@@ -21,6 +21,8 @@ mod_test () {
 
 	#sys_distro_unmount_for_chroot
 
+	#mod_chroot_session_create
+
 
 }
 

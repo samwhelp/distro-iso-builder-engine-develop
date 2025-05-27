@@ -4,15 +4,7 @@
 ### Head: Master / Mod / Chroot
 ##
 
-mod_chroot_session () {
 
-
-	util_error_echo "##"
-	util_error_echo "## ## mod_chroot_session"
-	util_error_echo "##"
-
-
-}
 
 
 
@@ -43,4 +35,36 @@ mod_distro_unmount_for_chroot () {
 
 ##
 ### Tail: Master / Mod / Chroot / Mount
+################################################################################
+
+
+################################################################################
+### Head: Master / Mod / Chroot / Session
+##
+
+
+mod_chroot_session_create () {
+
+	sys_chroot_session_prepare_dir
+
+	sys_chroot_session_prepare_file
+
+	return 0
+}
+
+mod_chroot_session_process () {
+
+
+	util_error_echo "##"
+	util_error_echo "## ## mod_chroot_session_process"
+	util_error_echo "##"
+
+	mod_chroot_session_create
+
+	sys_chroot_session_process
+
+}
+
+##
+### Tail: Master / Mod / Chroot / Session
 ################################################################################

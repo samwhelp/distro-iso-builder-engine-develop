@@ -56,3 +56,42 @@ sys_distro_unmount_for_chroot () {
 ##
 ### Tail: Master / Sys / Chroot / Mount
 ################################################################################
+
+
+################################################################################
+### Head: Master / Sys / Chroot / Session
+##
+
+sys_chroot_session_prepare_dir () {
+
+	sudo rm -rf "${REF_CHROOT_SESSION_DIR_PATH}"
+
+	sudo mkdir -p "${REF_CHROOT_SESSION_DIR_PATH}"
+
+	return 0
+}
+
+sys_chroot_session_prepare_file () {
+
+	sudo cp -rfT "${REF_MASTER_ASSET_DIR_PATH}" "${REF_CHROOT_SESSION_DIR_PATH}/${REF_MASTER_ASSET_DIR_NAME}"
+
+
+	sudo cp -rfT "${REF_MASTER_FACTORY_DIR_PATH}" "${REF_CHROOT_SESSION_DIR_PATH}/${REF_MASTER_FACTORY_DIR_NAME}"
+
+
+	sudo cp -rfT "${REF_MASTER_BASIC_DIR_PATH}" "${REF_CHROOT_SESSION_DIR_PATH}/${REF_MASTER_BASIC_DIR_NAME}"
+
+
+
+	return 0
+}
+
+sys_chroot_session_process () {
+
+
+	return 0
+}
+
+##
+### Tail: Master / Sys / Chroot / Session
+################################################################################
