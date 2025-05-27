@@ -45,6 +45,16 @@ THE_FACTORY_PACKAGE_INSTALL_FILE_PATH="${REF_MASTER_TMP_DIR_PATH}/factory-packag
 ### Head: Model / mod_module_factory_package_install
 ##
 
+sys_module_factory_package_update () {
+
+	util_error_echo
+	util_error_echo apt-get update
+	util_error_echo
+	apt-get update
+
+}
+
+
 sys_module_factory_package_install_combine_list () {
 
 	sys_tmp_dir_create
@@ -94,6 +104,8 @@ sys_module_factory_package_install () {
 }
 
 mod_module_factory_package_install () {
+
+	sys_module_factory_package_update
 
 	sys_module_factory_package_install_combine_list
 

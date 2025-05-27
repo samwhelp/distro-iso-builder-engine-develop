@@ -17,9 +17,9 @@ mod_test () {
 
 	#sys_distro_base_system_create
 
-	#sys_distro_mount_for_chroot
+	#mod_distro_mount_for_chroot
 
-	#sys_distro_unmount_for_chroot
+	#mod_distro_unmount_for_chroot
 
 	#mod_chroot_session_create
 
