@@ -196,6 +196,11 @@ sys_distro_iso_archive_post () {
 
 sys_distro_iso_create_grub_cfg () {
 
+
+	##
+	## --output="isolinux/grub.cfg" \
+	##
+
 	local grub_cfg_file_path="${1}"
 	local menu_entry_subject_name="${2}"
 	local iso_volume_id="${3}"
@@ -213,9 +218,9 @@ set default="0"
 set timeout=10
 
 menuentry "${menu_entry_subject_name}" {
-   set gfxpayload=keep
-   linux   /casper/vmlinuz boot=casper nopersistent quiet splash ---
-   initrd  /casper/initrd
+	set gfxpayload=keep
+	linux   /casper/vmlinuz boot=casper nopersistent quiet splash ---
+	initrd  /casper/initrd
 }
 
 menuentry "${menu_entry_subject_name} (Safe Graphics)" {
@@ -252,6 +257,10 @@ __EOF__
 ##
 
 sys_distro_iso_create_boot_image_for_hybrid () {
+
+	##
+	## --output="isolinux/bios.img" \
+	##
 
 	local cdboot_img_file_path="/usr/lib/grub/i386-pc/cdboot.img"
 	local core_img_file_path="${1}"
