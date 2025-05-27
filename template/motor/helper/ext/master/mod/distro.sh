@@ -65,7 +65,7 @@ mod_distro_iso_archive () {
 
 	local iso_dir_path="${REF_DISTRO_ISO_DIR_PATH}"
 	local iso_file_path="${REF_MASTER_TMP_DIR_PATH}/test.iso"
-	local iso_volume_id="TestId"
+	local iso_volume_id="TESTID"
 
 	sys_distro_iso_archive "${iso_dir_path}" "${iso_file_path}" "${iso_volume_id}"
 
@@ -138,7 +138,7 @@ mod_distro_iso_create_grub_cfg () {
 
 	local grub_cfg_file_path="${REF_DISTRO_ISO_DIR_PATH}/isolinux/grub.cfg"
 	local menu_entry_subject_name="Demo OS"
-	local iso_volume_id="TestId"
+	local iso_volume_id="TESTID"
 
 	sys_distro_iso_create_grub_cfg "${grub_cfg_file_path}" "${menu_entry_subject_name}" "${iso_volume_id}"
 
