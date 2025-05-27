@@ -225,6 +225,9 @@ base_var_init () {
 	REF_MASTER_CYCLE_DIR_NAME="cycle"
 	REF_MASTER_CYCLE_DIR_PATH="${REF_MASTER_DIR_PATH}/${REF_MASTER_CYCLE_DIR_NAME}"
 
+	REF_MASTER_OPTION_DIR_NAME="option"
+	REF_MASTER_OPTION_DIR_PATH="${REF_MASTER_DIR_PATH}/${REF_MASTER_OPTION_DIR_NAME}"
+
 
 	##
 	## ## Master Path / Asset / Sub
@@ -573,6 +576,10 @@ base_var_dump () {
 
 	util_debug_echo "REF_MASTER_CYCLE_DIR_NAME=${REF_MASTER_CYCLE_DIR_NAME}"
 	util_debug_echo "REF_MASTER_CYCLE_DIR_PATH=${REF_MASTER_CYCLE_DIR_PATH}"
+	util_debug_echo
+
+	util_debug_echo "REF_MASTER_OPTION_DIR_NAME=${REF_MASTER_OPTION_DIR_NAME}"
+	util_debug_echo "REF_MASTER_OPTION_DIR_PATH=${REF_MASTER_OPTION_DIR_PATH}"
 	util_debug_echo
 
 
