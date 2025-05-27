@@ -38,8 +38,14 @@ sys_distro_base_system_create () {
 
 	sys_distro_dir_create
 
+
 	sudo debootstrap \
-		--arch=amd64 --variant=minbase $TARGET_UBUNTU_VERSION new_building_os $BUILD_UBUNTU_MIRROR
+		--arch=${REF_BUILD_ARCH} \
+		--variant=minbase \
+		--include=${REF_BUILD_INCLUDE} \
+		${REF_BUILD_SUITE} \
+		${REF_DISTRO_IMG_DIR_PATH} \
+		${REF_PACKAGE_REPO_URL}
 
 
 	return 0

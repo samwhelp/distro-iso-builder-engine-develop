@@ -13,7 +13,7 @@ mod_test () {
 	util_error_echo
 
 
-	sys_tmp_dir_create
+	#sys_tmp_dir_create
 
 	sys_distro_base_system_create
 

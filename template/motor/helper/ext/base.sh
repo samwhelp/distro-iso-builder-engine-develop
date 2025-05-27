@@ -309,13 +309,14 @@ base_var_init () {
 	DEFAULT_BUILD_ARCH="amd64"
 	REF_BUILD_ARCH="${REF_BUILD_ARCH:=$DEFAULT_BUILD_ARCH}"
 
-	DEFAULT_BUILD_SUITE="bookworm"
+	DEFAULT_BUILD_SUITE="plucky"
 	REF_BUILD_SUITE="${REF_BUILD_SUITE:=$DEFAULT_BUILD_SUITE}"
 
-	DEFAULT_PACKAGE_REPO_URL="https://deb.debian.org/debian/"
+	DEFAULT_PACKAGE_REPO_URL="http://archive.ubuntu.com/ubuntu/"
+	#DEFAULT_PACKAGE_REPO_URL="http://tw.archive.ubuntu.com/ubuntu/"
 	REF_PACKAGE_REPO_URL="${REF_PACKAGE_REPO_URL:=$DEFAULT_PACKAGE_REPO_URL}"
 
-	DEFAULT_BUILD_INCLUDE="debian-ports-archive-keyring,debian-archive-keyring,apt-transport-https,ca-certificates,openssl"
+	DEFAULT_BUILD_INCLUDE="apt-transport-https,ca-certificates,openssl"
 	REF_BUILD_INCLUDE="${REF_BUILD_INCLUDE:=$DEFAULT_BUILD_INCLUDE}"
 
 
