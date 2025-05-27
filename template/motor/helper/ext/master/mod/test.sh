@@ -26,7 +26,9 @@ mod_test () {
 	#mod_chroot_session_process
 
 
-	mod_test_chroot_session
+	#mod_test_chroot_session
+
+	#mod_test_distro_img_archive
 
 }
 
@@ -37,6 +39,12 @@ mod_test_chroot_session () {
 	mod_chroot_session_process
 
 	mod_distro_unmount_for_chroot
+
+}
+
+mod_test_distro_img_archive () {
+
+	mod_distro_img_archive
 
 }
 

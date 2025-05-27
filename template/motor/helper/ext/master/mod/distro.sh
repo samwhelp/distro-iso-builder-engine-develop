@@ -33,6 +33,15 @@ mod_distro_base_system_create () {
 
 mod_distro_img_archive () {
 
+	local squashfs_root_dir_path="${REF_DISTRO_ISO_DIR_PATH}/casper"
+
+	sudo mkdir -p "${squashfs_root_dir_path}"
+
+	local squashfs_dir_path="${REF_DISTRO_IMG_DIR_PATH}"
+	local squashfs_file_path="${squashfs_root_dir_path}/filesystem.squashfs"
+
+	sys_distro_img_archive "${squashfs_dir_path}" "${squashfs_file_path}"
+
 
 	return 0
 }

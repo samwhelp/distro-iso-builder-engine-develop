@@ -62,6 +62,24 @@ sys_distro_base_system_create () {
 
 sys_distro_img_archive () {
 
+	local squashfs_dir_path="${1}"
+	local squashfs_file_path="${2}"
+
+	sudo mksquashfs "${squashfs_dir_path}" "${squashfs_file_path}" \
+		-noappend \
+		-no-duplicates \
+		-no-recovery \
+		-wildcards \
+		-b 1M \
+		-comp zstd \
+		-Xcompression-level 19 \
+		-e "var/cache/apt/archives/*" \
+		-e "root/*" \
+		-e "root/.*" \
+		-e "tmp/*" \
+		-e "tmp/.*" \
+		-e "swapfile"
+
 
 	return 0
 }
