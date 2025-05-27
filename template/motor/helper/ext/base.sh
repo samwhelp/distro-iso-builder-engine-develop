@@ -302,6 +302,24 @@ base_var_init () {
 
 
 
+	##
+	## ## Debootstrap Args
+	##
+
+	DEFAULT_BUILD_ARCH="amd64"
+	REF_BUILD_ARCH="${REF_BUILD_ARCH:=$DEFAULT_BUILD_ARCH}"
+
+	DEFAULT_BUILD_SUITE="bookworm"
+	REF_BUILD_SUITE="${REF_BUILD_SUITE:=$DEFAULT_BUILD_SUITE}"
+
+	DEFAULT_PACKAGE_REPO_URL="https://deb.debian.org/debian/"
+	REF_PACKAGE_REPO_URL="${REF_PACKAGE_REPO_URL:=$DEFAULT_PACKAGE_REPO_URL}"
+
+	DEFAULT_BUILD_INCLUDE="debian-ports-archive-keyring,debian-archive-keyring,apt-transport-https,ca-certificates,openssl"
+	REF_BUILD_INCLUDE="${REF_BUILD_INCLUDE:=$DEFAULT_BUILD_INCLUDE}"
+
+
+
 
 	return 0
 
@@ -627,6 +645,29 @@ base_var_dump () {
 
 	util_debug_echo "REF_DISTRO_DIST_DIR_NAME=${REF_DISTRO_DIST_DIR_NAME}"
 	util_debug_echo "REF_DISTRO_DIST_DIR_PATH=${REF_DISTRO_DIST_DIR_PATH}"
+	util_debug_echo
+
+
+	util_debug_echo
+	util_debug_echo "##"
+	util_debug_echo "## ## Debootstrap Args"
+	util_debug_echo "##"
+	util_debug_echo
+
+	util_debug_echo "DEFAULT_BUILD_ARCH=${DEFAULT_BUILD_ARCH}"
+	util_debug_echo "REF_BUILD_ARCH=${REF_BUILD_ARCH}"
+	util_debug_echo
+
+	util_debug_echo "DEFAULT_BUILD_SUITE=${DEFAULT_BUILD_SUITE}"
+	util_debug_echo "REF_BUILD_SUITE=${REF_BUILD_SUITE}"
+	util_debug_echo
+
+	util_debug_echo "DEFAULT_PACKAGE_REPO_URL=${DEFAULT_PACKAGE_REPO_URL}"
+	util_debug_echo "REF_PACKAGE_REPO_URL=${REF_PACKAGE_REPO_URL}"
+	util_debug_echo
+
+	util_debug_echo "DEFAULT_BUILD_INCLUDE=${DEFAULT_BUILD_INCLUDE}"
+	util_debug_echo "REF_BUILD_INCLUDE=${REF_BUILD_INCLUDE}"
 	util_debug_echo
 
 

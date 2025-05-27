@@ -38,6 +38,9 @@ sys_distro_base_system_create () {
 
 	sys_distro_dir_create
 
+	sudo debootstrap \
+		--arch=amd64 --variant=minbase $TARGET_UBUNTU_VERSION new_building_os $BUILD_UBUNTU_MIRROR
+
 
 	return 0
 }
