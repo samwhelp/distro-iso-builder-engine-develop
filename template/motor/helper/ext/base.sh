@@ -282,7 +282,21 @@ base_var_init () {
 	## ## Distro Path
 	##
 
-	REF_DISTRO_DIR_PATH="${REF_MASTER_TMP_DIR_PATH}"
+	REF_DISTRO_DIR_NAME="distro"
+	REF_DISTRO_DIR_PATH="${REF_MASTER_TMP_DIR_PATH}/${REF_DISTRO_DIR_NAME}"
+
+
+	##
+	## ## Distro Path / Sub
+	##
+
+	REF_DISTRO_ISO_DIR_NAME="iso"
+	REF_DISTRO_ISO_DIR_PATH="${REF_DISTRO_DIR_PATH}/${REF_DISTRO_ISO_DIR_NAME}"
+
+	REF_DISTRO_IMG_DIR_NAME="img"
+	REF_DISTRO_IMG_DIR_PATH="${REF_DISTRO_DIR_PATH}/${REF_DISTRO_IMG_DIR_NAME}"
+
+
 
 
 
@@ -593,6 +607,20 @@ base_var_dump () {
 	util_debug_echo "REF_DISTRO_DIR_PATH=${REF_DISTRO_DIR_PATH}"
 	util_debug_echo
 
+
+	util_debug_echo
+	util_debug_echo "##"
+	util_debug_echo "## ## Distro Path / Sub"
+	util_debug_echo "##"
+	util_debug_echo
+
+	util_debug_echo "REF_DISTRO_ISO_DIR_NAME=${REF_DISTRO_ISO_DIR_NAME}"
+	util_debug_echo "REF_DISTRO_ISO_DIR_PATH=${REF_DISTRO_ISO_DIR_PATH}"
+	util_debug_echo
+
+	util_debug_echo "REF_DISTRO_IMG_DIR_NAME=${REF_DISTRO_IMG_DIR_NAME}"
+	util_debug_echo "REF_DISTRO_IMG_DIR_PATH=${REF_DISTRO_IMG_DIR_PATH}"
+	util_debug_echo
 
 
 
