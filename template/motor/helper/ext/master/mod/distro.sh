@@ -84,12 +84,22 @@ mod_distro_iso_extract () {
 
 
 ################################################################################
-### Head: Master / Mod / Distro / Iso / Create
+### Head: Master / Mod / Distro / Iso / Build
 ##
 
+mod_distro_iso_build () {
+
+	sys_distro_iso_create_boot_image_for_bios
+
+	sys_distro_iso_create_boot_image_for_uefi
+
+	mod_distro_iso_archive
+
+	return 0
+}
 
 
 
 ##
-### Tail: Master / Mod / Distro / Iso / Create
+### Tail: Master / Mod / Distro / Iso / Build
 ################################################################################

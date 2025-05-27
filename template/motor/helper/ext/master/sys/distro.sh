@@ -113,6 +113,7 @@ sys_distro_iso_archive () {
 	util_error_echo
 
 
+	sys_distro_iso_archive_pre
 
 
 	sudo xorriso \
@@ -141,6 +142,7 @@ sys_distro_iso_archive () {
 			"."
 
 
+	sys_distro_iso_archive_post
 
 
 	util_error_echo
@@ -165,10 +167,59 @@ sys_distro_iso_extract () {
 
 
 ################################################################################
+### Head: Master / Sys / Distro / Iso / Archive
+##
+
+sys_distro_iso_archive_pre () {
+
+	return 0
+}
+
+sys_distro_iso_archive_post () {
+
+	return 0
+}
+
+##
+### Tail: Master / Sys / Distro / Iso / Archive
+################################################################################
+
+
+################################################################################
 ### Head: Master / Sys / Distro / Iso / Create
 ##
 
+sys_distro_iso_create_boot_image_for_bios () {
 
+	sys_distro_iso_create_boot_image_for_bios_via_grub_mkstandalone
+
+	return 0
+}
+
+sys_distro_iso_create_boot_image_for_uefi () {
+
+	#sys_distro_iso_create_boot_image_for_uefi_via_grub_install
+
+	sys_distro_iso_create_boot_image_for_uefi_via_grub_mkimage
+
+	return 0
+}
+
+sys_distro_iso_create_boot_image_for_bios_via_grub_mkstandalone () {
+
+	return 0
+}
+
+
+sys_distro_iso_create_boot_image_for_uefi_via_grub_install () {
+
+	return 0
+}
+
+sys_distro_iso_create_boot_image_for_uefi_via_grub_mkimage () {
+
+	return 0
+}
 
 
 ##

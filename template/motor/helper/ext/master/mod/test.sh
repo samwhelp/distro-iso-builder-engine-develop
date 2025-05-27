@@ -32,6 +32,8 @@ mod_test () {
 
 	#mod_test_distro_iso_archive
 
+	#mod_test_distro_iso_build
+
 }
 
 mod_test_chroot_session () {
@@ -54,6 +56,14 @@ mod_test_distro_img_archive () {
 mod_test_distro_iso_archive () {
 
 	mod_distro_iso_archive
+
+}
+
+
+
+mod_test_distro_iso_build () {
+
+	mod_distro_iso_build
 
 }
 
