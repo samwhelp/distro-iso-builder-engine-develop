@@ -41,7 +41,7 @@ mod_main_signal_bind () {
 	trap mod_action_on_signal_interrupted SIGINT
 	trap mod_action_on_signal_terminated SIGTERM
 	trap mod_action_on_err ERR
-	#trap mod_action_on_exit EXIT
+	trap mod_action_on_exit EXIT
 
 }
 
