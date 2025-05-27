@@ -106,6 +106,10 @@ sys_distro_iso_archive () {
 	local iso_volume_id="${3}"
 
 
+	##
+	## ## TODO: iso_volume_id upper_case
+	##
+
 	util_error_echo
 	util_error_echo cd "${iso_dir_path}"
 	util_error_echo
@@ -114,6 +118,7 @@ sys_distro_iso_archive () {
 
 
 	sys_distro_iso_archive_pre
+
 
 
 	sudo xorriso \
