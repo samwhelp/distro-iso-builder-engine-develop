@@ -101,6 +101,54 @@ sys_distro_img_extract () {
 
 sys_distro_iso_archive () {
 
+	local iso_dir_path="${1}"
+	local iso_file_path="${2}"
+	local iso_volume_id="${3}"
+
+
+	util_error_echo
+	util_error_echo cd "${iso_dir_path}"
+	util_error_echo
+	cd "${iso_dir_path}"
+	util_error_echo
+
+
+
+
+	sudo xorriso \
+		-as mkisofs \
+		-iso-level 3 \
+		-full-iso9660-filenames \
+		-volid "${iso_volume_id}" \
+		-eltorito-boot boot/grub/bios.img \
+			-no-emul-boot \
+			-boot-load-size 4 \
+			-boot-info-table \
+			--eltorito-catalog boot/grub/boot.cat \
+			--grub2-boot-info \
+			--grub2-mbr /usr/lib/grub/i386-pc/boot_hybrid.img \
+		-eltorito-alt-boot \
+			-e EFI/efiboot.img \
+			-no-emul-boot \
+			-append_partition 2 0xef isolinux/efiboot.img \
+		-output "${iso_file_path}" \
+		-m "isolinux/efiboot.img" \
+		-m "isolinux/bios.img" \
+		-graft-points \
+			"/EFI/efiboot.img=isolinux/efiboot.img" \
+			"/boot/grub/grub.cfg=isolinux/grub.cfg" \
+			"/boot/grub/bios.img=isolinux/bios.img" \
+			"."
+
+
+
+
+	util_error_echo
+	util_error_echo cd "${OLDPWD}"
+	util_error_echo
+	cd "${OLDPWD}"
+	util_error_echo
+
 
 	return 0
 }
@@ -113,4 +161,16 @@ sys_distro_iso_extract () {
 
 ##
 ### Tail: Master / Sys / Distro / Iso
+################################################################################
+
+
+################################################################################
+### Head: Master / Sys / Distro / Iso / Create
+##
+
+
+
+
+##
+### Tail: Master / Sys / Distro / Iso / Create
 ################################################################################

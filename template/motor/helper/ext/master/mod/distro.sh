@@ -63,6 +63,11 @@ mod_distro_img_extract () {
 
 mod_distro_iso_archive () {
 
+	local iso_dir_path="${REF_DISTRO_ISO_DIR_PATH}"
+	local iso_file_path="${REF_MASTER_TMP_DIR_PATH}/test.iso"
+	local iso_volume_id="TestId"
+
+	sys_distro_iso_archive "${iso_dir_path}" "${iso_file_path}" "${iso_volume_id}"
 
 	return 0
 }
@@ -75,4 +80,16 @@ mod_distro_iso_extract () {
 
 ##
 ### Tail: Master / Mod / Distro / Iso
+################################################################################
+
+
+################################################################################
+### Head: Master / Mod / Distro / Iso / Create
+##
+
+
+
+
+##
+### Tail: Master / Mod / Distro / Iso / Create
 ################################################################################
