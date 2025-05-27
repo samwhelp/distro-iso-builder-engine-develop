@@ -208,6 +208,14 @@ base_var_init () {
 
 
 	##
+	## ## Master Path / Log
+	##
+
+	REF_MASTER_LOG_FILE_NAME="log.txt"
+	REF_MASTER_LOG_FILE_PATH="${REF_MASTER_TMP_DIR_PATH}/${REF_MASTER_LOG_FILE_NAME}"
+
+
+	##
 	## ## Master Path / Sub
 	##
 
@@ -495,6 +503,17 @@ base_var_dump () {
 
 	util_debug_echo "REF_MASTER_TMP_DIR_NAME=${REF_MASTER_TMP_DIR_NAME}"
 	util_debug_echo "REF_MASTER_TMP_DIR_PATH=${REF_MASTER_TMP_DIR_PATH}"
+	util_debug_echo
+
+
+	util_debug_echo
+	util_debug_echo "##"
+	util_debug_echo "## ## Master Path / Log"
+	util_debug_echo "##"
+	util_debug_echo
+
+	util_debug_echo "REF_MASTER_LOG_FILE_NAME=${REF_MASTER_LOG_FILE_NAME}"
+	util_debug_echo "REF_MASTER_LOG_FILE_PATH=${REF_MASTER_LOG_FILE_PATH}"
 	util_debug_echo
 
 
