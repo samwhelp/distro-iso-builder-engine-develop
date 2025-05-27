@@ -13,10 +13,30 @@
 
 
 ################################################################################
+### Head: Master / Sys / Distro / Dir
+##
+
+sys_distro_dir_create () {
+
+	mkdir -p "${REF_DISTRO_IMG_DIR_PATH}"
+	mkdir -p "${REF_DISTRO_ISO_DIR_PATH}"
+	mkdir -p "${REF_DISTRO_DIST_DIR_PATH}"
+
+	return 0
+}
+
+##
+### Tail: Master / Sys / Distro / Dir
+################################################################################
+
+
+################################################################################
 ### Head: Master / Sys / Distro / Base System
 ##
 
 sys_distro_base_system_create () {
+
+	sys_distro_dir_create
 
 
 	return 0

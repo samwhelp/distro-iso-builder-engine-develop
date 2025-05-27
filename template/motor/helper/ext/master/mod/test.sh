@@ -15,7 +15,7 @@ mod_test () {
 
 	sys_tmp_dir_create
 
-
+	sys_distro_base_system_create
 
 
 }
