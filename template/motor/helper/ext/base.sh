@@ -267,6 +267,25 @@ base_var_init () {
 
 
 
+
+
+
+
+	##
+	############################################################################
+	##
+
+
+
+
+	##
+	## ## Distro Path
+	##
+
+	REF_DISTRO_DIR_PATH="${REF_MASTER_TMP_DIR_PATH}"
+
+
+
 	return 0
 
 }
@@ -555,6 +574,25 @@ base_var_dump () {
 	util_debug_echo "REF_MASTER_BASIC_PACKAGE_INSTALL_DIR_NAME=${REF_MASTER_BASIC_PACKAGE_INSTALL_DIR_NAME}"
 	util_debug_echo "REF_MASTER_BASIC_PACKAGE_INSTALL_DIR_PATH=${REF_MASTER_BASIC_PACKAGE_INSTALL_DIR_PATH}"
 	util_debug_echo
+
+
+
+
+	##
+	############################################################################
+	##
+
+
+
+	util_debug_echo
+	util_debug_echo "##"
+	util_debug_echo "## ## Distro Path"
+	util_debug_echo "##"
+	util_debug_echo
+
+	util_debug_echo "REF_DISTRO_DIR_PATH=${REF_DISTRO_DIR_PATH}"
+	util_debug_echo
+
 
 
 
