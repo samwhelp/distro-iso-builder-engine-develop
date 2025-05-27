@@ -13,6 +13,13 @@
 
 
 ##
+## ## Load: Master / Sys / Chroot
+##
+
+. "${REF_MAIN_EXT_MASTER_SYS_DIR_PATH}/chroot.sh"
+
+
+##
 ## ## Load: Master / Sys / Distro
 ##
 

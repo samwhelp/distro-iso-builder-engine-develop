@@ -20,6 +20,13 @@
 
 
 ##
+## ## Load: Master / Mod / Chroot
+##
+
+. "${REF_MAIN_EXT_MASTER_MOD_DIR_PATH}/chroot.sh"
+
+
+##
 ## ## Load: Master / Mod / Test
 ##
 

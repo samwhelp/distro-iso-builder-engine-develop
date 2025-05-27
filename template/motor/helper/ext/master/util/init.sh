@@ -28,5 +28,12 @@
 
 
 ##
+## ## Load: Master / Util / Chroot
+##
+
+. "${REF_MAIN_EXT_MASTER_UTIL_DIR_PATH}/chroot.sh"
+
+
+##
 ### Tail: Master / Util / Init
 ################################################################################
