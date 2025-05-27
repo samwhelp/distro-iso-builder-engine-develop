@@ -91,6 +91,9 @@ sys_chroot_session_prepare_file () {
 
 sys_chroot_session_process () {
 
+	local script_file_path="${REF_ATCHROOT_SESSION_START_FILE_PATH}"
+
+	sys_chroot_run ${script_file_path}
 
 	return 0
 }

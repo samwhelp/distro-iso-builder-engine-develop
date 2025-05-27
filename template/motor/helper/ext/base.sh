@@ -331,8 +331,11 @@ base_var_init () {
 	## ## Distro Path / Chroot Session
 	##
 
-	REF_CHROOT_SESSION_DIR_PATH="${REF_DISTRO_IMG_DIR_PATH}/opt/build/distro"
+	REF_ATCHROOT_SESSION_DIR_PATH="/opt/build/distro"
+	REF_ATCHROOT_SESSION_START_FILE_PATH="${REF_ATCHROOT_SESSION_DIR_PATH}/${REF_MASTER_CYCLE_DIR_NAME}/helper/bin/install-at-chroot.sh"
 
+	REF_CHROOT_SESSION_DIR_PATH="${REF_DISTRO_IMG_DIR_PATH}${REF_ATCHROOT_SESSION_DIR_PATH}"
+	REF_CHROOT_SESSION_START_FILE_PATH="${REF_CHROOT_SESSION_DIR_PATH}/${REF_MASTER_CYCLE_DIR_NAME}/helper/bin/install-at-chroot.sh"
 
 
 
@@ -701,7 +704,12 @@ base_var_dump () {
 	util_debug_echo "##"
 	util_debug_echo
 
+	util_debug_echo "REF_ATCHROOT_SESSION_DIR_PATH=${REF_ATCHROOT_SESSION_DIR_PATH}"
+	util_debug_echo "REF_ATCHROOT_SESSION_START_FILE_PATH=${REF_ATCHROOT_SESSION_START_FILE_PATH}"
+	util_debug_echo
+
 	util_debug_echo "REF_CHROOT_SESSION_DIR_PATH=${REF_CHROOT_SESSION_DIR_PATH}"
+	util_debug_echo "REF_CHROOT_SESSION_START_FILE_PATH=${REF_CHROOT_SESSION_START_FILE_PATH}"
 	util_debug_echo
 
 

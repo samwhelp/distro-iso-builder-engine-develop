@@ -54,10 +54,11 @@ mod_chroot_session_create () {
 
 mod_chroot_session_process () {
 
-
+	util_error_echo
 	util_error_echo "##"
 	util_error_echo "## ## mod_chroot_session_process"
 	util_error_echo "##"
+	util_error_echo
 
 	mod_chroot_session_create
 
