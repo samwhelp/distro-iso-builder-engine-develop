@@ -231,6 +231,17 @@ base_var_init () {
 
 
 	##
+	## ## Master Path / Option / Sub
+	##
+
+	REF_MASTER_OPTION_ARGS_FILE_NAME="args.sh"
+	REF_MASTER_OPTION_ARGS_FILE_PATH="${REF_MASTER_OPTION_DIR_PATH}/${REF_MASTER_OPTION_ARGS_FILE_NAME}"
+
+	REF_MASTER_OPTION_ARGS_OVERRIDE_FILE_NAME="args.override.sh"
+	REF_MASTER_OPTION_ARGS_OVERRIDE_FILE_PATH="${REF_MASTER_OPTION_DIR_PATH}/${REF_MASTER_OPTION_ARGS_OVERRIDE_FILE_NAME}"
+
+
+	##
 	## ## Master Path / Asset / Sub
 	##
 
@@ -515,6 +526,21 @@ base_var_dump () {
 
 	util_debug_echo "REF_MASTER_OPTION_DIR_NAME=${REF_MASTER_OPTION_DIR_NAME}"
 	util_debug_echo "REF_MASTER_OPTION_DIR_PATH=${REF_MASTER_OPTION_DIR_PATH}"
+	util_debug_echo
+
+
+	util_debug_echo
+	util_debug_echo "##"
+	util_debug_echo "## ## Master Path / Option / Sub"
+	util_debug_echo "##"
+	util_debug_echo
+
+	util_debug_echo "REF_MASTER_OPTION_ARGS_FILE_NAME=${REF_MASTER_OPTION_ARGS_FILE_NAME}"
+	util_debug_echo "REF_MASTER_OPTION_ARGS_FILE_PATH=${REF_MASTER_OPTION_ARGS_FILE_PATH}"
+	util_debug_echo
+
+	util_debug_echo "REF_MASTER_OPTION_ARGS_OVERRIDE_FILE_NAME=${REF_MASTER_OPTION_ARGS_OVERRIDE_FILE_NAME}"
+	util_debug_echo "REF_MASTER_OPTION_ARGS_OVERRIDE_FILE_PATH=${REF_MASTER_OPTION_ARGS_OVERRIDE_FILE_PATH}"
 	util_debug_echo
 
 
