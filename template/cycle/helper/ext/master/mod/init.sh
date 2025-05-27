@@ -13,6 +13,13 @@
 
 
 ##
+## ## Load: Master / Mod / Apt
+##
+
+. "${REF_MAIN_EXT_MASTER_MOD_DIR_PATH}/apt.sh"
+
+
+##
 ## ## Load: Master / Mod / Test
 ##
 

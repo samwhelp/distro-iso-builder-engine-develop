@@ -4,6 +4,14 @@
 ### Head: Master / Mod / Test
 ##
 
+mod_test () {
+
+	#sys_apt_source_list_create_simple
+
+	#mod_apt_source_list_create_for_building
+
+}
+
 mod_test_util_text_file_list_load () {
 
 	util_error_echo

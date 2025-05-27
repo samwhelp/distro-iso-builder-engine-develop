@@ -43,9 +43,7 @@ portal_test () {
 	util_error_echo
 
 
-	#mod_test_util_text_file_list_load
-
-	mod_test_util_stage_rundown_process
+	mod_test
 
 
 

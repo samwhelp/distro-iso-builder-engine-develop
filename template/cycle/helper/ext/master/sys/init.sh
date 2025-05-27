@@ -13,5 +13,12 @@
 
 
 ##
+## ## Load: Master / Sys / Apt
+##
+
+. "${REF_MAIN_EXT_MASTER_SYS_DIR_PATH}/apt.sh"
+
+
+##
 ### Tail: Master / Sys / Init
 ################################################################################
