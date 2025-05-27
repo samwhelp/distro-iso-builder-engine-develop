@@ -13,6 +13,13 @@
 
 
 ##
+## ## Load: Master / Mod / Distro
+##
+
+. "${REF_MAIN_EXT_MASTER_MOD_DIR_PATH}/distro.sh"
+
+
+##
 ## ## Load: Master / Mod / Test
 ##
 

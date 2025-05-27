@@ -21,5 +21,12 @@
 
 
 ##
+## ## Load: Master / Util / Distro
+##
+
+. "${REF_MAIN_EXT_MASTER_UTIL_DIR_PATH}/distro.sh"
+
+
+##
 ### Tail: Master / Util / Init
 ################################################################################
