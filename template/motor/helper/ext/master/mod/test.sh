@@ -26,8 +26,19 @@ mod_test () {
 	#mod_chroot_session_process
 
 
+	mod_test_chroot_session
+
 }
 
+mod_test_chroot_session () {
+
+	mod_distro_mount_for_chroot
+
+	mod_chroot_session_process
+
+	mod_distro_unmount_for_chroot
+
+}
 
 ##
 ### Tail: Master / Mod / Test
