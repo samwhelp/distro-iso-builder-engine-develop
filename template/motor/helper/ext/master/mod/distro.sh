@@ -108,7 +108,7 @@ mod_distro_iso_build () {
 
 
 ################################################################################
-### Head: Master / Mod / Distro / Iso / Create / Dir
+### Head: Master / Mod / Distro / Iso / Create / Base Dir
 ##
 
 mod_distro_iso_create_base_dir () {
@@ -122,9 +122,29 @@ mod_distro_iso_create_base_dir () {
 }
 
 ##
-### Tail: Master / Mod / Distro / Iso / Create / Dir
+### Tail: Master / Mod / Distro / Iso / Create / Base Dir
 ################################################################################
 
+
+################################################################################
+### Head: Master / Mod / Distro / Iso / Create / Grub Config
+##
+
+mod_distro_iso_create_grub_cfg () {
+
+	local grub_cfg_file_path="${REF_DISTRO_ISO_DIR_PATH}/isolinux/grub.cfg"
+	local menu_entry_subject_name="Demo OS"
+	local iso_volume_id="TestId"
+
+	sys_distro_iso_create_grub_cfg
+
+	return 0
+}
+
+
+##
+### Tail: Master / Mod / Distro / Iso / Create / Grub Config
+################################################################################
 
 
 ################################################################################

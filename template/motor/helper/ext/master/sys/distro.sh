@@ -186,7 +186,64 @@ sys_distro_iso_archive_post () {
 
 
 ################################################################################
-### Head: Master / Sys / Distro / Iso / Create
+### Head: Master / Mod / Distro / Iso / Create / Grub Config
+##
+
+sys_distro_iso_create_grub_cfg () {
+
+	local grub_cfg_file_path="${1}"
+	local menu_entry_subject_name="${2}"
+	local iso_volume_id="${3}"
+
+
+
+
+cat > "${grub_cfg_file_path}" << __EOF__
+
+search --set=root --file /${iso_volume_id}
+
+insmod all_video
+
+set default="0"
+set timeout=10
+
+menuentry "${menu_entry_subject_name}" {
+   set gfxpayload=keep
+   linux   /casper/vmlinuz boot=casper nopersistent quiet splash ---
+   initrd  /casper/initrd
+}
+
+menuentry "${menu_entry_subject_name} (Safe Graphics)" {
+	set gfxpayload=keep
+	linux   /casper/vmlinuz boot=casper nopersistent nomodeset ---
+	initrd  /casper/initrd
+}
+
+if [ "\$grub_platform" == "efi" ]; then
+	menuentry "Boot from next volume" {
+		exit 1
+	}
+
+	menuentry "UEFI Firmware Settings" {
+		fwsetup
+	}
+fi
+__EOF__
+
+
+
+
+	return 0
+}
+
+
+##
+### Tail: Master / Mod / Distro / Iso / Create / Grub Config
+################################################################################
+
+
+################################################################################
+### Head: Master / Sys / Distro / Iso / Create / Boot Image
 ##
 
 sys_distro_iso_create_boot_image_for_bios () {
@@ -269,5 +326,5 @@ sys_distro_iso_create_boot_image_for_uefi_via_grub_install () {
 
 
 ##
-### Tail: Master / Sys / Distro / Iso / Create
+### Tail: Master / Sys / Distro / Iso / Create / Boot Image
 ################################################################################
