@@ -27,6 +27,6 @@ Example:
 
 
 Debug:
-	$ export DEBUG_HELPER=true
+	$ export IS_DEBUG=true
 
 ```

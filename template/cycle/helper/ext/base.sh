@@ -1,6 +1,18 @@
 
 
 ################################################################################
+### Head: Debug
+##
+
+DEFAULT_IS_DEBUG=false
+IS_DEBUG="${IS_DEBUG:=$DEFAULT_IS_DEBUG}"
+
+##
+### Head: Debug
+################################################################################
+
+
+################################################################################
 ### Head: Util / Debug
 ##
 
@@ -47,12 +59,12 @@ find_dir_path () {
 
 
 ##
-## $ export DEBUG_HELPER=true
+## $ export IS_DEBUG=true
 ##
 
 is_debug () {
 
-	if [ "${DEBUG_HELPER}" = "true" ]; then
+	if [ "${IS_DEBUG}" = "true" ]; then
 		return 0
 	fi
 
@@ -322,7 +334,7 @@ base_var_dump () {
 	util_debug_echo "##"
 	util_debug_echo "## **Hide This Info**"
 	util_debug_echo "##"
-	util_debug_echo "## \$ export DEBUG_HELPER=false"
+	util_debug_echo "## \$ export IS_DEBUG=false"
 	util_debug_echo "##"
 	util_debug_echo
 
