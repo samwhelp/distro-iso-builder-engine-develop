@@ -190,8 +190,17 @@ mod_distro_img_extract () {
 
 mod_distro_iso_archive () {
 
+	local now_str="$(date '+%Y%m%d-%H%M%S')"
+
+	local subject_name="${REF_BUILD_SUBJECT_NAME}"
+
+	local iso_file_name="${subject_name}.${now_str}.iso"
+	## Converts all characters in the variable to lowercase
+	iso_file_name="${iso_file_name,,}"
+
+
 	local iso_dir_path="${REF_DISTRO_ISO_DIR_PATH}"
-	local iso_file_path="${REF_MASTER_TMP_DIR_PATH}/test.iso"
+	local iso_file_path="${REF_DISTRO_DIST_DIR_PATH}/${iso_file_name}"
 	local iso_volume_id="${REF_BUILD_ISO_VOLUME_ID}"
 
 	rm -f "${iso_file_path}"
