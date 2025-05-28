@@ -266,8 +266,8 @@ sys_distro_iso_create_boot_image_for_hybrid () {
 	local core_img_file_path="${1}"
 	local bios_img_file_path="${2}"
 
-	echo 	cat "${cdboot_img_file_path}" "${core_img_file_path}" > "${bios_img_file_path}"
-	#cat "${cdboot_img_file_path}" "${core_img_file_path}" > "${bios_img_file_path}"
+
+	cat "${cdboot_img_file_path}" "${core_img_file_path}" > "${bios_img_file_path}"
 
 	return 0
 }
