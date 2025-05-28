@@ -49,6 +49,7 @@ Example:
 
 	$ make prepare
 
+	$ make install
 
 Debug:
 	$ export IS_DEBUG=true

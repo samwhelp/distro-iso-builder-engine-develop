@@ -49,6 +49,11 @@ Example:
 
 	$ make prepare
 
+	$ make build
+	$ make log-build
+
+	$ make distro-mount
+	$ make distro-unmount
 
 Debug:
 	$ export IS_DEBUG=true
