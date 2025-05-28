@@ -27,12 +27,12 @@ sys_distro_mount_for_chroot () {
 	## https://github.com/mvallim/live-custom-ubuntu-from-scratch/blob/master/scripts/build.sh#L46-L52
 	##
 
-	sudo mount --bind /dev "${REF_DISTRO_IMG_DIR_PATH}"/dev
-	sudo mount --bind /run "${REF_DISTRO_IMG_DIR_PATH}"/run
+	sudo mount --bind /dev "${REF_DISTRO_IMG_DIR_PATH}"/dev || true
+	sudo mount --bind /run "${REF_DISTRO_IMG_DIR_PATH}"/run || true
 
-	sudo chroot "${REF_DISTRO_IMG_DIR_PATH}" mount none -t proc /proc
-	sudo chroot "${REF_DISTRO_IMG_DIR_PATH}" mount none -t sysfs /sys
-	sudo chroot "${REF_DISTRO_IMG_DIR_PATH}" mount none -t devpts /dev/pts
+	sudo chroot "${REF_DISTRO_IMG_DIR_PATH}" mount none -t proc /proc || true
+	sudo chroot "${REF_DISTRO_IMG_DIR_PATH}" mount none -t sysfs /sys || true
+	sudo chroot "${REF_DISTRO_IMG_DIR_PATH}" mount none -t devpts /dev/pts || true
 
 	return 0
 }
@@ -43,12 +43,12 @@ sys_distro_unmount_for_chroot () {
 	## https://github.com/mvallim/live-custom-ubuntu-from-scratch/blob/master/scripts/build.sh#L54-L60
 	##
 
-	sudo chroot "${REF_DISTRO_IMG_DIR_PATH}" umount /proc
-	sudo chroot "${REF_DISTRO_IMG_DIR_PATH}" umount /sys
-	sudo chroot "${REF_DISTRO_IMG_DIR_PATH}" umount /dev/pts
+	sudo chroot "${REF_DISTRO_IMG_DIR_PATH}" umount /proc || true
+	sudo chroot "${REF_DISTRO_IMG_DIR_PATH}" umount /sys || true
+	sudo chroot "${REF_DISTRO_IMG_DIR_PATH}" umount /dev/pts || true
 
-	sudo umount "${REF_DISTRO_IMG_DIR_PATH}"/dev
-	sudo umount "${REF_DISTRO_IMG_DIR_PATH}"/run
+	sudo umount "${REF_DISTRO_IMG_DIR_PATH}"/dev || true
+	sudo umount "${REF_DISTRO_IMG_DIR_PATH}"/run || true
 
 	return 0
 }
