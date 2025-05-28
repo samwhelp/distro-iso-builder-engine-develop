@@ -44,14 +44,14 @@ REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../ext"
 
 
 ################################################################################
-### Head: Portal / portal_build
+### Head: Portal / portal_log_build
 ##
 
-portal_build () {
+portal_log_build () {
 
 	util_error_echo
 	util_error_echo "##"
-	util_error_echo "## ## portal_build"
+	util_error_echo "## ## portal_log_build"
 	util_error_echo "##"
 	util_error_echo
 
@@ -59,9 +59,8 @@ portal_build () {
 	local log_file_path="${REF_MASTER_LOG_FILE_PATH}"
 
 	util_error_echo
-	util_error_echo sudo "${script_file_path}"
+	util_error_echo "${script_file_path}" '2>&1' '|' tee "${log_file_path}"
 	util_error_echo
-	sudo "${script_file_path}"
 
 	## ./build.sh" 2>&1 | tee log.txt
 	"${script_file_path}" 2>&1 | tee "${log_file_path}"
@@ -71,7 +70,7 @@ portal_build () {
 }
 
 ##
-### Tail: Portal / portal_build
+### Tail: Portal / portal_log_build
 ################################################################################
 
 
@@ -81,7 +80,7 @@ portal_build () {
 
 __main__ () {
 
-	portal_build "${@}"
+	portal_log_build "${@}"
 
 }
 

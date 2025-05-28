@@ -13,6 +13,6 @@
 
 apt-file
 
-gdebi
+#gdebi
 
-synaptic
+#synaptic
