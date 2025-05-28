@@ -6,7 +6,13 @@
 
 mod_distro_build_iso () {
 
-	sys_tmp_dir_create
+
+
+
+	mod_distro_build_prepare
+
+
+
 
 	mod_distro_base_system_create
 
@@ -24,11 +30,53 @@ mod_distro_build_iso () {
 
 
 
+	mod_distro_build_finish
+
+
+
+
+	return 0
 }
 
 
 ##
 ### Tail: Master / Mod / Distro
+################################################################################
+
+
+################################################################################
+### Head: Master / Mod / Distro / Build Prepare
+##
+
+mod_distro_build_prepare () {
+
+	sys_tmp_dir_create
+
+	sys_distro_dir_create
+
+	sys_distro_file_clean
+
+	return 0
+}
+
+##
+### Tail: Master / Mod / Distro / Build Prepare
+################################################################################
+
+
+################################################################################
+### Head: Master / Mod / Distro / Build Finish
+##
+
+mod_distro_build_finish () {
+
+
+
+	return 0
+}
+
+##
+### Tail: Master / Mod / Distro / Build Finish
 ################################################################################
 
 
