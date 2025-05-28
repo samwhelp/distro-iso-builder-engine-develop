@@ -358,6 +358,15 @@ base_var_init () {
 
 
 	##
+	## ## Live System Args
+	##
+
+	DEFAULT_LIVE_PACKAGE_REPO_URL="http://archive.ubuntu.com/ubuntu/"
+	#DEFAULT_LIVE_PACKAGE_REPO_URL="http://tw.archive.ubuntu.com/ubuntu/"
+	REF_LIVE_PACKAGE_REPO_URL="${REF_LIVE_PACKAGE_REPO_URL:=$DEFAULT_LIVE_PACKAGE_REPO_URL}"
+
+
+	##
 	## ## Distro Path / Chroot Session
 	##
 
@@ -756,6 +765,16 @@ base_var_dump () {
 	util_debug_echo "REF_BUILD_INCLUDE=${REF_BUILD_INCLUDE}"
 	util_debug_echo
 
+
+	util_debug_echo
+	util_debug_echo "##"
+	util_debug_echo "## ## Live System Args"
+	util_debug_echo "##"
+	util_debug_echo
+
+	util_debug_echo "DEFAULT_LIVE_PACKAGE_REPO_URL=${DEFAULT_LIVE_PACKAGE_REPO_URL}"
+	util_debug_echo "REF_LIVE_PACKAGE_REPO_URL=${REF_LIVE_PACKAGE_REPO_URL}"
+	util_debug_echo
 
 
 	util_debug_echo
