@@ -6,13 +6,14 @@
 
 mod_kernel_package_install () {
 
-	local package_install_list="$(sys_kernel_package_name_find)"
+	local kernel_package="$(sys_kernel_package_name_find)"
 
+	local extra_package="thermald"
 
 	util_error_echo
-	util_error_echo apt-get install -y --no-install-recommends ${package_install_list}
+	util_error_echo apt-get install -y --no-install-recommends ${kernel_package} ${extra_package}
 	util_error_echo
-	apt-get install -y --no-install-recommends ${package_install_list}
+	apt-get install -y --no-install-recommends ${kernel_package} ${extra_package}
 
 
 	return 0
