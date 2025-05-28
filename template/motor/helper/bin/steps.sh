@@ -20,7 +20,7 @@
 ### Head: Init
 ##
 
-#REF_CMD_FILE_NAME="$(basename "${0}")"
+REF_CMD_FILE_NAME="$(basename "${0}")"
 REF_BASE_DIR_PATH="$(cd -- "$(dirname -- "${0}")" ; pwd)"
 REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../ext"
 . "${REF_INIT_DIR_PATH}/init.sh"
@@ -43,11 +43,21 @@ portal_steps () {
 	util_error_echo
 
 
+
+
+	mod_main_signal_bind
+
+	mod_limit_root_user_required
+
+
+
+
 	mod_stage_rundown_process_all
 
 
-	return 0
 
+
+	return 0
 }
 
 ##
