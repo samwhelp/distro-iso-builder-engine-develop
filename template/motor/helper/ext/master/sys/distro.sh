@@ -397,3 +397,22 @@ sys_distro_iso_create_kernel_via_copy () {
 ##
 ### Tail: Master / Sys / Distro / Iso / Create / Kernel
 ################################################################################
+
+
+################################################################################
+### Head: Master / Mod / Distro / Iso / Create / Manifest
+##
+
+sys_distro_iso_create_manifest () {
+
+	local distro_img_dir_path="${1}"
+	local distro_iso_dir_path="${2}"
+
+	sudo chroot "${distro_img_dir_path}" dpkg-query -W --showformat='${Package} ${Version}\n' | sudo tee "${distro_iso_dir_path}"/casper/filesystem.manifest >/dev/null 2>&1
+
+	return 0
+}
+
+##
+### Tail: Master / Mod / Distro / Iso / Create / Manifest
+################################################################################

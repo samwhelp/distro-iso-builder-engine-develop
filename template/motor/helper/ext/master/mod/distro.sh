@@ -108,6 +108,12 @@ mod_distro_iso_build () {
 	mod_distro_iso_create_kernel
 
 
+	##
+	## ## create manifest
+	##
+
+	mod_distro_iso_create_manifest
+
 
 	##
 	## ## archive distro os files to squashfs
@@ -231,7 +237,7 @@ mod_distro_iso_create_boot_image_for_uefi () {
 
 mod_distro_iso_create_kernel () {
 
-	local source_dir_path="${REF_DISTRO_IMG_DIR_NAME}/boot"
+	local source_dir_path="${REF_DISTRO_IMG_DIR_PATH}/boot"
 	local target_dir_path="${REF_DISTRO_ISO_DIR_PATH}/casper"
 
 	sys_distro_iso_create_kernel_via_copy "${source_dir_path}" "${target_dir_path}"
@@ -243,3 +249,23 @@ mod_distro_iso_create_kernel () {
 ### Tail: Master / Mod / Distro / Iso / Create / Kernel
 ################################################################################
 
+
+################################################################################
+### Head: Master / Mod / Distro / Iso / Create / Manifest
+##
+
+mod_distro_iso_create_manifest () {
+
+	local source_dir_path="${REF_DISTRO_IMG_DIR_PATH}"
+	local target_dir_path="${REF_DISTRO_ISO_DIR_PATH}"
+
+	mod_distro_mount_for_chroot
+
+	sys_distro_iso_create_manifest "${source_dir_path}" "${target_dir_path}"
+
+	return 0
+}
+
+##
+### Tail: Master / Mod / Distro / Iso / Create / Manifest
+################################################################################
