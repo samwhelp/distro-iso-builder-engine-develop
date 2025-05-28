@@ -11,9 +11,9 @@ mod_kernel_package_install () {
 	local extra_package="thermald"
 
 	util_error_echo
-	util_error_echo apt-get install -y --no-install-recommends ${kernel_package} ${extra_package}
+	util_error_echo apt-get install -y ${kernel_package} ${extra_package}
 	util_error_echo
-	apt-get install -y --no-install-recommends ${kernel_package} ${extra_package}
+	apt-get install -y ${kernel_package} ${extra_package}
 
 
 	return 0
