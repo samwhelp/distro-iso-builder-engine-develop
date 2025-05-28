@@ -6,9 +6,9 @@
 
 mod_test () {
 
-	#sys_apt_source_list_create_simple
+	#sys_apt_source_list_create_simple_for_build
 
-	#mod_apt_source_list_create_for_building
+	#mod_apt_source_list_create_for_build
 
 
 	return 0

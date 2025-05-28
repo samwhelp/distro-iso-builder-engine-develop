@@ -4,7 +4,7 @@
 ### Head: Master / Sys / Apt
 ##
 
-sys_apt_source_list_create_simple () {
+sys_apt_source_list_create_simple_for_build () {
 
 	util_apt_source_list_create_simple "${REF_BUILD_PACKAGE_REPO_URL}" "${REF_BUILD_SUITE}"
 
