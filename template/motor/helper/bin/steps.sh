@@ -30,6 +30,25 @@ REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../ext"
 ################################################################################
 
 
+
+################################################################################
+### Head: Main / Mod / Signal / Override
+##
+
+mod_action_on_exit () {
+
+	sys_action_on_exit
+
+	mod_distro_unmount_for_chroot
+
+	exit 0
+}
+
+##
+### Tail: Main / Mod / Signal / Override
+################################################################################
+
+
 ################################################################################
 ### Head: Portal / portal_steps
 ##
@@ -51,8 +70,8 @@ portal_steps () {
 
 
 
-
-	mod_stage_rundown_process_all
+	mod_distro_unmount_for_chroot
+	#mod_stage_rundown_process_all
 
 
 

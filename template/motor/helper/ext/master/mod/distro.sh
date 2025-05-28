@@ -4,7 +4,27 @@
 ### Head: Master / Mod / Distro
 ##
 
+mod_distro_build_iso () {
 
+	sys_tmp_dir_create
+
+	mod_distro_base_system_create
+
+
+
+
+	mod_distro_mount_for_chroot
+
+	mod_chroot_session_process
+
+	mod_distro_iso_archive
+
+	mod_distro_unmount_for_chroot
+
+
+
+
+}
 
 
 ##
@@ -18,6 +38,7 @@
 
 mod_distro_base_system_create () {
 
+	sys_distro_base_system_create
 
 	return 0
 }
