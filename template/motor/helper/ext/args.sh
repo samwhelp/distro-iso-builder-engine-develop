@@ -35,7 +35,7 @@ args_var_dump () {
 
 	util_debug_echo
 	util_debug_echo "##"
-	util_debug_echo "## ## Args From File"
+	util_debug_echo "## ## Args From File Override"
 	util_debug_echo "##"
 	util_debug_echo
 
@@ -43,6 +43,8 @@ args_var_dump () {
 	util_debug_echo "REF_BUILD_PACKAGE_REPO_URL=${REF_BUILD_PACKAGE_REPO_URL}"
 	util_debug_echo
 
+	util_debug_echo "REF_LIVE_PACKAGE_REPO_URL=${REF_LIVE_PACKAGE_REPO_URL}"
+	util_debug_echo
 
 
 	util_debug_echo
