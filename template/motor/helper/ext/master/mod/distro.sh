@@ -119,7 +119,7 @@ mod_distro_iso_build () {
 
 
 	##
-	## ## archive iso file finally
+	## ## archive iso files finally
 	##
 
 	mod_distro_iso_archive
