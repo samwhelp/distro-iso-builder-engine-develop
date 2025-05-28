@@ -89,9 +89,25 @@ mod_distro_iso_extract () {
 
 mod_distro_iso_build () {
 
+
+	##
+	## ## create dir
+	##
+
 	mod_distro_iso_create_base_dir
 
+
+	##
+	## ## copy kernel
+	##
+
 	mod_distro_iso_create_kernel
+
+
+
+	##
+	## ## boot files
+	##
 
 	mod_distro_iso_create_grub_cfg
 
@@ -101,7 +117,13 @@ mod_distro_iso_build () {
 
 	mod_distro_iso_create_boot_image_for_uefi
 
+
+	##
+	## ## archive iso file finally
+	##
+
 	mod_distro_iso_archive
+
 
 	return 0
 }
