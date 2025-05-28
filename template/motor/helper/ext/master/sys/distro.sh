@@ -131,12 +131,15 @@ sys_distro_iso_archive () {
 
 	local iso_dir_path="${1}"
 	local iso_file_path="${2}"
+
+
+	##
+	## ## Notice: iso_volume_id (all characters must uppercase)
+	##
+
 	local iso_volume_id="${3}"
+	iso_volume_id="${iso_volume_id^^}"
 
-
-	##
-	## ## TODO: iso_volume_id upper_case
-	##
 
 	util_error_echo
 	util_error_echo cd "${iso_dir_path}"
@@ -231,7 +234,14 @@ sys_distro_iso_create_grub_cfg () {
 
 	local grub_cfg_file_path="${1}"
 	local menu_entry_subject_name="${2}"
+
+
+	##
+	## ## Notice: iso_volume_id (all characters must uppercase)
+	##
+
 	local iso_volume_id="${3}"
+	iso_volume_id="${iso_volume_id^^}"
 
 
 
