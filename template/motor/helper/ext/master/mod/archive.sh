@@ -14,7 +14,7 @@ mod_archive_system_to_squashfs () {
 
 mod_archive_system_to_iso () {
 
-	mod_distro_iso_archive
+	mod_distro_iso_build
 
 	return 0
 }

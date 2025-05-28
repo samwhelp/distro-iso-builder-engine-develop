@@ -23,7 +23,7 @@ mod_distro_build_iso_from_scratch () {
 
 	mod_chroot_session_process
 
-	mod_distro_iso_archive
+	mod_distro_iso_build
 
 	mod_distro_unmount_for_chroot
 
