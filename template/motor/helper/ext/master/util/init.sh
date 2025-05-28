@@ -21,17 +21,17 @@
 
 
 ##
-## ## Load: Master / Util / Distro
-##
-
-. "${REF_MAIN_EXT_MASTER_UTIL_DIR_PATH}/distro.sh"
-
-
-##
 ## ## Load: Master / Util / Chroot
 ##
 
 . "${REF_MAIN_EXT_MASTER_UTIL_DIR_PATH}/chroot.sh"
+
+
+##
+## ## Load: Master / Util / Distro
+##
+
+. "${REF_MAIN_EXT_MASTER_UTIL_DIR_PATH}/distro.sh"
 
 
 ##

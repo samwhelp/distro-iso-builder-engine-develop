@@ -188,7 +188,7 @@ mod_distro_iso_build () {
 	## ## archive distro os files to squashfs
 	##
 
-	#mod_distro_img_archive
+	mod_distro_img_archive
 
 
 	##

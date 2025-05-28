@@ -20,6 +20,13 @@
 
 
 ##
+## ## Load: Master / Mod / Chroot
+##
+
+. "${REF_MAIN_EXT_MASTER_MOD_DIR_PATH}/chroot.sh"
+
+
+##
 ## ## Load: Master / Mod / Distro
 ##
 
@@ -27,10 +34,17 @@
 
 
 ##
-## ## Load: Master / Mod / Chroot
+## ## Load: Master / Mod / Just
 ##
 
-. "${REF_MAIN_EXT_MASTER_MOD_DIR_PATH}/chroot.sh"
+. "${REF_MAIN_EXT_MASTER_MOD_DIR_PATH}/just.sh"
+
+
+##
+## ## Load: Master / Mod / Archive
+##
+
+. "${REF_MAIN_EXT_MASTER_MOD_DIR_PATH}/archive.sh"
 
 
 ##
