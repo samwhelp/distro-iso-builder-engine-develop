@@ -38,6 +38,60 @@ mod_distro_build_iso_from_scratch () {
 	return 0
 }
 
+mod_distro_base_system_from_scratch () {
+
+
+
+
+	mod_distro_build_prepare
+
+
+
+
+	mod_distro_base_system_create
+
+
+
+
+
+
+
+
+
+	return 0
+}
+
+mod_distro_full_system_from_scratch () {
+
+
+
+
+	mod_distro_build_prepare
+
+
+
+
+	mod_distro_base_system_create
+
+
+
+
+	mod_distro_mount_for_chroot
+
+	mod_chroot_session_process
+
+	mod_distro_unmount_for_chroot
+
+
+
+
+	mod_distro_build_finish
+
+
+
+
+	return 0
+}
 
 ##
 ### Tail: Master / Mod / Distro
