@@ -40,7 +40,7 @@ args_var_dump () {
 	util_debug_echo
 
 	util_debug_echo "REF_BUILD_SUITE=${REF_BUILD_SUITE}"
-	util_debug_echo "REF_PACKAGE_REPO_URL=${REF_PACKAGE_REPO_URL}"
+	util_debug_echo "REF_BUILD_PACKAGE_REPO_URL=${REF_BUILD_PACKAGE_REPO_URL}"
 	util_debug_echo
 
 

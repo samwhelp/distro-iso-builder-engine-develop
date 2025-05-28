@@ -6,7 +6,7 @@
 
 sys_apt_source_list_create_simple () {
 
-	util_apt_source_list_create_simple "${REF_PACKAGE_REPO_URL}" "${REF_BUILD_SUITE}"
+	util_apt_source_list_create_simple "${REF_BUILD_PACKAGE_REPO_URL}" "${REF_BUILD_SUITE}"
 
 }
 

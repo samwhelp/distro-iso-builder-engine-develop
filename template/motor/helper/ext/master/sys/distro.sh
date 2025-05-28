@@ -73,7 +73,7 @@ sys_distro_base_system_create () {
 		--include=${REF_BUILD_INCLUDE} \
 		${REF_BUILD_SUITE} \
 		${REF_DISTRO_IMG_DIR_PATH} \
-		${REF_PACKAGE_REPO_URL}
+		${REF_BUILD_PACKAGE_REPO_URL}
 
 
 	return 0
