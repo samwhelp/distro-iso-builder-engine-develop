@@ -35,10 +35,12 @@ mod_distro_img_archive () {
 
 	local squashfs_root_dir_path="${REF_DISTRO_ISO_DIR_PATH}/casper"
 
-	sudo mkdir -p "${squashfs_root_dir_path}"
+	mkdir -p "${squashfs_root_dir_path}"
 
 	local squashfs_dir_path="${REF_DISTRO_IMG_DIR_PATH}"
 	local squashfs_file_path="${squashfs_root_dir_path}/filesystem.squashfs"
+
+	rm -f "${squashfs_file_path}"
 
 	sys_distro_img_archive "${squashfs_dir_path}" "${squashfs_file_path}"
 
@@ -66,6 +68,8 @@ mod_distro_iso_archive () {
 	local iso_dir_path="${REF_DISTRO_ISO_DIR_PATH}"
 	local iso_file_path="${REF_MASTER_TMP_DIR_PATH}/test.iso"
 	local iso_volume_id="TESTID"
+
+	rm -f "${iso_file_path}"
 
 	sys_distro_iso_archive "${iso_dir_path}" "${iso_file_path}" "${iso_volume_id}"
 
@@ -103,6 +107,13 @@ mod_distro_iso_build () {
 
 	mod_distro_iso_create_kernel
 
+
+
+	##
+	## ## archive distro os files to squashfs
+	##
+
+	#mod_distro_img_archive
 
 
 	##
