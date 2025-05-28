@@ -79,7 +79,7 @@ sys_module_factory_package_remove () {
 	local package_remove_list=$(sys_module_factory_package_remove_load_list)
 
 	util_error_echo
-	util_error_echo apt-get remove -y ${package_remove_list}
+	util_error_echo apt-get purge -y ${package_remove_list}
 	util_error_echo
 	apt-get purge -y ${package_remove_list}
 
