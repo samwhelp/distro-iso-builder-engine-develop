@@ -111,6 +111,8 @@ mod_distro_img_archive () {
 
 	rm -f "${squashfs_file_path}"
 
+	mod_distro_unmount_for_chroot
+
 	sys_distro_img_archive "${squashfs_dir_path}" "${squashfs_file_path}"
 
 
