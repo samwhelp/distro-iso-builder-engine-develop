@@ -374,3 +374,26 @@ sys_distro_iso_create_boot_image_for_uefi_via_grub_install () {
 ##
 ### Tail: Master / Sys / Distro / Iso / Create / Boot Image
 ################################################################################
+
+
+################################################################################
+### Head: Master / Sys / Distro / Iso / Create / Kernel
+##
+
+sys_distro_iso_create_kernel_via_copy () {
+
+	local source_dir_path="${1}"
+	local target_dir_path="${2}"
+
+	rm -f "${target_dir_path}"/vmlinuz
+	rm -f "${target_dir_path}"/initrd
+
+	cp -f "${source_dir_path}"/vmlinuz-**-**-generic "${target_dir_path}"/vmlinuz
+	cp -f "${source_dir_path}"/initrd.img-**-**-generic "${target_dir_path}"/initrd
+
+	return 0
+}
+
+##
+### Tail: Master / Sys / Distro / Iso / Create / Kernel
+################################################################################

@@ -91,6 +91,8 @@ mod_distro_iso_build () {
 
 	mod_distro_iso_create_base_dir
 
+	mod_distro_iso_create_kernel
+
 	mod_distro_iso_create_grub_cfg
 
 	mod_distro_iso_create_boot_image_for_bios
@@ -187,5 +189,24 @@ mod_distro_iso_create_boot_image_for_uefi () {
 
 ##
 ### Tail: Master / Mod / Distro / Iso / Create / Boot Image
+################################################################################
+
+
+################################################################################
+### Head: Master / Mod / Distro / Iso / Create / Kernel
+##
+
+mod_distro_iso_create_kernel () {
+
+	local source_dir_path="${REF_DISTRO_IMG_DIR_NAME}/boot"
+	local target_dir_path="${REF_DISTRO_ISO_DIR_PATH}/casper"
+
+	sys_distro_iso_create_kernel_via_copy "${source_dir_path}" "${target_dir_path}"
+
+	return 0
+}
+
+##
+### Tail: Master / Mod / Distro / Iso / Create / Kernel
 ################################################################################
 
