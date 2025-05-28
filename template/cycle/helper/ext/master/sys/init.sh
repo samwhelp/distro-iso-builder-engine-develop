@@ -20,5 +20,19 @@
 
 
 ##
+## ## Load: Master / Sys / Kernel
+##
+
+. "${REF_MAIN_EXT_MASTER_SYS_DIR_PATH}/kernel.sh"
+
+
+##
+## ## Load: Master / Sys / Core
+##
+
+. "${REF_MAIN_EXT_MASTER_SYS_DIR_PATH}/core.sh"
+
+
+##
 ### Tail: Master / Sys / Init
 ################################################################################

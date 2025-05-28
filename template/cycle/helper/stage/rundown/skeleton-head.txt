@@ -4,4 +4,20 @@
 ## # skeleton-head
 ##
 
-apt-source-list-init
+
+
+
+##
+## ## apt
+##
+
+core-apt-init
+
+
+
+
+##
+## ## kernel
+##
+
+core-kernel-install

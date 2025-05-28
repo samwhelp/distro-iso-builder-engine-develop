@@ -10,6 +10,19 @@ mod_apt_source_list_create_for_building () {
 
 }
 
+mod_apt_package_db_update () {
+
+	sys_apt_package_db_update
+
+}
+
+mod_apt_package_db_update_for_build_start () {
+
+	mod_apt_source_list_create_for_building
+
+	sys_apt_package_db_update
+
+}
 
 ##
 ### Tail: Master / Mod / Apt

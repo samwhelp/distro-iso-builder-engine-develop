@@ -10,6 +10,14 @@ sys_apt_source_list_create_simple () {
 
 }
 
+sys_apt_package_db_update () {
+
+	util_error_echo
+	util_error_echo apt-get update
+	util_error_echo
+	apt-get update
+
+}
 
 ##
 ### Tail: Master / Sys / Apt

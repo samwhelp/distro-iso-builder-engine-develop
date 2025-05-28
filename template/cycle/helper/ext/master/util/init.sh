@@ -28,5 +28,12 @@
 
 
 ##
+## ## Load: Master / Util / Core
+##
+
+. "${REF_MAIN_EXT_MASTER_UTIL_DIR_PATH}/core.sh"
+
+
+##
 ### Tail: Master / Util / Init
 ################################################################################

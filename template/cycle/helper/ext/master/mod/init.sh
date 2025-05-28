@@ -20,6 +20,20 @@
 
 
 ##
+## ## Load: Master / Mod / Kernel
+##
+
+. "${REF_MAIN_EXT_MASTER_MOD_DIR_PATH}/kernel.sh"
+
+
+##
+## ## Load: Master / Mod / Core
+##
+
+. "${REF_MAIN_EXT_MASTER_MOD_DIR_PATH}/core.sh"
+
+
+##
 ## ## Load: Master / Mod / Test
 ##
 

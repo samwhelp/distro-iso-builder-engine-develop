@@ -47,7 +47,7 @@ portal_install () {
 	util_error_echo "[Run Module]: ${script_file_path}"
 
 
-	mod_apt_source_list_create_for_building
+	mod_apt_package_db_update_for_build_start
 
 
 }
