@@ -82,7 +82,7 @@ portal_steps () {
 
 
 
-	mod_distro_build_iso
+	mod_distro_build_iso_from_scratch
 	#mod_stage_rundown_process_all
 
 

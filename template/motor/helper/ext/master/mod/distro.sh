@@ -4,7 +4,7 @@
 ### Head: Master / Mod / Distro
 ##
 
-mod_distro_build_iso () {
+mod_distro_build_iso_from_scratch () {
 
 
 
