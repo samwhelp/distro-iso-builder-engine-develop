@@ -43,7 +43,13 @@ args_var_dump () {
 	util_debug_echo "REF_BUILD_PACKAGE_REPO_URL=${REF_BUILD_PACKAGE_REPO_URL}"
 	util_debug_echo
 
+
 	util_debug_echo "REF_LIVE_PACKAGE_REPO_URL=${REF_LIVE_PACKAGE_REPO_URL}"
+	util_debug_echo
+
+
+	util_debug_echo "REF_BUILD_SUBJECT_NAME=${REF_BUILD_SUBJECT_NAME}"
+	util_debug_echo "REF_BUILD_ISO_VOLUME_ID=${REF_BUILD_ISO_VOLUME_ID}"
 	util_debug_echo
 
 
