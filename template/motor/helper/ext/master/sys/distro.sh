@@ -465,7 +465,13 @@ sys_distro_iso_create_filesystem_size () {
 	local distro_img_dir_path="${1}"
 	local distro_iso_dir_path="${2}"
 
-	printf $(sudo du -sx --block-size=1 "${distro_img_dir_path}" | cut -f1) > "${distro_iso_dir_path}"/casper/filesystem.size
+	local source_dir_path="${distro_img_dir_path}"
+	local target_dir_path="${distro_iso_dir_path}/casper"
+
+	mkdir -p "${source_dir_path}"
+	mkdir -p "${target_dir_path}"
+
+	printf $(du -sx --block-size=1 "${source_dir_path}" | cut -f1) > "${target_dir_path}/filesystem.size"
 
 	return 0
 }
