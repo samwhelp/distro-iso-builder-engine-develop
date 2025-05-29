@@ -49,8 +49,17 @@ args_var_dump () {
 
 
 	util_debug_echo "REF_BUILD_SUBJECT_NAME=${REF_BUILD_SUBJECT_NAME}"
+	util_debug_echo "REF_BUILD_SUBJECT_TITLE=${REF_BUILD_SUBJECT_TITLE}"
 	util_debug_echo "REF_BUILD_ISO_VOLUME_ID=${REF_BUILD_ISO_VOLUME_ID}"
 	util_debug_echo
+
+
+	util_debug_echo "REF_BUILD_LANG_PACK_CODE=${REF_BUILD_LANG_PACK_CODE}"
+	util_debug_echo "REF_BUILD_LANG_MODE=${REF_BUILD_LANG_MODE}"
+	util_debug_echo "REF_BUILD_LANG=${REF_BUILD_LANG}"
+	util_debug_echo
+
+
 
 
 	util_debug_echo
