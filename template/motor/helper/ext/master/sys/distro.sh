@@ -446,7 +446,13 @@ sys_distro_iso_create_manifest () {
 	local distro_img_dir_path="${1}"
 	local distro_iso_dir_path="${2}"
 
-	sudo chroot "${distro_img_dir_path}" dpkg-query -W --showformat='${Package} ${Version}\n' | sudo tee "${distro_iso_dir_path}"/casper/filesystem.manifest >/dev/null 2>&1
+	local source_dir_path="${distro_img_dir_path}"
+	local target_dir_path="${distro_iso_dir_path}/casper"
+
+	mkdir -p "${source_dir_path}"
+	mkdir -p "${target_dir_path}"
+
+	chroot "${source_dir_path}" dpkg-query -W --showformat='${Package} ${Version}\n' | sudo tee "${target_dir_path}/filesystem.manifest" >/dev/null 2>&1
 
 	return 0
 }
