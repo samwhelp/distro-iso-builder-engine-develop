@@ -31,7 +31,7 @@ REF_LIVE_PACKAGE_REPO_URL="http://archive.ubuntu.com/ubuntu/"
 ##
 ## ## REF_BUILD_SUBJECT_NAME
 ##
-## > for iso name
+## > for iso file name
 ##
 
 REF_BUILD_SUBJECT_NAME="ubuntu"
@@ -40,7 +40,20 @@ REF_BUILD_SUBJECT_NAME="ubuntu"
 
 
 ##
+## ## REF_BUILD_SUBJECT_TITLE
+##
+## > for info
+##
+
+REF_BUILD_SUBJECT_NAME="Ubuntu"
+
+
+
+
+##
 ## ## REF_BUILD_ISO_VOLUME_ID
+##
+## > for xorriso -volid ${REF_BUILD_ISO_VOLUME_ID}
 ##
 
 REF_BUILD_ISO_VOLUME_ID="UBUNTU"
