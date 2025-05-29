@@ -403,3 +403,22 @@ mod_distro_iso_create_manifest () {
 ##
 ### Tail: Master / Mod / Distro / Iso / Create / Manifest
 ################################################################################
+
+
+################################################################################
+### Head: Master / Mod / Distro / Iso / Create / Filesystem Size
+##
+
+mod_distro_iso_create_filesystem_size () {
+
+	local source_dir_path="${REF_DISTRO_IMG_DIR_PATH}"
+	local target_dir_path="${REF_DISTRO_ISO_DIR_PATH}"
+
+	sys_distro_iso_create_filesystem_size "${source_dir_path}" "${target_dir_path}"
+
+	return 0
+}
+
+##
+### Tail: Master / Mod / Distro / Iso / Create / Filesystem Size
+################################################################################

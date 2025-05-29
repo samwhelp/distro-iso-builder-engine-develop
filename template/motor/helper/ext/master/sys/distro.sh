@@ -222,7 +222,7 @@ sys_distro_iso_archive_post () {
 
 
 ################################################################################
-### Head: Master / Mod / Distro / Iso / Create / Grub Config
+### Head: Master / Sys / Distro / Iso / Create / Grub Config
 ##
 
 sys_distro_iso_create_grub_cfg () {
@@ -286,7 +286,7 @@ __EOF__
 
 
 ##
-### Tail: Master / Mod / Distro / Iso / Create / Grub Config
+### Tail: Master / Sys / Distro / Iso / Create / Grub Config
 ################################################################################
 
 
@@ -438,7 +438,7 @@ sys_distro_iso_create_kernel_via_copy () {
 
 
 ################################################################################
-### Head: Master / Mod / Distro / Iso / Create / Manifest
+### Head: Master / Sys / Distro / Iso / Create / Manifest
 ##
 
 sys_distro_iso_create_manifest () {
@@ -452,5 +452,24 @@ sys_distro_iso_create_manifest () {
 }
 
 ##
-### Tail: Master / Mod / Distro / Iso / Create / Manifest
+### Tail: Master / Sys / Distro / Iso / Create / Manifest
+################################################################################
+
+
+################################################################################
+### Head: Master / Sys / Distro / Iso / Create / Filesystem Size
+##
+
+sys_distro_iso_create_filesystem_size () {
+
+	local distro_img_dir_path="${1}"
+	local distro_iso_dir_path="${2}"
+
+	printf $(sudo du -sx --block-size=1 "${distro_img_dir_path}" | cut -f1) > "${distro_iso_dir_path}"/casper/filesystem.size
+
+	return 0
+}
+
+##
+### Tail: Master / Sys / Distro / Iso / Create / Filesystem Size
 ################################################################################
