@@ -44,8 +44,15 @@ portal_prepare () {
 
 	mod_main_signal_bind
 
-	sleep 10;
 
+
+
+	sys_package_install_for_build_iso
+
+
+
+
+	return 0
 }
 
 ##
