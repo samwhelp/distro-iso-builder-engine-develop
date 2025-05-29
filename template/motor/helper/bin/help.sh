@@ -61,6 +61,8 @@ Example:
 	$ make archive-system-to-squashfs
 	$ make archive-system-to-iso
 
+	$ make clean
+
 Debug:
 	$ export IS_DEBUG=true
 
