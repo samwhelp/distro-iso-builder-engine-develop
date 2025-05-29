@@ -518,6 +518,43 @@ sys_distro_iso_create_disk_info () {
 
 
 ################################################################################
+### Head: Master / Sys / Distro / Iso / Create / Disk Define
+##
+
+sys_distro_iso_create_disk_define () {
+
+	local distro_img_dir_path="${1}"
+	local distro_iso_dir_path="${2}"
+
+	local source_dir_path="${distro_img_dir_path}"
+	local target_dir_path="${distro_iso_dir_path}"
+
+	mkdir -p "${source_dir_path}"
+	mkdir -p "${target_dir_path}"
+
+
+cat > "${target_dir_path}/README.diskdefines" << __EOF__
+#define DISKNAME  Try ${REF_BUILD_SUBJECT_TITLE}
+#define TYPE  binary
+#define TYPEbinary  1
+#define ARCH  amd64
+#define ARCHamd64  1
+#define DISKNUM  1
+#define DISKNUM1  1
+#define TOTALNUM  0
+#define TOTALNUM0  1
+__EOF__
+
+
+	return 0
+}
+
+##
+### Tail: Master / Sys / Distro / Iso / Create / Disk Define
+################################################################################
+
+
+################################################################################
 ### Head: Master / Sys / Distro / Iso / Create / Readme
 ##
 

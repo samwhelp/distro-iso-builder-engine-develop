@@ -40,7 +40,9 @@ mod_test () {
 
 	#mod_test_distro_iso_create_disk_info
 
-	mod_test_mod_distro_iso_create_readme
+	mod_test_distro_iso_create_disk_define
+
+	#mod_test_mod_distro_iso_create_readme
 
 	#mod_test_distro_iso_create_checksum
 
@@ -97,6 +99,14 @@ mod_test_distro_iso_create_disk_info () {
 	mod_distro_iso_create_disk_info
 
 }
+
+mod_test_distro_iso_create_disk_define () {
+
+	mod_distro_iso_create_disk_define
+
+}
+
+
 
 mod_test_mod_distro_iso_create_readme () {
 
