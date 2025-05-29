@@ -23,6 +23,12 @@ sys_chroot_run () {
 
 sys_distro_mount_for_chroot () {
 
+
+	if ! [ -d "${REF_DISTRO_IMG_DIR_PATH}" ]; then
+		return 0
+	fi
+
+
 	##
 	## https://github.com/mvallim/live-custom-ubuntu-from-scratch/blob/master/scripts/build.sh#L46-L52
 	##
@@ -38,6 +44,12 @@ sys_distro_mount_for_chroot () {
 }
 
 sys_distro_unmount_for_chroot () {
+
+
+	if ! [ -d "${REF_DISTRO_IMG_DIR_PATH}" ]; then
+		return 0
+	fi
+
 
 	##
 	## https://github.com/mvallim/live-custom-ubuntu-from-scratch/blob/master/scripts/build.sh#L54-L60
