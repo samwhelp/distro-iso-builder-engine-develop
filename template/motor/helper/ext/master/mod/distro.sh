@@ -80,11 +80,6 @@ mod_distro_full_system_from_scratch () {
 
 
 
-	mod_distro_build_finish
-
-
-
-
 	return 0
 }
 
@@ -98,6 +93,8 @@ mod_distro_full_system_from_scratch () {
 ##
 
 mod_distro_build_prepare () {
+
+	sys_package_install_for_build_iso
 
 	sys_tmp_dir_create
 

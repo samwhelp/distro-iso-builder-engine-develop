@@ -16,9 +16,72 @@
 ### Head: Master / Sys / Distro / Build Prepare
 ##
 
+sys_package_install_for_build_iso () {
+
+	util_error_echo
+	util_error_echo sudo apt-get update
+	util_error_echo
+	sudo apt-get update
+
+
+
+
+local run_cmd=$(cat << __EOF__
+	sudo apt-get install -y --no-install-recommends
+		binutils
+		debootstrap
+		squashfs-tools
+		xorriso
+		grub-pc-bin
+		grub-efi-amd64
+		grub2-common
+		mtools
+		dosfstools
+__EOF__
+)
+
+	util_error_echo
+	util_error_echo $run_cmd
+	util_error_echo
+
+	$run_cmd
+
+	return 0
+}
+
+sys_package_install_for_build_iso_raw () {
+
+	sudo apt-get update
+
+	sudo apt-get install -y \
+		binutils \
+		debootstrap \
+		squashfs-tools \
+		xorriso \
+		grub-pc-bin \
+		grub-efi-amd64 \
+		grub2-common \
+		mtools \
+		dosfstools \
+		--no-install-recommends
+
+	return 0
+}
+
 
 ##
 ### Tail: Master / Sys / Distro / Build Prepare
+################################################################################
+
+
+################################################################################
+### Head: Master / Sys / Distro / Build Finish
+##
+
+
+
+##
+### Tail: Master / Sys / Distro / Build Finish
 ################################################################################
 
 
