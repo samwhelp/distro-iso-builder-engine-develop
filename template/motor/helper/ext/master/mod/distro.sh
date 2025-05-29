@@ -205,6 +205,7 @@ mod_distro_iso_archive_v1 () {
 	local now_str="$(date '+%Y%m%d-%H%M%S')"
 
 	local subject_name="${REF_BUILD_SUBJECT_NAME}"
+	subject_name="${subject_name,,}"
 
 	local iso_file_name="${subject_name}.${now_str}.iso"
 	## Converts all characters in the variable to lowercase
@@ -225,6 +226,7 @@ mod_distro_iso_archive_v1 () {
 mod_distro_iso_archive () {
 
 	local subject_name="${REF_BUILD_SUBJECT_NAME}"
+	subject_name="${subject_name,,}"
 
 	local iso_file_name="${subject_name}.iso"
 	## Converts all characters in the variable to lowercase

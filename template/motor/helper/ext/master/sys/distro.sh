@@ -80,6 +80,96 @@ sys_package_install_for_build_iso_raw () {
 
 sys_distro_iso_move_to_dist_dir () {
 
+	local now_str="$(date '+%Y%m%d-%H%M%S')"
+
+	local lang_mode="${REF_BUILD_LANG_MODE}"
+	lang_mode="${lang_mode,,}"
+
+
+
+	local subject_name="${REF_BUILD_SUBJECT_NAME}"
+	subject_name="${subject_name,,}"
+
+	local source_iso_file_name="${subject_name}.iso"
+	## Converts all characters in the variable to lowercase
+	source_iso_file_name="${source_iso_file_name,,}"
+
+
+	local source_iso_dir_path="${REF_DISTRO_OUT_DIR_PATH}"
+	local source_iso_file_path="${source_iso_dir_path}/${source_iso_file_name}"
+
+
+
+	local target_iso_file_main_name="${subject_name}.${lang_mode}.${now_str}"
+	target_iso_file_main_name="${target_iso_file_main_name,,}"
+
+	local target_iso_file_checksum_name="${target_iso_file_main_name}.sha256"
+	local target_iso_file_name="${target_iso_file_main_name}.iso"
+	## Converts all characters in the variable to lowercase
+	target_iso_file_name="${target_iso_file_name,,}"
+
+	local target_iso_dir_path="${REF_DISTRO_DIST_DIR_PATH}"
+	local target_iso_file_path="${target_iso_dir_path}/${target_iso_file_name}"
+
+
+
+	mkdir -p "${source_iso_dir_path}"
+	mkdir -p "${target_iso_dir_path}"
+
+	if ! [ -f ${source_iso_file_path} ]; then
+
+		util_error_echo
+		util_error_echo "##"
+		util_error_echo "## ## [ISO Not Created]: ${source_iso_file_path}"
+		util_error_echo "##"
+		util_error_echo
+
+		return 0
+	fi
+
+
+
+
+	##
+	## ## Move ISO File to Dist Dir
+	##
+
+	util_error_echo
+	util_error_echo mv "${source_iso_file_path}" "${target_iso_file_path}"
+	util_error_echo
+	mv "${source_iso_file_path}" "${target_iso_file_path}" || true
+
+
+
+
+
+	##
+	## ## Checksum
+	##
+
+	cd "${target_iso_dir_path}"
+
+	sha256sum ${target_iso_file_name} | sudo tee "${target_iso_file_checksum_name}" 2>&1 >/dev/null || true
+
+
+	cd "${OLDPWD}"
+
+
+
+	##
+	## ## Move Log File to Dist Dir
+	##
+
+	local source_log_file_path="${REF_MASTER_LOG_FILE_PATH}"
+	local target_log_file_path="${target_iso_dir_path}/${target_iso_file_main_name}.log.txt"
+
+
+	util_error_echo
+	util_error_echo mv "${source_log_file_path}" "${target_log_file_path}"
+	util_error_echo
+	mv "${source_log_file_path}" "${target_log_file_path}"
+
+
 
 	return 0
 }
