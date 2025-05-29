@@ -42,12 +42,15 @@ portal_clean () {
 	util_error_echo "##"
 	util_error_echo
 
+
 	mod_main_signal_bind
 
+	mod_limit_root_user_required
 
 
 
 
+	mod_distro_build_clean
 
 
 

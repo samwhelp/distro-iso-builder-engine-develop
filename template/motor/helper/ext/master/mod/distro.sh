@@ -127,6 +127,24 @@ mod_distro_build_finish () {
 
 
 ################################################################################
+### Head: Master / Mod / Distro / Build Clean
+##
+
+mod_distro_build_clean () {
+
+	mod_distro_unmount_for_chroot
+
+	sys_distro_file_clean
+
+	return 0
+}
+
+##
+### Tail: Master / Mod / Distro / Build Clean
+################################################################################
+
+
+################################################################################
 ### Head: Master / Mod / Distro / Base System
 ##
 
