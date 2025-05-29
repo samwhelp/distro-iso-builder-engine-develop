@@ -423,6 +423,9 @@ sys_distro_iso_create_kernel_via_copy () {
 	local source_dir_path="${1}"
 	local target_dir_path="${2}"
 
+	mkdir -p "${source_dir_path}"
+	mkdir -p "${target_dir_path}"
+
 	rm -f "${target_dir_path}"/vmlinuz
 	rm -f "${target_dir_path}"/initrd
 
