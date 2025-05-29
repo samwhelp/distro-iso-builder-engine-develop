@@ -335,7 +335,8 @@ base_var_init () {
 	REF_DISTRO_OUT_DIR_NAME="out"
 	REF_DISTRO_OUT_DIR_PATH="${REF_DISTRO_DIR_PATH}/${REF_DISTRO_OUT_DIR_NAME}"
 
-
+	REF_DISTRO_DIST_DIR_NAME="dist"
+	REF_DISTRO_DIST_DIR_PATH="${REF_SUIT_DIR_PATH}/${REF_DISTRO_DIST_DIR_NAME}"
 
 
 	##
@@ -740,6 +741,10 @@ base_var_dump () {
 
 	util_debug_echo "REF_DISTRO_OUT_DIR_NAME=${REF_DISTRO_OUT_DIR_NAME}"
 	util_debug_echo "REF_DISTRO_OUT_DIR_PATH=${REF_DISTRO_OUT_DIR_PATH}"
+	util_debug_echo
+
+	util_debug_echo "REF_DISTRO_DIST_DIR_NAME=${REF_DISTRO_DIST_DIR_NAME}"
+	util_debug_echo "REF_DISTRO_DIST_DIR_PATH=${REF_DISTRO_DIST_DIR_PATH}"
 	util_debug_echo
 
 
