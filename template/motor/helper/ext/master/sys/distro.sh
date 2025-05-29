@@ -455,7 +455,7 @@ sys_distro_iso_create_manifest () {
 	mkdir -p "${source_dir_path}"
 	mkdir -p "${target_dir_path}"
 
-	chroot "${source_dir_path}" dpkg-query -W --showformat='${Package} ${Version}\n' | sudo tee "${target_dir_path}/filesystem.manifest" >/dev/null 2>&1
+	sudo chroot "${source_dir_path}" dpkg-query -W --showformat='${Package} ${Version}\n' | sudo tee "${target_dir_path}/filesystem.manifest" >/dev/null 2>&1
 
 	return 0
 }
