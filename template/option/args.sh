@@ -31,6 +31,8 @@ REF_LIVE_PACKAGE_REPO_URL="http://archive.ubuntu.com/ubuntu/"
 ##
 ## ## REF_BUILD_SUBJECT_NAME
 ##
+## > for iso name
+##
 
 REF_BUILD_SUBJECT_NAME="ubuntu"
 
