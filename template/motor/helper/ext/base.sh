@@ -352,9 +352,9 @@ base_var_init () {
 	#DEFAULT_BUILD_PACKAGE_REPO_URL="http://tw.archive.ubuntu.com/ubuntu/"
 	REF_BUILD_PACKAGE_REPO_URL="${REF_BUILD_PACKAGE_REPO_URL:=$DEFAULT_BUILD_PACKAGE_REPO_URL}"
 
-	#DEFAULT_BUILD_INCLUDE="ca-certificates,openssl"
-	DEFAULT_BUILD_INCLUDE="ca-certificates,openssl,console-setup-linux,console-setup,locales,tzdata"
-	REF_BUILD_INCLUDE="${REF_BUILD_INCLUDE:=$DEFAULT_BUILD_INCLUDE}"
+	#DEFAULT_BUILD_PACKAGE_INCLUDE="ca-certificates,openssl"
+	DEFAULT_BUILD_PACKAGE_INCLUDE="ca-certificates,openssl,console-setup-linux,console-setup,locales,tzdata"
+	REF_BUILD_PACKAGE_INCLUDE="${REF_BUILD_PACKAGE_INCLUDE:=$DEFAULT_BUILD_PACKAGE_INCLUDE}"
 
 
 	##
@@ -761,8 +761,8 @@ base_var_dump () {
 	util_debug_echo "REF_BUILD_PACKAGE_REPO_URL=${REF_BUILD_PACKAGE_REPO_URL}"
 	util_debug_echo
 
-	util_debug_echo "DEFAULT_BUILD_INCLUDE=${DEFAULT_BUILD_INCLUDE}"
-	util_debug_echo "REF_BUILD_INCLUDE=${REF_BUILD_INCLUDE}"
+	util_debug_echo "DEFAULT_BUILD_PACKAGE_INCLUDE=${DEFAULT_BUILD_PACKAGE_INCLUDE}"
+	util_debug_echo "REF_BUILD_PACKAGE_INCLUDE=${REF_BUILD_PACKAGE_INCLUDE}"
 	util_debug_echo
 
 

@@ -70,7 +70,7 @@ sys_distro_base_system_create () {
 	sudo debootstrap \
 		--arch=${REF_BUILD_ARCH} \
 		--variant=minbase \
-		--include=${REF_BUILD_INCLUDE} \
+		--include=${REF_BUILD_PACKAGE_INCLUDE} \
 		${REF_BUILD_SUITE} \
 		${REF_DISTRO_IMG_DIR_PATH} \
 		${REF_BUILD_PACKAGE_REPO_URL}
