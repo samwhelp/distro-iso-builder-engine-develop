@@ -140,6 +140,8 @@ mod_distro_build_finish () {
 
 mod_distro_base_system_create () {
 
+	mod_distro_unmount_for_chroot
+
 	sys_distro_base_system_create
 
 	return 0
