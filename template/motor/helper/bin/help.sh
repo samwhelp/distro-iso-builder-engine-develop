@@ -52,8 +52,14 @@ Example:
 	$ make build
 	$ make log-build
 
+	$ make just-base-system
+	$ make just-full-system
+
 	$ make distro-mount
 	$ make distro-unmount
+
+	$ make archive-system-to-squashfs
+	$ make archive-system-to-iso
 
 Debug:
 	$ export IS_DEBUG=true
