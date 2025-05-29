@@ -74,3 +74,33 @@ REF_BUILD_SUBJECT_TITLE="Ubuntu"
 ##
 
 REF_BUILD_ISO_VOLUME_ID="UBUNTU"
+
+
+
+
+##
+## ## REF_BUILD_LANG_PACK_CODE
+##
+##
+
+REF_BUILD_LANG_PACK_CODE="en"
+
+
+
+
+##
+## ## REF_BUILD_LANG_MODE
+##
+##
+
+REF_BUILD_LANG_MODE="en_US"
+
+
+
+
+##
+## ## REF_BUILD_LANG_MODE
+##
+##
+
+REF_BUILD_LANG="en_US.UTF-8"

@@ -246,6 +246,7 @@ mod_distro_iso_build () {
 	mod_distro_iso_create_manifest
 	mod_distro_iso_create_filesystem_size
 	mod_distro_iso_create_disk_info
+	mod_distro_iso_create_readme
 
 
 	##
@@ -452,6 +453,25 @@ mod_distro_iso_create_disk_info () {
 
 ##
 ### Tail: Master / Mod / Distro / Iso / Create / Disk Info
+################################################################################
+
+
+################################################################################
+### Head: Master / Mod / Distro / Iso / Create / Readme
+##
+
+mod_distro_iso_create_readme () {
+
+	local source_dir_path="${REF_DISTRO_IMG_DIR_PATH}"
+	local target_dir_path="${REF_DISTRO_ISO_DIR_PATH}"
+
+	sys_distro_iso_create_readme "${source_dir_path}" "${target_dir_path}"
+
+	return 0
+}
+
+##
+### Tail: Master / Mod / Distro / Iso / Create / Readme
 ################################################################################
 
 

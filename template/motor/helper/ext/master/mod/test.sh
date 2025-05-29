@@ -38,7 +38,9 @@ mod_test () {
 
 	#mod_test_distro_iso_create_filesystem_size
 
-	mod_test_distro_iso_create_disk_info
+	#mod_test_distro_iso_create_disk_info
+
+	mod_test_mod_distro_iso_create_readme
 
 	#mod_test_distro_iso_create_checksum
 
@@ -93,6 +95,12 @@ mod_test_distro_iso_create_filesystem_size () {
 mod_test_distro_iso_create_disk_info () {
 
 	mod_distro_iso_create_disk_info
+
+}
+
+mod_test_mod_distro_iso_create_readme () {
+
+	mod_distro_iso_create_readme
 
 }
 

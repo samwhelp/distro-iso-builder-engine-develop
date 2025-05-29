@@ -505,15 +505,58 @@ sys_distro_iso_create_disk_info () {
 	mkdir -p "${source_dir_path}"
 	mkdir -p "${target_dir_path}"
 
-	local now_str="$(date '+%Y%m%d')"
+	local date_str="$(date '+%Y-%m-%d')"
 
-	echo "${REF_BUILD_SUBJECT_TITLE} ${REF_BUILD_VERSION} ${REF_BUILD_SUITE} - Release ${REF_BUILD_ARCH} (${now_str})" | sudo tee "${target_dir_path}"/info 2>&1 >/dev/null
+	echo "${REF_BUILD_SUBJECT_TITLE} ${REF_BUILD_VERSION} ${REF_BUILD_SUITE} - Release ${REF_BUILD_ARCH} (${date_str})" | sudo tee "${target_dir_path}"/info 2>&1 >/dev/null
 
 	return 0
 }
 
 ##
 ### Tail: Master / Sys / Distro / Iso / Create / Disk Info
+################################################################################
+
+
+################################################################################
+### Head: Master / Sys / Distro / Iso / Create / Readme
+##
+
+sys_distro_iso_create_readme () {
+
+	local distro_img_dir_path="${1}"
+	local distro_iso_dir_path="${2}"
+
+	local source_dir_path="${distro_img_dir_path}"
+	local target_dir_path="${distro_iso_dir_path}"
+
+	mkdir -p "${source_dir_path}"
+	mkdir -p "${target_dir_path}"
+
+	local date_str="$(date '+%Y-%m-%d')"
+
+cat > "${target_dir_path}/README.md" << __EOF__
+
+# ${REF_BUILD_SUBJECT_TITLE}
+
+> This is a custom Ubuntu-based Linux distribution.
+
+
+## Build Info
+
+| Key           | Value                 |
+| ------------- | --------------------- |
+| Language      | ${REF_BUILD_LANG}           |
+| Version       | ${REF_BUILD_VERSION}                 |
+| Date          | ${date_str}            |
+
+__EOF__
+
+
+	return 0
+}
+
+##
+### Tail: Master / Sys / Distro / Iso / Create / Readme
 ################################################################################
 
 
