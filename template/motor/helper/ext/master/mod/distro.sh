@@ -249,6 +249,7 @@ mod_distro_iso_build () {
 	##
 
 	mod_distro_iso_create_manifest
+	mod_distro_iso_create_filesystem_size
 
 
 	##
