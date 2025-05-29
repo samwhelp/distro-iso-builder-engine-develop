@@ -488,3 +488,34 @@ sys_distro_iso_create_filesystem_size () {
 ##
 ### Tail: Master / Sys / Distro / Iso / Create / Filesystem Size
 ################################################################################
+
+
+################################################################################
+### Head: Master / Sys / Distro / Iso / Create / Checksum
+##
+
+sys_distro_iso_create_checksum_md5sum () {
+
+	local distro_img_dir_path="${1}"
+	local distro_iso_dir_path="${2}"
+
+	local source_dir_path="${distro_img_dir_path}"
+	local target_dir_path="${distro_iso_dir_path}"
+
+	mkdir -p "${source_dir_path}"
+	mkdir -p "${target_dir_path}"
+
+
+	cd "${target_dir_path}"
+
+	sudo /bin/bash -c "(find . -type f -print0 | xargs -0 md5sum | grep -v -e 'md5sum.txt' -e 'bios.img' -e 'efiboot.img' > md5sum.txt)"
+
+	cd "${OLDPWD}"
+
+
+	return 0
+}
+
+##
+### Tail: Master / Sys / Distro / Iso / Create / Checksum
+################################################################################

@@ -53,11 +53,6 @@ mod_distro_base_system_from_scratch () {
 
 
 
-
-
-
-
-
 	return 0
 }
 
@@ -272,6 +267,19 @@ mod_distro_iso_build () {
 	mod_distro_iso_create_boot_image_for_uefi
 
 
+
+
+
+
+
+
+	##
+	## ## checksum
+	##
+
+	mod_distro_iso_create_checksum
+
+
 	##
 	## ## archive iso files finally
 	##
@@ -424,4 +432,23 @@ mod_distro_iso_create_filesystem_size () {
 
 ##
 ### Tail: Master / Mod / Distro / Iso / Create / Filesystem Size
+################################################################################
+
+
+################################################################################
+### Head: Master / Mod / Distro / Iso / Create / Checksum
+##
+
+mod_distro_iso_create_checksum () {
+
+	local source_dir_path="${REF_DISTRO_IMG_DIR_PATH}"
+	local target_dir_path="${REF_DISTRO_ISO_DIR_PATH}"
+
+	sys_distro_iso_create_checksum_md5sum "${source_dir_path}" "${target_dir_path}"
+
+	return 0
+}
+
+##
+### Tail: Master / Mod / Distro / Iso / Create / Checksum
 ################################################################################
