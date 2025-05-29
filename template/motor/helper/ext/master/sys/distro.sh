@@ -455,7 +455,7 @@ sys_distro_iso_create_manifest () {
 	mkdir -p "${source_dir_path}"
 	mkdir -p "${target_dir_path}"
 
-	sudo chroot "${source_dir_path}" dpkg-query -W --showformat='${Package} ${Version}\n' | sudo tee "${target_dir_path}/filesystem.manifest" >/dev/null 2>&1
+	sudo chroot "${source_dir_path}" dpkg-query -W --showformat='${Package} ${Version}\n' | sudo tee "${target_dir_path}/filesystem.manifest" 2>&1 >/dev/null
 
 	return 0
 }
@@ -487,6 +487,33 @@ sys_distro_iso_create_filesystem_size () {
 
 ##
 ### Tail: Master / Sys / Distro / Iso / Create / Filesystem Size
+################################################################################
+
+
+################################################################################
+### Head: Master / Sys / Distro / Iso / Create / Disk Info
+##
+
+sys_distro_iso_create_disk_info () {
+
+	local distro_img_dir_path="${1}"
+	local distro_iso_dir_path="${2}"
+
+	local source_dir_path="${distro_img_dir_path}"
+	local target_dir_path="${distro_iso_dir_path}/.disk"
+
+	mkdir -p "${source_dir_path}"
+	mkdir -p "${target_dir_path}"
+
+	local now_str="$(date '+%Y%m%d')"
+
+	echo "${REF_BUILD_SUBJECT_TITLE} ${REF_BUILD_VERSION} ${REF_BUILD_SUITE} - Release ${REF_BUILD_ARCH} (${now_str})" | sudo tee "${target_dir_path}"/info 2>&1 >/dev/null
+
+	return 0
+}
+
+##
+### Tail: Master / Sys / Distro / Iso / Create / Disk Info
 ################################################################################
 
 

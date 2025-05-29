@@ -62,7 +62,7 @@ REF_BUILD_SUBJECT_NAME="ubuntu"
 ## > for info
 ##
 
-REF_BUILD_SUBJECT_NAME="Ubuntu"
+REF_BUILD_SUBJECT_TITLE="Ubuntu"
 
 
 

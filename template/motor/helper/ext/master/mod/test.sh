@@ -38,6 +38,8 @@ mod_test () {
 
 	#mod_test_distro_iso_create_filesystem_size
 
+	mod_test_distro_iso_create_disk_info
+
 	#mod_test_distro_iso_create_checksum
 
 }
@@ -75,6 +77,7 @@ mod_test_distro_iso_build () {
 
 
 
+
 mod_test_distro_iso_create_manifest () {
 
 	mod_distro_iso_create_manifest
@@ -84,6 +87,12 @@ mod_test_distro_iso_create_manifest () {
 mod_test_distro_iso_create_filesystem_size () {
 
 	mod_distro_iso_create_filesystem_size
+
+}
+
+mod_test_distro_iso_create_disk_info () {
+
+	mod_distro_iso_create_disk_info
 
 }
 
