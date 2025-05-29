@@ -78,7 +78,11 @@ sys_package_install_for_build_iso_raw () {
 ### Head: Master / Sys / Distro / Build Finish
 ##
 
+sys_distro_iso_move_to_dist_dir () {
 
+
+	return 0
+}
 
 ##
 ### Tail: Master / Sys / Distro / Build Finish

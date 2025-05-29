@@ -48,6 +48,8 @@ mod_test () {
 
 	#mod_test_distro_iso_create_checksum
 
+	#mod_distro_build_finish
+
 }
 
 mod_test_chroot_session () {

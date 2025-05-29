@@ -116,7 +116,7 @@ mod_distro_build_prepare () {
 
 mod_distro_build_finish () {
 
-
+	sys_distro_iso_move_to_dist_dir
 
 	return 0
 }
