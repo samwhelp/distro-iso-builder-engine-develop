@@ -93,7 +93,7 @@ sys_distro_file_clean () {
 
 	rm -rf "${REF_DISTRO_IMG_DIR_PATH}"
 	rm -rf "${REF_DISTRO_ISO_DIR_PATH}"
-	rm -rf "${REF_DISTRO_DIST_DIR_PATH}"
+	rm -rf "${REF_DISTRO_OUT_DIR_PATH}"
 
 	return 0
 }
@@ -111,7 +111,7 @@ sys_distro_dir_create () {
 
 	mkdir -p "${REF_DISTRO_IMG_DIR_PATH}"
 	mkdir -p "${REF_DISTRO_ISO_DIR_PATH}"
-	mkdir -p "${REF_DISTRO_DIST_DIR_PATH}"
+	mkdir -p "${REF_DISTRO_OUT_DIR_PATH}"
 
 	return 0
 }

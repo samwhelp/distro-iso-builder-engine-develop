@@ -212,7 +212,7 @@ mod_distro_iso_archive () {
 
 
 	local iso_dir_path="${REF_DISTRO_ISO_DIR_PATH}"
-	local iso_file_path="${REF_DISTRO_DIST_DIR_PATH}/${iso_file_name}"
+	local iso_file_path="${REF_DISTRO_OUT_DIR_PATH}/${iso_file_name}"
 	local iso_volume_id="${REF_BUILD_ISO_VOLUME_ID}"
 
 	rm -f "${iso_file_path}"
