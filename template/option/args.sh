@@ -28,6 +28,17 @@ REF_LIVE_PACKAGE_REPO_URL="http://archive.ubuntu.com/ubuntu/"
 
 
 
+
+
+##
+## ## REF_BUILD_VERSION
+##
+
+REF_BUILD_VERSION="0.0.1"
+
+
+
+
 ##
 ## ## REF_BUILD_SUBJECT_NAME
 ##
