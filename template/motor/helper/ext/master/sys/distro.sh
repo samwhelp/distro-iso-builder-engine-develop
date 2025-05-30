@@ -403,7 +403,7 @@ sys_distro_iso_create_grub_cfg () {
 
 
 
-cat > "${grub_cfg_file_path}" << __EOF__
+cat << __EOF__ > "${grub_cfg_file_path}"
 
 search --set=root --file /${iso_volume_id}
 
@@ -690,7 +690,7 @@ sys_distro_iso_create_disk_define () {
 	mkdir -p "${target_dir_path}"
 
 
-cat > "${target_dir_path}/README.diskdefines" << __EOF__
+cat << __EOF__ > "${target_dir_path}/README.diskdefines"
 #define DISKNAME  Try ${REF_BUILD_SUBJECT_TITLE}
 #define TYPE  binary
 #define TYPEbinary  1
@@ -728,7 +728,7 @@ sys_distro_iso_create_readme () {
 
 	local date_str="$(date '+%Y-%m-%d')"
 
-cat > "${target_dir_path}/README.md" << __EOF__
+cat << __EOF__ > "${target_dir_path}/README.md"
 
 # ${REF_BUILD_SUBJECT_TITLE}
 
