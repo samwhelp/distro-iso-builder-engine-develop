@@ -57,6 +57,15 @@ sys_distro_mount_for_chroot () {
 	## https://github.com/mvallim/live-custom-ubuntu-from-scratch/blob/master/scripts/build.sh#L46-L52
 	##
 
+	##
+	## mount --bind /dev "${chroot_dir_path}"/dev || true
+	## mount --bind /run "${chroot_dir_path}"/run || true
+	##
+	## chroot "${chroot_dir_path}" mount none -t proc /proc || true
+	## chroot "${chroot_dir_path}" mount none -t sysfs /sys || true
+	## chroot "${chroot_dir_path}" mount none -t devpts /dev/pts || true
+	##
+
 
 	util_error_echo
 	util_error_echo mount --bind /dev "${chroot_dir_path}"/dev
@@ -113,6 +122,15 @@ sys_distro_unmount_for_chroot () {
 
 	##
 	## https://github.com/mvallim/live-custom-ubuntu-from-scratch/blob/master/scripts/build.sh#L54-L60
+	##
+
+	##
+	## chroot "${chroot_dir_path}" umount /proc || true
+	## chroot "${chroot_dir_path}" umount /sys || true
+	## chroot "${chroot_dir_path}" umount /dev/pts || true
+	##
+	## umount "${chroot_dir_path}"/dev || true
+	## umount "${chroot_dir_path}"/run || true
 	##
 
 
