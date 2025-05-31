@@ -20,8 +20,8 @@ core-apt-init
 ## ## locale
 ##
 
-build-locale-package-install
 build-locale-config-install
+build-locale-package-install
 
 
 
