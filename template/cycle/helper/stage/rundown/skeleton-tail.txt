@@ -6,6 +6,27 @@
 
 
 
+##
+## ## initramfs
+##
+
+core-initramfs-update
+
+
+
+
+##
+## ## locale
+##
+
+build-locale-gen
+
+
+
+
+
+
+
 
 ##
 ## ## machine-id
@@ -21,15 +42,6 @@ base-machine-id-remove
 ##
 
 base-initctl-diversion-remove
-
-
-
-
-##
-## ## locale
-##
-
-build-locale-gen
 
 
 
