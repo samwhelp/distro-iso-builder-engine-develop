@@ -91,6 +91,44 @@ mod_chroot_session_process () {
 
 	sys_chroot_session_process
 
+
+}
+
+mod_step_renew_chroot_session_script () {
+
+
+	util_error_echo
+	util_error_echo "##"
+	util_error_echo "## ## mod_step_renew_chroot_session_script"
+	util_error_echo "##"
+	util_error_echo
+
+
+	mod_chroot_session_create
+
+
+	return 0
+}
+
+mod_step_chroot_session_process () {
+
+	util_error_echo
+	util_error_echo "##"
+	util_error_echo "## ## mod_step_chroot_session_process"
+	util_error_echo "##"
+	util_error_echo
+
+
+	mod_distro_mount_for_chroot
+
+	sys_chroot_session_process
+
+	sleep 1
+
+	mod_distro_unmount_for_chroot
+
+
+	return 0
 }
 
 ##

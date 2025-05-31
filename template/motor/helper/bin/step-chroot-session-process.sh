@@ -8,7 +8,7 @@
 ##
 ## ## Link
 ##
-## * https://github.com/samwhelp/skel-project-plan/blob/master/develop/sh/project-helper/basic/helper/bin/prepare.sh
+## * https://github.com/samwhelp/skel-project-plan/blob/master/develop/sh/project-helper/basic/helper/bin/chroot_session_process.sh
 ##
 
 ##
@@ -44,52 +44,53 @@ REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../ext"
 
 
 ################################################################################
-### Head: Portal / portal_help
+### Head: Main / Mod / Signal / Override
 ##
 
-portal_help () {
+mod_action_on_exit () {
 
-cat << __EOF__
+	sys_action_on_exit
 
-Usage:
+	mod_distro_unmount_for_chroot
 
-	$ make [action]
-
-Example:
-
-	$ make
-	$ make help
-
-	$ make prepare
-
-	$ make build
-	$ make log-build
-
-	$ make just-base-system
-	$ make just-full-system
-
-	$ make distro-mount
-	$ make distro-unmount
-
-	$ make chroot
-
-	$ make step-renew-chroot-session-script
-	$ make step-chroot-session-process
-
-	$ make archive-system-to-squashfs
-	$ make archive-system-to-iso
-
-	$ make clean
-
-Debug:
-	$ export IS_DEBUG=true
-
-__EOF__
-
+	exit 0
 }
 
 ##
-### Tail: Portal / portal_help
+### Tail: Main / Mod / Signal / Override
+################################################################################
+
+
+################################################################################
+### Head: Portal / portal_chroot_session_process
+##
+
+portal_chroot_session_process () {
+
+	util_error_echo
+	util_error_echo "##"
+	util_error_echo "## ## portal_chroot_session_process"
+	util_error_echo "##"
+	util_error_echo
+
+
+	mod_main_signal_bind
+
+	mod_limit_root_user_required
+
+
+
+
+	mod_step_chroot_session_process
+
+
+
+
+	return 0
+}
+
+##
+### Tail: Portal / portal_chroot_session_process
 ################################################################################
 
 
@@ -99,7 +100,7 @@ __EOF__
 
 __main__ () {
 
-	portal_help "${@}"
+	portal_chroot_session_process "${@}"
 
 }
 

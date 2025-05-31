@@ -8,7 +8,7 @@
 ##
 ## ## Link
 ##
-## * https://github.com/samwhelp/skel-project-plan/blob/master/develop/sh/project-helper/basic/helper/bin/prepare.sh
+## * https://github.com/samwhelp/skel-project-plan/blob/master/develop/sh/project-helper/basic/helper/bin/renew_chroot_session_script.sh
 ##
 
 ##
@@ -44,52 +44,35 @@ REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../ext"
 
 
 ################################################################################
-### Head: Portal / portal_help
+### Head: Portal / portal_renew_chroot_session_script
 ##
 
-portal_help () {
+portal_renew_chroot_session_script () {
 
-cat << __EOF__
+	util_error_echo
+	util_error_echo "##"
+	util_error_echo "## ## portal_renew_chroot_session_script"
+	util_error_echo "##"
+	util_error_echo
 
-Usage:
 
-	$ make [action]
+	mod_main_signal_bind
 
-Example:
+	mod_limit_root_user_required
 
-	$ make
-	$ make help
 
-	$ make prepare
 
-	$ make build
-	$ make log-build
 
-	$ make just-base-system
-	$ make just-full-system
+	mod_step_renew_chroot_session_script
 
-	$ make distro-mount
-	$ make distro-unmount
 
-	$ make chroot
 
-	$ make step-renew-chroot-session-script
-	$ make step-chroot-session-process
 
-	$ make archive-system-to-squashfs
-	$ make archive-system-to-iso
-
-	$ make clean
-
-Debug:
-	$ export IS_DEBUG=true
-
-__EOF__
-
+	return 0
 }
 
 ##
-### Tail: Portal / portal_help
+### Tail: Portal / portal_renew_chroot_session_script
 ################################################################################
 
 
@@ -99,7 +82,7 @@ __EOF__
 
 __main__ () {
 
-	portal_help "${@}"
+	portal_renew_chroot_session_script "${@}"
 
 }
 
