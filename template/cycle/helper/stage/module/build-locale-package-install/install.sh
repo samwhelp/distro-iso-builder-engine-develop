@@ -51,7 +51,7 @@ mod_module_locale_package_install () {
 
 
 local run_cmd=$(cat << __EOF__
-	sudo apt-get install -y --no-install-recommends
+	apt-get install -y --no-install-recommends
 		locales
 		tzdata
 __EOF__

@@ -51,7 +51,7 @@ mod_module_casper_package_install () {
 
 
 local run_cmd=$(cat << __EOF__
-	sudo apt-get install -y --no-install-recommends
+	apt-get install -y --no-install-recommends
 		casper
 		discover
 		laptop-detect

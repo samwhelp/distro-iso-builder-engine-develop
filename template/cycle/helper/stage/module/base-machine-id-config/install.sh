@@ -52,9 +52,9 @@ mod_module_machine_id_config () {
 	local host_name="${REF_BUILD_SUBJECT_NAME}"
 
 	util_error_echo
-	util_error_echo dbus-uuidgen '|' sudo tee /etc/machine_id
+	util_error_echo dbus-uuidgen '|' tee /etc/machine_id
 	util_error_echo
-	dbus-uuidgen | sudo tee /etc/machine_id 2>&1 >/dev/null
+	dbus-uuidgen | tee /etc/machine_id 2>&1 >/dev/null
 
 
 	util_error_echo

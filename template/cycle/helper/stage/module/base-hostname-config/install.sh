@@ -52,9 +52,9 @@ mod_module_hostname_config () {
 	local host_name="${REF_BUILD_SUBJECT_NAME}"
 
 	util_error_echo
-	util_error_echo echo "${host_name}" '|' sudo tee /etc/hostname
+	util_error_echo echo "${host_name}" '|' tee /etc/hostname
 	util_error_echo
-	echo "${host_name}" | sudo tee /etc/hostname 2>&1 >/dev/null
+	echo "${host_name}" | tee /etc/hostname 2>&1 >/dev/null
 
 
 	return 0
