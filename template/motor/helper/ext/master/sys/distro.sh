@@ -236,6 +236,7 @@ local run_cmd=$(cat << __EOF__
 		--include=${REF_BUILD_PACKAGE_INCLUDE}
 		${REF_BUILD_SUITE}
 		${REF_DISTRO_IMG_DIR_PATH}
+		${REF_BUILD_PACKAGE_REPO_URL}
 __EOF__
 )
 
