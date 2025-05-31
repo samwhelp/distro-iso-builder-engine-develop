@@ -40,11 +40,14 @@ local run_cmd=$(cat << __EOF__
 __EOF__
 )
 
+
 	util_error_echo
 	util_error_echo $run_cmd
 	util_error_echo
-
 	$run_cmd
+
+
+
 
 	return 0
 }
@@ -220,6 +223,35 @@ sys_distro_dir_create () {
 ##
 
 sys_distro_base_system_create () {
+
+	sys_distro_dir_create
+
+
+
+
+local run_cmd=$(cat << __EOF__
+	debootstrap
+		--arch=${REF_BUILD_ARCH}
+		--variant=minbase
+		--include=${REF_BUILD_PACKAGE_INCLUDE}
+		${REF_BUILD_SUITE}
+		${REF_DISTRO_IMG_DIR_PATH}
+__EOF__
+)
+
+
+	util_error_echo
+	util_error_echo $run_cmd
+	util_error_echo
+	$run_cmd
+
+
+
+
+	return 0
+}
+
+sys_distro_base_system_create_raw () {
 
 	sys_distro_dir_create
 
