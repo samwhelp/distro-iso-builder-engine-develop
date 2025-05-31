@@ -77,15 +77,19 @@ mod_module_machine_id_config () {
 	util_error_echo
 	util_error_echo cat /etc/machine-id
 	util_error_echo
-	cat /etc/machine-id
+	cat /etc/machine-id || true
+
+
+	#util_error_echo
+	#util_error_echo file /var/lib/dbus/machine-id
+	#util_error_echo
+	#file /var/lib/dbus/machine-id
 
 
 	util_error_echo
-	util_error_echo file /var/lib/dbus/machine-id
+	util_error_echo ls -al /var/lib/dbus/machine-id
 	util_error_echo
-	file /var/lib/dbus/machine-id
-
-
+	ls -al /var/lib/dbus/machine-id || true
 
 
 	return 0

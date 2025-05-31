@@ -104,10 +104,16 @@ mod_module_initctl_diversion_config_install () {
 
 
 
+	#util_error_echo
+	#util_error_echo file /sbin/initctl
+	#util_error_echo
+	#file /sbin/initctl
+
+
 	util_error_echo
-	util_error_echo file /sbin/initctl
+	util_error_echo ls -al /sbin/initctl
 	util_error_echo
-	file /sbin/initctl
+	ls -al /sbin/initctl || true
 
 
 
