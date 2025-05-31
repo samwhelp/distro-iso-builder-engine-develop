@@ -8,7 +8,23 @@ sys_chroot_run () {
 
 	local img_dir_path="${REF_DISTRO_IMG_DIR_PATH}"
 
-	sudo env DEBIAN_FRONTEND=noninteractive chroot "${img_dir_path}" ${@}
+	util_error_echo
+	util_error_echo env DEBIAN_FRONTEND=noninteractive chroot "${img_dir_path}" ${@}
+	util_error_echo
+
+	env DEBIAN_FRONTEND=noninteractive chroot "${img_dir_path}" ${@}
+
+}
+
+sys_chroot () {
+
+	local img_dir_path="${REF_DISTRO_IMG_DIR_PATH}"
+
+	util_error_echo
+	util_error_echo env DEBIAN_FRONTEND=noninteractive chroot "${img_dir_path}"
+	util_error_echo
+
+	env DEBIAN_FRONTEND=noninteractive chroot "${img_dir_path}"
 
 }
 

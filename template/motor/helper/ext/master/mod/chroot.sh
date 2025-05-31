@@ -4,6 +4,32 @@
 ### Head: Master / Mod / Chroot
 ##
 
+mod_chroot_run () {
+
+	mod_distro_mount_for_chroot
+
+	sys_chroot_run ${@}
+
+	sleep 1
+
+	mod_distro_unmount_for_chroot
+
+	return 0
+}
+
+mod_chroot () {
+
+	mod_distro_mount_for_chroot
+
+	sys_chroot
+
+	sleep 1
+
+	mod_distro_unmount_for_chroot
+
+	return 0
+
+}
 
 
 
