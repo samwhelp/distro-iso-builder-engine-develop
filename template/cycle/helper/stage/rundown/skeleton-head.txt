@@ -80,8 +80,7 @@ base-network-config-install
 ## ## kernel
 ##
 
-base-kernel-package-install
-base-kernel-config-install
+core-kernel-package-install
 
 
 
