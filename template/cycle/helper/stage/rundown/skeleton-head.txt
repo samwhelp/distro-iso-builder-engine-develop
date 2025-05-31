@@ -8,10 +8,10 @@
 
 
 ##
-## ## hostname
+## ## apt
 ##
 
-base-hostname-config
+core-apt-init
 
 
 
@@ -26,11 +26,24 @@ build-locale-config-install
 
 
 
+
+
+
+
 ##
-## ## apt
+## ## hostname
 ##
 
-core-apt-init
+base-hostname-config
+
+
+
+
+##
+## ## hostname
+##
+
+base-hostname-config
 
 
 
@@ -39,7 +52,8 @@ core-apt-init
 ## ## kernel
 ##
 
-core-kernel-package-install
+base-network-package-install
+base-network-config-install
 
 
 
