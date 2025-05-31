@@ -11,7 +11,7 @@
 ## ## Package / dconf-cli
 ##
 
-## for `sudo dconf update` [See: 60-dconf-system-db-init-mod]
+## for `sudo dconf update` [See: base-dconf-system-db-init]
 dconf-cli
 
 
@@ -21,6 +21,5 @@ dconf-cli
 ## ## Package / sassc
 ##
 
-## for install fluent-gtk-theme [See: 25-fluent-gtk-theme]
+## for install extra-gtk-theme
 sassc
-
