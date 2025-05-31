@@ -57,8 +57,15 @@ mod_module_network_package_install () {
 ##
 
 
+##
+## apt-get install -y --install-suggests
+## apt-get install -y --no-install-recommends
+## apt-get install -y
+##
+
+
 local run_cmd=$(cat << __EOF__
-	apt-get install -y --no-install-recommends
+	apt-get install -y --install-suggests
 		network-manager
 		net-tools
 		resolvconf

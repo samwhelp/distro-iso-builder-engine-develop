@@ -58,13 +58,14 @@ mod_module_systemd_package_install () {
 
 
 ##
+## apt-get install -y --install-suggests
 ## apt-get install -y --no-install-recommends
 ## apt-get install -y
 ##
 
 
 local run_cmd=$(cat << __EOF__
-	apt-get install -y
+	apt-get install -y --install-suggests
 		systemd-sysv
 		libterm-readline-gnu-perl
 __EOF__
