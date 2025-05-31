@@ -29,24 +29,6 @@ build-locale-gen
 
 
 ##
-## ## machine-id
-##
-
-base-machine-id-remove
-
-
-
-
-##
-## ## initctl-diversion
-##
-
-base-initctl-diversion-remove
-
-
-
-
-##
 ## ## final package remove
 ##
 
@@ -62,3 +44,21 @@ factory-package-remove
 clean-apt-cache-file
 clean-root-dir-file
 clean-system-tmp-file
+
+
+
+
+##
+## ## machine-id
+##
+
+base-machine-id-remove
+
+
+
+
+##
+## ## initctl-diversion
+##
+
+base-initctl-diversion-remove
