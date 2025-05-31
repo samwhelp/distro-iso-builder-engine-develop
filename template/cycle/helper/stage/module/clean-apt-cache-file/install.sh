@@ -44,55 +44,41 @@ REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../../../ext"
 
 
 ################################################################################
-### Head: Model / mod_module_machine_id_config
+### Head: Model / mod_module_clean_apt_cache_file
 ##
 
-mod_module_machine_id_config () {
+mod_module_clean_apt_cache_file () {
 
 
 	util_error_echo
-	util_error_echo dbus-uuidgen '|' tee /etc/machine-id
+	util_error_echo apt-get autoremove
 	util_error_echo
-	dbus-uuidgen | tee /etc/machine-id 2>&1 >/dev/null
-
-
-
-
-	if [ -a "/var/lib/dbus/machine-id" ]; then
-		util_error_echo
-		util_error_echo rm -f "/var/lib/dbus/machine-id"
-		util_error_echo
-		rm -f "/var/lib/dbus/machine-id"
-	fi
+	apt-get autoremove
 
 
 	util_error_echo
-	util_error_echo ln -sf /etc/machine-id /var/lib/dbus/machine-id
+	util_error_echo apt-get autoclean
 	util_error_echo
-	ln -sf /etc/machine-id /var/lib/dbus/machine-id
-
-
+	apt-get autoclean
 
 
 	util_error_echo
-	util_error_echo cat /etc/machine-id
+	util_error_echo apt-get clean
 	util_error_echo
-	cat /etc/machine-id
+	apt-get clean
 
 
 	util_error_echo
-	util_error_echo file /var/lib/dbus/machine-id
+	util_error_echo rm -rf '/var/cache/apt/archives/*'
 	util_error_echo
-	file /var/lib/dbus/machine-id
-
-
+	rm -rf /var/cache/apt/archives/*
 
 
 	return 0
 }
 
 ##
-### Tail: Model / mod_module_machine_id_config
+### Tail: Model / mod_module_clean_apt_cache_file
 ################################################################################
 
 
@@ -113,7 +99,7 @@ portal_install () {
 	util_error_echo "[Run Module]: ${script_file_path}"
 
 
-	mod_module_machine_id_config
+	mod_module_clean_apt_cache_file
 
 
 }

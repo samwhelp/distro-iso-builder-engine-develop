@@ -44,46 +44,22 @@ REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../../../ext"
 
 
 ################################################################################
-### Head: Model / mod_module_machine_id_config
+### Head: Model / mod_module_initctl_diversion_remove
 ##
 
-mod_module_machine_id_config () {
+mod_module_initctl_diversion_remove () {
 
 
 	util_error_echo
-	util_error_echo dbus-uuidgen '|' tee /etc/machine-id
+	util_error_echo rm -f /sbin/initctl
 	util_error_echo
-	dbus-uuidgen | tee /etc/machine-id 2>&1 >/dev/null
-
-
-
-
-	if [ -a "/var/lib/dbus/machine-id" ]; then
-		util_error_echo
-		util_error_echo rm -f "/var/lib/dbus/machine-id"
-		util_error_echo
-		rm -f "/var/lib/dbus/machine-id"
-	fi
+	rm -f /sbin/initctl || true
 
 
 	util_error_echo
-	util_error_echo ln -sf /etc/machine-id /var/lib/dbus/machine-id
+	util_error_echo dpkg-divert --rename --remove /sbin/initctl
 	util_error_echo
-	ln -sf /etc/machine-id /var/lib/dbus/machine-id
-
-
-
-
-	util_error_echo
-	util_error_echo cat /etc/machine-id
-	util_error_echo
-	cat /etc/machine-id
-
-
-	util_error_echo
-	util_error_echo file /var/lib/dbus/machine-id
-	util_error_echo
-	file /var/lib/dbus/machine-id
+	dpkg-divert --rename --remove /sbin/initctl || true
 
 
 
@@ -92,7 +68,7 @@ mod_module_machine_id_config () {
 }
 
 ##
-### Tail: Model / mod_module_machine_id_config
+### Tail: Model / mod_module_initctl_diversion_remove
 ################################################################################
 
 
@@ -113,7 +89,7 @@ portal_install () {
 	util_error_echo "[Run Module]: ${script_file_path}"
 
 
-	mod_module_machine_id_config
+	mod_module_initctl_diversion_remove
 
 
 }

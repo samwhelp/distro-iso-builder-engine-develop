@@ -44,55 +44,36 @@ REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../../../ext"
 
 
 ################################################################################
-### Head: Model / mod_module_machine_id_config
+### Head: Model / mod_module_machine_id_remove
 ##
 
-mod_module_machine_id_config () {
+mod_module_machine_id_remove () {
 
 
-	util_error_echo
-	util_error_echo dbus-uuidgen '|' tee /etc/machine-id
-	util_error_echo
-	dbus-uuidgen | tee /etc/machine-id 2>&1 >/dev/null
+	local machine_id_file_path="/etc/machine-id"
 
 
+	if ! [ -a "${machine_id_file_path}" ]; then
 
-
-	if [ -a "/var/lib/dbus/machine-id" ]; then
 		util_error_echo
-		util_error_echo rm -f "/var/lib/dbus/machine-id"
+		util_error_echo "[File Not Exist]: ${machine_id_file_path}"
 		util_error_echo
-		rm -f "/var/lib/dbus/machine-id"
+
+		return 0
 	fi
 
 
 	util_error_echo
-	util_error_echo ln -sf /etc/machine-id /var/lib/dbus/machine-id
+	util_error_echo truncate -s 0 "${machine_id_file_path}"
 	util_error_echo
-	ln -sf /etc/machine-id /var/lib/dbus/machine-id
-
-
-
-
-	util_error_echo
-	util_error_echo cat /etc/machine-id
-	util_error_echo
-	cat /etc/machine-id
-
-
-	util_error_echo
-	util_error_echo file /var/lib/dbus/machine-id
-	util_error_echo
-	file /var/lib/dbus/machine-id
-
-
+	truncate -s 0 "${machine_id_file_path}"
 
 
 	return 0
 }
 
 ##
-### Tail: Model / mod_module_machine_id_config
+### Tail: Model / mod_module_machine_id_remove
 ################################################################################
 
 
@@ -113,7 +94,7 @@ portal_install () {
 	util_error_echo "[Run Module]: ${script_file_path}"
 
 
-	mod_module_machine_id_config
+	mod_module_machine_id_remove
 
 
 }

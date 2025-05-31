@@ -44,46 +44,28 @@ REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../../../ext"
 
 
 ################################################################################
-### Head: Model / mod_module_machine_id_config
+### Head: Model / mod_module_initctl_diversion_install
 ##
 
-mod_module_machine_id_config () {
-
-
-	util_error_echo
-	util_error_echo dbus-uuidgen '|' tee /etc/machine-id
-	util_error_echo
-	dbus-uuidgen | tee /etc/machine-id 2>&1 >/dev/null
+mod_module_initctl_diversion_package_install () {
 
 
 
 
-	if [ -a "/var/lib/dbus/machine-id" ]; then
-		util_error_echo
-		util_error_echo rm -f "/var/lib/dbus/machine-id"
-		util_error_echo
-		rm -f "/var/lib/dbus/machine-id"
-	fi
-
-
-	util_error_echo
-	util_error_echo ln -sf /etc/machine-id /var/lib/dbus/machine-id
-	util_error_echo
-	ln -sf /etc/machine-id /var/lib/dbus/machine-id
+local run_cmd=$(cat << __EOF__
+	apt-get install -y --no-install-recommends
+		dpkg
+__EOF__
+)
 
 
 
 
 	util_error_echo
-	util_error_echo cat /etc/machine-id
+	util_error_echo $run_cmd
 	util_error_echo
-	cat /etc/machine-id
 
-
-	util_error_echo
-	util_error_echo file /var/lib/dbus/machine-id
-	util_error_echo
-	file /var/lib/dbus/machine-id
+	$run_cmd
 
 
 
@@ -91,8 +73,59 @@ mod_module_machine_id_config () {
 	return 0
 }
 
+mod_module_initctl_diversion_config_install () {
+
+
+	util_error_echo
+	util_error_echo dpkg-divert --local --rename --add /sbin/initctl
+	util_error_echo
+	dpkg-divert --local --rename --add /sbin/initctl
+
+
+
+
+	if [ -a "/sbin/initctl" ]; then
+		util_error_echo
+		util_error_echo rm -f "/sbin/initctl"
+		util_error_echo
+		rm -f "/sbin/initctl"
+	fi
+
+
+	util_error_echo
+	util_error_echo ln -sf /bin/true /sbin/initctl
+	util_error_echo
+	ln -sf /bin/true /sbin/initctl
+
+
+
+
+
+
+
+
+	util_error_echo
+	util_error_echo file /sbin/initctl
+	util_error_echo
+	file /sbin/initctl
+
+
+
+
+	return 0
+}
+
+mod_module_initctl_diversion_install () {
+
+	#mod_module_initctl_diversion_package_install
+
+	mod_module_initctl_diversion_config_install
+
+	return 0
+}
+
 ##
-### Tail: Model / mod_module_machine_id_config
+### Tail: Model / mod_module_initctl_diversion_install
 ################################################################################
 
 
@@ -113,7 +146,7 @@ portal_install () {
 	util_error_echo "[Run Module]: ${script_file_path}"
 
 
-	mod_module_machine_id_config
+	mod_module_initctl_diversion_install
 
 
 }

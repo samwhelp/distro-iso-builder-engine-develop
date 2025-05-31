@@ -12,6 +12,7 @@
 ##
 
 apt-file
+apt-utils
 
 #gdebi
 

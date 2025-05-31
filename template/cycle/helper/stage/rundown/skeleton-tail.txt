@@ -8,6 +8,24 @@
 
 
 ##
+## ## machine-id
+##
+
+base-machine-id-remove
+
+
+
+
+##
+## ## initctl-diversion
+##
+
+base-initctl-diversion-remove
+
+
+
+
+##
 ## ## locale
 ##
 
@@ -21,3 +39,14 @@ build-locale-gen
 ##
 
 factory-package-remove
+
+
+
+
+##
+## ## final clean
+##
+
+clean-apt-cache-file
+clean-root-dir-file
+clean-system-tmp-file

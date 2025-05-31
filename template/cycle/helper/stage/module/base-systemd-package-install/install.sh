@@ -44,55 +44,45 @@ REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../../../ext"
 
 
 ################################################################################
-### Head: Model / mod_module_machine_id_config
+### Head: Model / mod_module_systemd_package_install
 ##
 
-mod_module_machine_id_config () {
+mod_module_systemd_package_install () {
+
+
+##
+## ## Link
+##
+## * https://github.com/mvallim/live-custom-ubuntu-from-scratch/blob/master/scripts/chroot_build.sh#L101
+##
+
+
+##
+## apt-get install -y --no-install-recommends
+## apt-get install -y
+##
+
+
+local run_cmd=$(cat << __EOF__
+	apt-get install -y
+		systemd-sysv
+		libterm-readline-gnu-perl
+__EOF__
+)
 
 
 	util_error_echo
-	util_error_echo dbus-uuidgen '|' tee /etc/machine-id
+	util_error_echo $run_cmd
 	util_error_echo
-	dbus-uuidgen | tee /etc/machine-id 2>&1 >/dev/null
 
-
-
-
-	if [ -a "/var/lib/dbus/machine-id" ]; then
-		util_error_echo
-		util_error_echo rm -f "/var/lib/dbus/machine-id"
-		util_error_echo
-		rm -f "/var/lib/dbus/machine-id"
-	fi
-
-
-	util_error_echo
-	util_error_echo ln -sf /etc/machine-id /var/lib/dbus/machine-id
-	util_error_echo
-	ln -sf /etc/machine-id /var/lib/dbus/machine-id
-
-
-
-
-	util_error_echo
-	util_error_echo cat /etc/machine-id
-	util_error_echo
-	cat /etc/machine-id
-
-
-	util_error_echo
-	util_error_echo file /var/lib/dbus/machine-id
-	util_error_echo
-	file /var/lib/dbus/machine-id
-
-
+	$run_cmd
 
 
 	return 0
 }
 
 ##
-### Tail: Model / mod_module_machine_id_config
+### Tail: Model / mod_module_systemd_package_install
 ################################################################################
 
 
@@ -113,7 +103,7 @@ portal_install () {
 	util_error_echo "[Run Module]: ${script_file_path}"
 
 
-	mod_module_machine_id_config
+	mod_module_systemd_package_install
 
 
 }

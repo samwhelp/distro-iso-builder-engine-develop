@@ -44,55 +44,35 @@ REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../../../ext"
 
 
 ################################################################################
-### Head: Model / mod_module_machine_id_config
+### Head: Model / mod_module_clean_root_dir_file
 ##
 
-mod_module_machine_id_config () {
+mod_module_clean_root_dir_file () {
 
 
 	util_error_echo
-	util_error_echo dbus-uuidgen '|' tee /etc/machine-id
+	util_error_echo rm -f "/root/.bash_history"
 	util_error_echo
-	dbus-uuidgen | tee /etc/machine-id 2>&1 >/dev/null
-
-
-
-
-	if [ -a "/var/lib/dbus/machine-id" ]; then
-		util_error_echo
-		util_error_echo rm -f "/var/lib/dbus/machine-id"
-		util_error_echo
-		rm -f "/var/lib/dbus/machine-id"
-	fi
+	rm -f "/root/.bash_history"
 
 
 	util_error_echo
-	util_error_echo ln -sf /etc/machine-id /var/lib/dbus/machine-id
+	util_error_echo rm -rf "/root/.viminfo"
 	util_error_echo
-	ln -sf /etc/machine-id /var/lib/dbus/machine-id
-
-
+	rm -rf "/root/.viminfo"
 
 
 	util_error_echo
-	util_error_echo cat /etc/machine-id
+	util_error_echo rm -f "/root/.bash_history"
 	util_error_echo
-	cat /etc/machine-id
-
-
-	util_error_echo
-	util_error_echo file /var/lib/dbus/machine-id
-	util_error_echo
-	file /var/lib/dbus/machine-id
-
-
+	rm -f "/root/.bash_history"
 
 
 	return 0
 }
 
 ##
-### Tail: Model / mod_module_machine_id_config
+### Tail: Model / mod_module_clean_root_dir_file
 ################################################################################
 
 
@@ -113,7 +93,7 @@ portal_install () {
 	util_error_echo "[Run Module]: ${script_file_path}"
 
 
-	mod_module_machine_id_config
+	mod_module_clean_root_dir_file
 
 
 }
