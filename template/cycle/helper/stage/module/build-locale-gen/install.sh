@@ -35,7 +35,7 @@ set -u						## treat unset variable as error
 
 REF_CMD_FILE_NAME="$(basename "${0}")"
 REF_BASE_DIR_PATH="$(cd -- "$(dirname -- "${0}")" ; pwd)"
-REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../ext"
+REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../../../ext"
 . "${REF_INIT_DIR_PATH}/init.sh"
 
 ##
@@ -44,35 +44,59 @@ REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../ext"
 
 
 ################################################################################
-### Head: Portal / portal_help
+### Head: Model / mod_module_locale_config
 ##
 
-portal_help () {
+sys_locale_gen () {
 
-cat << __EOF__
 
-Usage:
+	util_error_echo
+	util_error_echo locale-gen
+	util_error_echo
+	locale-gen
 
-	$ make [action]
 
-Example:
+	return 0
+}
 
-	$ make
-	$ make help
+mod_module_locale_config () {
 
-	$ make prepare
 
-	$ make install
+	sys_locale_gen
 
-Debug:
-	$ export IS_DEBUG=true
 
-__EOF__
+	return 0
+}
+
+##
+### Tail: Model / mod_module_locale_config
+################################################################################
+
+
+################################################################################
+### Head: Portal / portal_install
+##
+
+portal_install () {
+
+	util_error_echo
+	util_error_echo "##"
+	util_error_echo "## ## Run Module"
+	util_error_echo "##"
+	util_error_echo
+
+	local script_file_path="${REF_BASE_DIR_PATH}/${REF_CMD_FILE_NAME}"
+
+	util_error_echo "[Run Module]: ${script_file_path}"
+
+
+	mod_module_locale_config
+
 
 }
 
 ##
-### Tail: Portal / portal_help
+### Tail: Portal / portal_install
 ################################################################################
 
 
@@ -82,7 +106,7 @@ __EOF__
 
 __main__ () {
 
-	portal_help "${@}"
+	portal_install "${@}"
 
 }
 

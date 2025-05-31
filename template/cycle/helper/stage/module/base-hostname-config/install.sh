@@ -35,7 +35,7 @@ set -u						## treat unset variable as error
 
 REF_CMD_FILE_NAME="$(basename "${0}")"
 REF_BASE_DIR_PATH="$(cd -- "$(dirname -- "${0}")" ; pwd)"
-REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../ext"
+REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../../../ext"
 . "${REF_INIT_DIR_PATH}/init.sh"
 
 ##
@@ -44,35 +44,51 @@ REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../ext"
 
 
 ################################################################################
-### Head: Portal / portal_help
+### Head: Model / mod_module_hostname_config
 ##
 
-portal_help () {
+mod_module_hostname_config () {
 
-cat << __EOF__
+	local host_name="${REF_BUILD_SUBJECT_NAME}"
 
-Usage:
+	util_error_echo
+	util_error_echo echo "${host_name}" '|' sudo tee /etc/hostname
+	util_error_echo
+	echo "${host_name}" | sudo tee /etc/hostname 2>&1 >/dev/null
 
-	$ make [action]
 
-Example:
+	return 0
+}
 
-	$ make
-	$ make help
+##
+### Tail: Model / mod_module_hostname_config
+################################################################################
 
-	$ make prepare
 
-	$ make install
+################################################################################
+### Head: Portal / portal_install
+##
 
-Debug:
-	$ export IS_DEBUG=true
+portal_install () {
 
-__EOF__
+	util_error_echo
+	util_error_echo "##"
+	util_error_echo "## ## Run Module"
+	util_error_echo "##"
+	util_error_echo
+
+	local script_file_path="${REF_BASE_DIR_PATH}/${REF_CMD_FILE_NAME}"
+
+	util_error_echo "[Run Module]: ${script_file_path}"
+
+
+	mod_module_hostname_config
+
 
 }
 
 ##
-### Tail: Portal / portal_help
+### Tail: Portal / portal_install
 ################################################################################
 
 
@@ -82,7 +98,7 @@ __EOF__
 
 __main__ () {
 
-	portal_help "${@}"
+	portal_install "${@}"
 
 }
 

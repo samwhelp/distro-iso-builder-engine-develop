@@ -35,7 +35,7 @@ set -u						## treat unset variable as error
 
 REF_CMD_FILE_NAME="$(basename "${0}")"
 REF_BASE_DIR_PATH="$(cd -- "$(dirname -- "${0}")" ; pwd)"
-REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../ext"
+REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../../../ext"
 . "${REF_INIT_DIR_PATH}/init.sh"
 
 ##
@@ -44,35 +44,57 @@ REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../ext"
 
 
 ################################################################################
-### Head: Portal / portal_help
+### Head: Model / mod_module_machine_id_config
 ##
 
-portal_help () {
+mod_module_machine_id_config () {
 
-cat << __EOF__
+	local host_name="${REF_BUILD_SUBJECT_NAME}"
 
-Usage:
+	util_error_echo
+	util_error_echo dbus-uuidgen '|' sudo tee /etc/machine_id
+	util_error_echo
+	dbus-uuidgen | sudo tee /etc/machine_id 2>&1 >/dev/null
 
-	$ make [action]
 
-Example:
+	util_error_echo
+	util_error_echo ln -fs /etc/machine-id /var/lib/dbus/machine-id
+	util_error_echo
+	ln -fs /etc/machine-id /var/lib/dbus/machine-id
 
-	$ make
-	$ make help
 
-	$ make prepare
+	return 0
+}
 
-	$ make install
+##
+### Tail: Model / mod_module_machine_id_config
+################################################################################
 
-Debug:
-	$ export IS_DEBUG=true
 
-__EOF__
+################################################################################
+### Head: Portal / portal_install
+##
+
+portal_install () {
+
+	util_error_echo
+	util_error_echo "##"
+	util_error_echo "## ## Run Module"
+	util_error_echo "##"
+	util_error_echo
+
+	local script_file_path="${REF_BASE_DIR_PATH}/${REF_CMD_FILE_NAME}"
+
+	util_error_echo "[Run Module]: ${script_file_path}"
+
+
+	mod_module_machine_id_config
+
 
 }
 
 ##
-### Tail: Portal / portal_help
+### Tail: Portal / portal_install
 ################################################################################
 
 
@@ -82,7 +104,7 @@ __EOF__
 
 __main__ () {
 
-	portal_help "${@}"
+	portal_install "${@}"
 
 }
 

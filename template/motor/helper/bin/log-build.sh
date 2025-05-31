@@ -30,10 +30,23 @@
 
 
 ################################################################################
+### Head: Bash
+##
+
+set -e						## exit on error
+set -o pipefail				## exit on pipeline error
+set -u						## treat unset variable as error
+
+##
+### Tail: Bash
+################################################################################
+
+
+################################################################################
 ### Head: Init
 ##
 
-#REF_CMD_FILE_NAME="$(basename "${0}")"
+REF_CMD_FILE_NAME="$(basename "${0}")"
 REF_BASE_DIR_PATH="$(cd -- "$(dirname -- "${0}")" ; pwd)"
 REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../ext"
 . "${REF_INIT_DIR_PATH}/init.sh"
@@ -55,8 +68,22 @@ portal_log_build () {
 	util_error_echo "##"
 	util_error_echo
 
-	local script_file_path="${REF_MAIN_BIN_DIR_PATH}/build.sh"
+
+
+
+	local log_dir_path="${REF_MASTER_TMP_DIR_PATH}"
 	local log_file_path="${REF_MASTER_LOG_FILE_PATH}"
+
+
+	util_error_echo
+	util_error_echo mkdir -p "${log_dir_path}"
+	util_error_echo
+	mkdir -p "${log_dir_path}"
+
+
+
+
+	local script_file_path="${REF_MAIN_BIN_DIR_PATH}/build.sh"
 
 	util_error_echo
 	util_error_echo "${script_file_path}" '2>&1' '|' tee "${log_file_path}"
@@ -64,6 +91,9 @@ portal_log_build () {
 
 	## ./build.sh" 2>&1 | tee log.txt
 	"${script_file_path}" 2>&1 | tee "${log_file_path}"
+
+
+
 
 	return 0
 

@@ -8,6 +8,25 @@
 
 
 ##
+## ## hostname
+##
+
+base-hostname-config
+
+
+
+
+##
+## ## locale
+##
+
+build-locale-package-install
+build-locale-config-install
+
+
+
+
+##
 ## ## apt
 ##
 

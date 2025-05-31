@@ -7,6 +7,14 @@
 
 
 
+##
+## ## locale
+##
+
+build-locale-gen
+
+
+
 
 ##
 ## ## final package remove
