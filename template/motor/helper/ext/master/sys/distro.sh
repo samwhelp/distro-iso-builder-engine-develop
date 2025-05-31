@@ -292,6 +292,28 @@ sys_distro_img_archive () {
 		-comp zstd \
 		-Xcompression-level 19 \
 		-e "var/cache/apt/archives/*" \
+		-e "tmp/*" \
+		-e "tmp/.*" \
+		-e "swapfile"
+
+
+	return 0
+}
+
+sys_distro_img_archive_v1 () {
+
+	local squashfs_dir_path="${1}"
+	local squashfs_file_path="${2}"
+
+	sudo mksquashfs "${squashfs_dir_path}" "${squashfs_file_path}" \
+		-noappend \
+		-no-duplicates \
+		-no-recovery \
+		-wildcards \
+		-b 1M \
+		-comp zstd \
+		-Xcompression-level 19 \
+		-e "var/cache/apt/archives/*" \
 		-e "root/*" \
 		-e "root/.*" \
 		-e "tmp/*" \
