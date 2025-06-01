@@ -24,6 +24,24 @@ build-locale-gen
 
 
 
+##
+## ## dconf
+##
+
+base-dconf-system-db-init
+
+
+
+
+##
+## ## gsettings
+##
+
+base-gsettings-schema-compile
+
+
+
+
 
 
 
