@@ -18,6 +18,16 @@ dconf-cli
 
 
 ##
+## ## Package / gsettings
+##
+
+## for `sudo glib-compile-schemas /usr/share/glib-2.0/schemas` [See: base-gsettings-schema-compile]
+libglib2.0-bin
+
+
+
+
+##
 ## ## Package / sassc
 ##
 

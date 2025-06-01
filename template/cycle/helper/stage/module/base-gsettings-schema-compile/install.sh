@@ -44,10 +44,22 @@ REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../../../ext"
 
 
 ################################################################################
-### Head: Model / mod_module_settings_schema_compile
+### Head: Model / mod_module_gsettings_schema_compile
 ##
 
-sys_settings_schema_compile () {
+sys_gsettings_package_install () {
+
+
+	util_error_echo
+	util_error_echo apt-get install -y libglib2.0-bin
+	util_error_echo
+	apt-get install -y libglib2.0-bin
+
+
+	return 0
+}
+
+sys_gsettings_schema_compile () {
 
 
 	util_error_echo
@@ -59,17 +71,17 @@ sys_settings_schema_compile () {
 	return 0
 }
 
-mod_module_settings_schema_compile () {
+mod_module_gsettings_schema_compile () {
 
-	#mod_module_initctl_diversion_package_install
+	sys_gsettings_package_install
 
-	sys_settings_schema_compile
+	sys_gsettings_schema_compile
 
 	return 0
 }
 
 ##
-### Tail: Model / mod_module_settings_schema_compile
+### Tail: Model / mod_module_gsettings_schema_compile
 ################################################################################
 
 
@@ -90,7 +102,7 @@ portal_install () {
 	util_error_echo "[Run Module]: ${script_file_path}"
 
 
-	mod_module_settings_schema_compile
+	mod_module_gsettings_schema_compile
 
 
 }
