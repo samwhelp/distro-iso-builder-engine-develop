@@ -218,6 +218,12 @@ sys_chroot_session_prepare_file () {
 
 
 	util_error_echo
+	util_error_echo cp -rfT "${REF_MASTER_INSTALLER_DIR_PATH}" "${REF_CHROOT_SESSION_DIR_PATH}/${REF_MASTER_INSTALLER_DIR_NAME}"
+	util_error_echo
+	cp -rfT "${REF_MASTER_INSTALLER_DIR_PATH}" "${REF_CHROOT_SESSION_DIR_PATH}/${REF_MASTER_INSTALLER_DIR_NAME}"
+
+
+	util_error_echo
 	util_error_echo cp -rfT "${REF_MASTER_CYCLE_DIR_PATH}" "${REF_CHROOT_SESSION_DIR_PATH}/${REF_MASTER_CYCLE_DIR_NAME}"
 	util_error_echo
 	cp -rfT "${REF_MASTER_CYCLE_DIR_PATH}" "${REF_CHROOT_SESSION_DIR_PATH}/${REF_MASTER_CYCLE_DIR_NAME}"
