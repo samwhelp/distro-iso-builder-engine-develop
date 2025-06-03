@@ -49,7 +49,7 @@ REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../../../ext"
 
 sys_apt_preferences_no_snapd () {
 
-cat << __EOF__ | tee /etc/apt/preferences.d/no-snapd.conf 2>&1 >/dev/null
+cat << __EOF__ | tee /etc/apt/preferences.d/no-snapd.pref 2>&1 >/dev/null
 Package: snapd
 Pin: release a=*
 Pin-Priority: -10
@@ -59,9 +59,9 @@ __EOF__
 
 
 	util_error_echo
-	util_error_echo cat /etc/apt/preferences.d/no-snapd.conf
+	util_error_echo cat /etc/apt/preferences.d/no-snapd.pref
 	util_error_echo
-	cat /etc/apt/preferences.d/no-snapd.conf
+	cat /etc/apt/preferences.d/no-snapd.pref
 
 
 
