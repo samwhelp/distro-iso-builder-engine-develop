@@ -44,35 +44,23 @@ REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../../../ext"
 
 
 ################################################################################
-### Head: Model / mod_module_clean_root_dir_file
+### Head: Model / mod_module_clean_system_log_file
 ##
 
-mod_module_clean_root_dir_file () {
+mod_module_clean_system_log_file () {
 
 
 	util_error_echo
-	util_error_echo rm -f "/root/.bash_history"
+	util_error_echo rm -rf '/var/log/*'
 	util_error_echo
-	rm -f "/root/.bash_history"
-
-
-	util_error_echo
-	util_error_echo rm -rf "/root/.viminfo"
-	util_error_echo
-	rm -rf "/root/.viminfo"
-
-
-	util_error_echo
-	util_error_echo rm -f "/root/.bash_history"
-	util_error_echo
-	rm -f "/root/.bash_history"
+	rm -rf /var/log/*
 
 
 	return 0
 }
 
 ##
-### Tail: Model / mod_module_clean_root_dir_file
+### Tail: Model / mod_module_clean_system_log_file
 ################################################################################
 
 
@@ -93,7 +81,7 @@ portal_install () {
 	util_error_echo "[Run Module]: ${script_file_path}"
 
 
-	mod_module_clean_root_dir_file
+	mod_module_clean_system_log_file
 
 
 }

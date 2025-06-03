@@ -60,8 +60,9 @@ factory-package-remove
 ##
 
 clean-apt-cache-file
-clean-root-dir-file
+clean-root-home-dir-file
 clean-system-tmp-file
+clean-system-log-file
 
 
 
