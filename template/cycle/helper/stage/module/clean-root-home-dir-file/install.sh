@@ -51,9 +51,9 @@ mod_module_clean_root_home_dir_file () {
 
 
 	util_error_echo
-	util_error_echo rm -f "/root/.bash_history"
+	util_error_echo rm -rf "/root/.bash_history"
 	util_error_echo
-	rm -f "/root/.bash_history"
+	rm -rf "/root/.bash_history"
 
 
 	util_error_echo
@@ -63,9 +63,21 @@ mod_module_clean_root_home_dir_file () {
 
 
 	util_error_echo
-	util_error_echo rm -f "/root/.bash_history"
+	util_error_echo rm -rf "/root/.cache"
 	util_error_echo
-	rm -f "/root/.bash_history"
+	rm -rf "/root/.cache"
+
+
+	util_error_echo
+	util_error_echo rm -rf "/root/.ssh"
+	util_error_echo
+	rm -rf "/root/.ssh"
+
+
+	util_error_echo
+	util_error_echo rm -rf "/root/.launchpadlib"
+	util_error_echo
+	rm -rf "/root/.launchpadlib"
 
 
 	return 0
