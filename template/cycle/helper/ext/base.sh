@@ -325,6 +325,39 @@ base_var_init () {
 
 
 
+
+
+
+
+	##
+	## ## Locale
+	##
+
+	REF_BUILD_LOCALE_NAME="en_US.UTF-8"
+
+	REF_BUILD_LOCALE_NAME_PART_MAIN="en_US"
+	REF_BUILD_LOCALE_NAME_PART_LANGUAGE="en"
+	REF_BUILD_LOCALE_NAME_PART_TERRITORY="US"
+
+	REF_BUILD_LOCALE_NAME_PART_CODESET="UTF-8"
+
+
+	REF_BUILD_LOCALE_GEN="en_US.UTF-8 zh_TW.UTF-8 zh_CN.UTF-8 zh_HK.UTF-8 ja_JP.UTF-8 ko_KR.UTF-8"
+
+
+	## /usr/share/zoneinfo/Etc/UTC
+	REF_BUILD_TIMEZONE="Etc/UTC"
+
+	## /usr/share/zoneinfo/Asia/Taipei
+	#REF_BUILD_TIMEZONE="Asia/Taipei"
+
+
+
+
+
+
+
+
 	return 0
 
 }
@@ -674,6 +707,38 @@ base_var_dump () {
 	util_debug_echo "REF_MASTER_INSTALLER_PACKAGE_INSTALL_DIR_NAME=${REF_MASTER_INSTALLER_PACKAGE_INSTALL_DIR_NAME}"
 	util_debug_echo "REF_MASTER_INSTALLER_PACKAGE_INSTALL_DIR_PATH=${REF_MASTER_INSTALLER_PACKAGE_INSTALL_DIR_PATH}"
 	util_debug_echo
+
+
+
+
+
+
+
+
+	util_debug_echo
+	util_debug_echo "##"
+	util_debug_echo "## ## Locale"
+	util_debug_echo "##"
+	util_debug_echo
+
+	util_debug_echo "REF_BUILD_LOCALE_NAME=${REF_BUILD_LOCALE_NAME}"
+	util_debug_echo
+
+	util_debug_echo "REF_BUILD_LOCALE_NAME_PART_MAIN=${REF_BUILD_LOCALE_NAME_PART_MAIN}"
+	util_debug_echo "REF_BUILD_LOCALE_NAME_PART_LANGUAGE=${REF_BUILD_LOCALE_NAME_PART_LANGUAGE}"
+	util_debug_echo "REF_BUILD_LOCALE_NAME_PART_TERRITORY=${REF_BUILD_LOCALE_NAME_PART_TERRITORY}"
+	util_debug_echo
+
+	util_debug_echo "REF_BUILD_LOCALE_NAME_PART_CODESET=${REF_BUILD_LOCALE_NAME_PART_CODESET}"
+	util_debug_echo
+
+	util_debug_echo "REF_BUILD_LOCALE_GEN=${REF_BUILD_LOCALE_GEN}"
+	util_debug_echo "REF_BUILD_TIMEZONE=${REF_BUILD_TIMEZONE}"
+	util_debug_echo
+
+
+
+
 
 
 

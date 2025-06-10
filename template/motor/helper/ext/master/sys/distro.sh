@@ -85,7 +85,7 @@ sys_distro_iso_move_to_dist_dir () {
 
 	local now_str="$(date '+%Y%m%d-%H%M%S')"
 
-	local lang_mode="${REF_BUILD_LANG_MODE}"
+	local lang_mode="${REF_BUILD_LOCALE_NAME_PART_MAIN}"
 	lang_mode="${lang_mode,,}"
 
 
@@ -794,7 +794,7 @@ cat << __EOF__ > "${target_dir_path}/README.md"
 
 | Key           | Value                 |
 | ------------- | --------------------- |
-| Language      | ${REF_BUILD_LANG}           |
+| Language      | ${REF_BUILD_LOCALE_NAME}           |
 | Version       | ${REF_BUILD_VERSION}                 |
 | Date          | ${date_str}            |
 

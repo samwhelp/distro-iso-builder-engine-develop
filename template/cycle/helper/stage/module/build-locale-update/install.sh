@@ -49,7 +49,7 @@ REF_INIT_DIR_PATH="${REF_BASE_DIR_PATH}/../../../ext"
 
 sys_locale_update () {
 
-	local the_lang="${REF_BUILD_LANG}"
+	local the_lang="${REF_BUILD_LOCALE_NAME}"
 
 	util_error_echo
 	util_error_echo update-locale LANG=${the_lang} LC_ALL=${the_lang}
