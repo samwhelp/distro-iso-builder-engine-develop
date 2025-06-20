@@ -19,6 +19,7 @@ core-initramfs-update
 ## ## locale
 ##
 
+live-locale-config-from-args
 build-locale-gen
 
 
