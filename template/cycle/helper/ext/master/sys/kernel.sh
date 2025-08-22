@@ -6,10 +6,19 @@
 
 sys_kernel_package_name_find () {
 
-	sys_kernel_package_name_find_via_apt_cache
+	sys_kernel_package_name_find_for_generic
+
+	#sys_kernel_package_name_find_via_apt_cache
 
 	#sys_kernel_package_name_find_via_apt
 
+}
+
+sys_kernel_package_name_find_for_generic () {
+
+	echo "linux-image-generic"
+
+	return 0
 }
 
 sys_kernel_package_name_find_via_apt_cache () {
