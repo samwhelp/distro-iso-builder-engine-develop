@@ -6,7 +6,7 @@
 ## > for `debootstrap`
 ##
 
-REF_BUILD_SUITE="plucky"
+REF_BUILD_SUITE="questing"
 
 
 
@@ -40,7 +40,7 @@ REF_LIVE_PACKAGE_REPO_URL="http://archive.ubuntu.com/ubuntu/"
 ## ## REF_BUILD_VERSION
 ##
 
-REF_BUILD_VERSION="25.04"
+REF_BUILD_VERSION="25.10"
 
 
 

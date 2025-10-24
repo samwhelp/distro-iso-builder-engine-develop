@@ -37,6 +37,15 @@ core-apt-limit-no-snapd
 
 
 ##
+## ## coreutils
+##
+
+core-coreutils-from-gnu
+
+
+
+
+##
 ## ## dist-upgrade
 ##
 
