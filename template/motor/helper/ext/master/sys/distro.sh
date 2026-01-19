@@ -573,6 +573,13 @@ sys_distro_iso_create_boot_image_for_uefi_via_grub_mkimage () {
 	## --output="isolinux/efiboot.img" \
 	##
 
+
+	##
+	## ## MODULES dir from Package: grub-efi-amd64-bin
+	## ls -1 /usr/lib/grub/x86_64-efi/
+	##
+
+
 	sudo grub-mkimage \
 		--format="x86_64-efi" \
 		--output="${boot_image_file_path}" \
@@ -599,7 +606,7 @@ sys_distro_iso_create_boot_image_for_uefi_via_grub_mkimage () {
 			search_fs_file \
 			gfxterm \
 			gfxterm_background \
-			gfxterm_menu \
+			gfxmenu \
 			test \
 			all_video \
 			loadenv \
